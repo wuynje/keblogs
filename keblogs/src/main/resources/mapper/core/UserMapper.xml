@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yjytke.dao.UserDao">
+	<sql id="BASE_TABLE">
+		ke_user
+	</sql>
+
+	<sql id="BASE_COLUMN">
+		account_number,nick_name,avatar,sex,account_password,phone_number,email,login_time,ts,dr
+	</sql>
+
+	<insert id="insert"
+		parameterType="com.yjytke.entity.KeUser">
+		INSERT INTO
+		<include refid="BASE_TABLE" />
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			account_number,account_password
+			<if test="phone_number != null">
+				phone_number,
+			</if>
+		</trim>
+		<trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+			#{account_number, jdbcType=VARCHAR},#{account_password, jdbcType=VARCHAR},
+			<if test="phone_number != null">
+				#{phone_number, jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+
+	<update id="updateUserInfo"
+		parameterType="com.yjytke.entity.KeUser">
+		UPDATE
+		<include refid="BASE_TABLE" />
+		<set>
+			<if test="account_password != null">
+				account_password = #{account_password, jdbcType=VARCHAR},
+			</if>
+			<if test="screenName != null">
+				nick_name = #{nick_name, jdbcType=VARCHAR},
+			</if>
+			<if test="email != null">
+				email = #{email, jdbcType=VARCHAR},
+			</if>
+		</set>
+		WHERE account_number = #{account_number, jdbcType=INTEGER}
+	</update>
+
+	<select id="selectUsers"
+		resultType="com.yjytke.entity.KeUser">
+		SELECT
+		<include refid="BASE_COLUMN" />
+		FROM
+		<include refid="BASE_TABLE" />
+		WHERE
+		account_number = #{account_number, jdbcType=INTEGER}
+	</select>
+
+
+
+
+</mapper>
