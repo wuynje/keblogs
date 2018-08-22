@@ -8,4 +8,6 @@ package com.yjytke.exception;
  */
 public class BusinessException extends Exception {
 
+	private static final long serialVersionUID = 7982405219655142959L;
+
 }

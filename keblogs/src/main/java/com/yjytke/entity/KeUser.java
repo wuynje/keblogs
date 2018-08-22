@@ -9,6 +9,10 @@ package com.yjytke.entity;
 public class KeUser {
 	
 	/**
+	 * 主键
+	 */
+	private Integer id;
+	/**
 	 * 唯一，账户
 	 */
 	private String account_number;
@@ -21,11 +25,6 @@ public class KeUser {
 	 * 头像路径
 	 */
 	private String avatar;
-	
-	/**
-	 * 性别
-	 */
-	private String sex;
 	
 	/**
 	 * 密码
@@ -56,6 +55,15 @@ public class KeUser {
 	 * 创建时间
 	 */
 	private String ts;
+	
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public String getAccount_password() {
 		return account_password;
@@ -100,14 +108,6 @@ public class KeUser {
 	public String getEmail() {
 		return email;
 	}
-	
-	public String getSex() {
-		return sex;
-	}
-
-	public void setSex(String sex) {
-		this.sex = sex;
-	}
 
 	public void setEmail(String email) {
 		this.email = email;
@@ -125,8 +125,7 @@ public class KeUser {
 		return dr;
 	}
 
-	public void setDr(Integer dr) {
-		this.dr = 0;
+	public void setDr(int dr) {
 		this.dr = dr;
 	}
 
