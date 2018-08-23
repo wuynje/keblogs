@@ -12,6 +12,9 @@ import com.yjytke.entity.KeUser;
  */
 //@Mapper
 public interface UserDao {
+	
+	KeUser login(String username, String password);
+	
 	int insert (KeUser user);
 	
 	List<KeUser> selectUsers();

@@ -42,14 +42,9 @@ public class KeUser {
 	private String email;
 	
 	/**
-	 * 上次登录时间s
+	 *账号标识
 	 */
-	private String login_time;
-	
-	/**
-	 * 删除标志
-	 */
-	private int dr;
+	private int status;
 	
 	/**
 	 * 创建时间
@@ -113,20 +108,12 @@ public class KeUser {
 		this.email = email;
 	}
 
-	public String getLogin_time() {
-		return login_time;
+	public int getStatus() {
+		return status;
 	}
 
-	public void setLogin_time(String login_time) {
-		this.login_time = login_time;
-	}
-
-	public Integer getDr() {
-		return dr;
-	}
-
-	public void setDr(int dr) {
-		this.dr = dr;
+	public void setStatus(int status) {
+		this.status = status;
 	}
 
 	public String getTs() {
