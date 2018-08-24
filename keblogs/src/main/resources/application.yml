@@ -43,3 +43,8 @@ pagehelper:
     supportMethodsArguments: true
     params: count=countSql
     returnPageInfo: check
+    
+# 打印sql-mybatis
+logging:
+  level:
+     com.yjytke.dao: debug

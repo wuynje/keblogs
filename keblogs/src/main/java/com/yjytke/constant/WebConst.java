@@ -5,9 +5,6 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by Donghua.Chen on 2018/4/29.
- */
 @Component
 public class WebConst {
 
@@ -21,15 +18,12 @@ public class WebConst {
      */
     public static String LOGIN_SESSION_KEY = "login_user";
 
-    public static final String USER_IN_COOKIE = "S_L_ID";
-
-
-
+    public static final String USER_IN_COOKIE = "ACCT";
 
     /**
-     * aes加密加盐
+     * aes加密key,ase比des安全
      */
-    public static String AES_SALT = "0123456789abcdef";
+    public static String AES_KEY = "keblogs112993";
 
     /**
      * 最大获取文章条数

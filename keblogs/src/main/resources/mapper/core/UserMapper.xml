@@ -6,7 +6,7 @@
 	</sql>
 
 	<sql id="BASE_COLUMN">
-		id,account_number,nick_name,avatar,account_password,phone_number,email,ts,status
+		id,account_number,nick_name,avatar,account_password,phone_number,email,ts,status,login_error_tale,login_time
 	</sql>
 
 	<insert id="insert"
@@ -27,22 +27,22 @@
 		</trim>
 	</insert>
 
-	<update id="updateUserInfo"
+	<update id="addLoginErrorSum"
 		parameterType="com.yjytke.entity.KeUser">
 		UPDATE
 		<include refid="BASE_TABLE" />
 		<set>
-			<if test="account_password != null">
-				account_password = #{account_password, jdbcType=VARCHAR},
-			</if>
-			<if test="screenName != null">
-				nick_name = #{nick_name, jdbcType=VARCHAR},
-			</if>
-			<if test="email != null">
-				email = #{email, jdbcType=VARCHAR},
-			</if>
+		<if test="password != null">
+             login_error_tale = 0
+         </if>
+         <if test="password == null">
+             login_error_tale = ifnull(login_error_tale,0)+1,
+         </if>
+         <if test="login_time != null">
+             login_time = #{login_time, jdbcType=BIGINT}
+         </if>
 		</set>
-		WHERE account_number = #{account_number, jdbcType=INTEGER}
+		WHERE account_number = #{username, jdbcType=VARCHAR}
 	</update>
 
 	<select id="login"

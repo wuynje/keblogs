@@ -47,6 +47,16 @@ public class KeUser {
 	private int status;
 	
 	/**
+	 * 登录错误次数
+	 */
+	private int login_error_tale;
+	
+	/**
+	 * 上次登录时间
+	 */
+	private long login_time;
+	
+	/**
 	 * 创建时间
 	 */
 	private String ts;
@@ -123,6 +133,21 @@ public class KeUser {
 	public void setTs(String ts) {
 		this.ts = ts;
 	}
-	
+
+	public int getLogin_error_tale() {
+		return login_error_tale;
+	}
+
+	public void setLogin_error_tale(int login_error_tale) {
+		this.login_error_tale = login_error_tale;
+	}
+
+	public long getLogin_time() {
+		return login_time;
+	}
+
+	public void setLogin_time(long login_time) {
+		this.login_time = login_time;
+	}
 	
 }

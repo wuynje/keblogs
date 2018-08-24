@@ -15,8 +15,19 @@ public enum ErrorConst {
 	/**
 	 * 用户名或密码错误
 	 */
-	NAMEORPWODERROR("1001","用户名密码错误");
-	
+	PASSWORDERROR("1001","密码错误"),
+	/**
+	 * 用户名不存在
+	 */
+	NAMENOTEXIT("1002","用户名不存在"),
+	/**
+	 * 密码输入错误超过3次
+	 */
+	PAWWORRDERROROVERTHREE("1003","密码输入错误超过3次，请30秒后重新输入"),
+	/**
+	 * 加密错误
+	 */
+	ADDAECERROR("8001","加密错误");
 	private String errorCode;
 	private String message;
 

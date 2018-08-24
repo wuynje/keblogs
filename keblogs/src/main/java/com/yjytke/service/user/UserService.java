@@ -25,4 +25,6 @@ public interface UserService {
 	
 	PageInfo<KeUser> findAllUser(int pageNum, int pageSize);
 	
+	void resetPwdErrSum(KeUser user);
+	
 }

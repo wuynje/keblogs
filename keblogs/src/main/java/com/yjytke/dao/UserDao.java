@@ -10,10 +10,11 @@ import com.yjytke.entity.KeUser;
  * @version 1.0
  * @description:
  */
-//@Mapper
 public interface UserDao {
 	
 	KeUser login(String username, String password);
+	
+	void addLoginErrorSum(String username, String password, long login_time);
 	
 	int insert (KeUser user);
 	

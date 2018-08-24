@@ -131,7 +131,8 @@ $.tale.prototype.post = function (options) {
         type: 'POST',
         url: options.url,
         data: options.data || {},
-        async: options.async || false,
+        async: true,   //是否为异步请求
+        cache: false,
         dataType: 'json',
         success: function (result) {
             self.hideLoading();

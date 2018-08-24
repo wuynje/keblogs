@@ -14,7 +14,7 @@ public class IndexAdminController {
 	
 	@RequestMapping("admin/index")
 	public String getIndexAdmin() {
-		return "admin/login";
+		return "admin/index";
 	}
 	
 }

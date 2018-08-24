@@ -14,6 +14,7 @@ import com.yjytke.dao.UserDao;
 import com.yjytke.entity.KeUser;
 import com.yjytke.exception.BusinessException;
 import com.yjytke.service.user.UserService;
+import com.yjytke.utils.GeneralUtil;
 
 /**
  * @author wuynje
@@ -46,17 +47,30 @@ public class UserServiceImp implements UserService {
 	/**
 	 * 登录
 	 */
+	@Transactional
 	@Override
 	public KeUser login(String username, String password){
 		if(StringUtils.isBlank(username) || StringUtils.isBlank(password)){
 			throw new BusinessException(ErrorConst.NAMEORPWODISNULL);
 		}
-		KeUser keUser = userDao.login(username, password);
-		if(null==keUser) {
-			throw new BusinessException(ErrorConst.NAMEORPWODERROR);
-		}else {
-			return keUser;
+		KeUser keUserA = userDao.login(username, null);
+		if(null == keUserA)
+			throw new BusinessException(ErrorConst.NAMENOTEXIT);
+		if(keUserA.getLogin_error_tale()>=3 &&
+				GeneralUtil.getSubTime(keUserA.getLogin_time())/1000<30)
+			throw new BusinessException(ErrorConst.PAWWORRDERROROVERTHREE);
+		KeUser keUserB = userDao.login(username, password);
+		if(null==keUserB) {
+			userDao.addLoginErrorSum(username,null,GeneralUtil.getcurrenttime());
 		}
+		return keUserB;
+	}
+	
+	/**
+	 * 登录成功重设密码错误次数为0
+	 */
+	public void resetPwdErrSum(KeUser user) {
+		userDao.addLoginErrorSum(user.getAccount_number(), user.getAccount_password(),GeneralUtil.getcurrenttime());
 	}
 
 }
