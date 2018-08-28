@@ -4,9 +4,9 @@ package com.yjytke.entity;
  * @author wuynje
  * @time 2018年8月22日 下午4:47:29
  * @version 1.0
- * @description:登录日志
+ * @description:后台日志
  */
-public class LoginLog {
+public class KeLog {
 	
 	private int id;
 	
@@ -14,11 +14,6 @@ public class LoginLog {
 	 * 用户主键
 	 */
 	private int userid;
-	
-	/**
-	 * 登录失败次数
-	 */
-	private int login_error_tale;
 	
 	/**
 	 * 登录ip
@@ -29,6 +24,11 @@ public class LoginLog {
 	 * 操作
 	 */
 	private String operator;
+	
+	/**
+	 * 创建时间
+	 */
+	private long ts;
 
 	public int getId() {
 		return id;
@@ -46,14 +46,6 @@ public class LoginLog {
 		this.userid = userid;
 	}
 
-	public int getLogin_error_tale() {
-		return login_error_tale;
-	}
-
-	public void setLogin_error_tale(int login_error_tale) {
-		this.login_error_tale = login_error_tale;
-	}
-
 	public String getLogin_ip() {
 		return login_ip;
 	}
@@ -69,7 +61,13 @@ public class LoginLog {
 	public void setOperator(String operator) {
 		this.operator = operator;
 	}
-	
-	
+
+	public long getTs() {
+		return ts;
+	}
+
+	public void setTs(long ts) {
+		this.ts = ts;
+	}
 	
 }

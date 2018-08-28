@@ -28,4 +28,10 @@ public interface UserService {
 	 */
 	void resetPwdErrSum(KeUser user, int isadd);
 	
+	/**
+	 * 根据用户名查询用户
+	 * @param username
+	 * @return
+	 */
+	KeUser findUserByUsername(String username);
 }

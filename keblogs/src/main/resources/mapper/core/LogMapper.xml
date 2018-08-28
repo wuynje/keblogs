@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yjytke.dao.LogDao">
+	<sql id="BASE_TABLE">
+		ke_log
+	</sql>
+
+	<sql id="BASE_COLUMN">
+		id,userid,login_ip,operator,ts
+	</sql>
+
+	<!-- 新增后台日志 -->
+	<insert id="addLog"
+		parameterType="com.yjytke.entity.KeLog">
+		INSERT INTO
+		<include refid="BASE_TABLE" />
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			userid,login_ip,operator,ts
+		</trim>
+		<trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+            #{userid, jdbcType=INTEGER}, #{login_ip, jdbcType=VARCHAR},
+            #{operator, jdbcType=VARCHAR}, #{ts, jdbcType=BIGINT},
+        </trim>
+	</insert>
+
+</mapper>

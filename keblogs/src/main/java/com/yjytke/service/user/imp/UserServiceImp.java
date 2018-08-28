@@ -1,14 +1,10 @@
 package com.yjytke.service.user.imp;
 
-import java.util.List;
-
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import com.yjytke.constant.ErrorConst;
 import com.yjytke.constant.WebConst;
 import com.yjytke.dao.UserDao;
@@ -62,9 +58,16 @@ public class UserServiceImp implements UserService {
 	/**
 	 * 重设密码错误次数为0
 	 */
+	@Transactional
 	@Override
 	public void resetPwdErrSum(KeUser user, int isadd) {
 		userDao.addLoginErrorSum(user.getAccount_number(), isadd,GeneralUtil.getcurrenttime());
+	}
+
+	@Override
+	public KeUser findUserByUsername(String username) {
+
+		return userDao.login(username, null);
 	}
 
 }
