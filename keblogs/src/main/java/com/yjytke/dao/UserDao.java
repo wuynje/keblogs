@@ -12,9 +12,21 @@ import com.yjytke.entity.KeUser;
  */
 public interface UserDao {
 	
+	/**
+	 * 登录
+	 * @param username
+	 * @param password
+	 * @return
+	 */
 	KeUser login(String username, String password);
 	
-	void addLoginErrorSum(String username, String password, long login_time);
+	/**
+	 * 重设密码登录次数
+	 * @param username
+	 * @param isadd
+	 * @param login_time
+	 */
+	void addLoginErrorSum(String username, int isadd, long login_time);
 	
 	int insert (KeUser user);
 	

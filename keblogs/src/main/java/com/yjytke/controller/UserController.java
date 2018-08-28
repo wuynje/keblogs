@@ -20,7 +20,7 @@ public class UserController {
 
     @PostMapping("/add")
     public int addUser(KeUser user){
-        return userService.addUser(user);
+        return 1;
     }
 
 }

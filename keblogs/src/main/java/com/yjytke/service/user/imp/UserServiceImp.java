@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.yjytke.constant.ErrorConst;
+import com.yjytke.constant.WebConst;
 import com.yjytke.dao.UserDao;
 import com.yjytke.entity.KeUser;
 import com.yjytke.exception.BusinessException;
@@ -27,25 +28,14 @@ public class UserServiceImp implements UserService {
 
 	@Autowired
 	private UserDao userDao;
-	
-	@Override
-	@Transactional
-	public int addUser(KeUser user) {
-		return userDao.insert(user);
-	}
-
-
-	@Override
-	public PageInfo<KeUser> findAllUser(int pageNum, int pageSize) {
-		PageHelper.startPage(pageNum, pageSize);
-        List<KeUser> userDomains = userDao.selectUsers();
-        PageInfo result = new PageInfo(userDomains);
-        return result;
-	}
-
 
 	/**
 	 * 登录
+	 * 1.判断用户名密码为空
+	 * 2.判断用户是否存在
+	 * 3.判断是否在可以登录的时间
+	 * 4.判断密码输入错误次数
+	 * 5.判断用户名密码是否正确
 	 */
 	@Transactional
 	@Override
@@ -56,21 +46,25 @@ public class UserServiceImp implements UserService {
 		KeUser keUserA = userDao.login(username, null);
 		if(null == keUserA)
 			throw new BusinessException(ErrorConst.NAMENOTEXIT);
-		if(keUserA.getLogin_error_tale()>=3 &&
-				GeneralUtil.getSubTime(keUserA.getLogin_time())/1000<30)
-			throw new BusinessException(ErrorConst.PAWWORRDERROROVERTHREE);
+		if(GeneralUtil.getSubTime(keUserA.getLogin_time())/1000 > WebConst.LOGGER_ERROR_MAX_TIME)
+			userDao.addLoginErrorSum(keUserA.getAccount_number(), WebConst.RESET, GeneralUtil.getcurrenttime());
+		else {
+			if(keUserA.getLogin_error_tale() >= WebConst.ERROR_TIME)
+				throw new BusinessException(ErrorConst.PAWWORRDERROROVERTHREE);
+		}
 		KeUser keUserB = userDao.login(username, password);
-		if(null==keUserB) {
-			userDao.addLoginErrorSum(username,null,GeneralUtil.getcurrenttime());
+		if(null == keUserB) {
+			userDao.addLoginErrorSum(username,WebConst.ADD,GeneralUtil.getcurrenttime());
 		}
 		return keUserB;
 	}
 	
 	/**
-	 * 登录成功重设密码错误次数为0
+	 * 重设密码错误次数为0
 	 */
-	public void resetPwdErrSum(KeUser user) {
-		userDao.addLoginErrorSum(user.getAccount_number(), user.getAccount_password(),GeneralUtil.getcurrenttime());
+	@Override
+	public void resetPwdErrSum(KeUser user, int isadd) {
+		userDao.addLoginErrorSum(user.getAccount_number(), isadd,GeneralUtil.getcurrenttime());
 	}
 
 }

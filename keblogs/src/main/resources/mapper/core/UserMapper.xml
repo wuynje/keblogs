@@ -32,12 +32,14 @@
 		UPDATE
 		<include refid="BASE_TABLE" />
 		<set>
-		<if test="password != null">
-             login_error_tale = 0
-         </if>
-         <if test="password == null">
-             login_error_tale = ifnull(login_error_tale,0)+1,
-         </if>
+		<choose>
+			<when test="isadd == 0">
+				login_error_tale = 0,
+			</when>
+			<otherwise>
+				login_error_tale = ifnull(login_error_tale,0)+1,
+			</otherwise>
+		</choose>
          <if test="login_time != null">
              login_time = #{login_time, jdbcType=BIGINT}
          </if>

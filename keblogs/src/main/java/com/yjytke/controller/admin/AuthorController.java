@@ -73,9 +73,9 @@ public class AuthorController {
 				request.getSession().setAttribute(WebConst.LOGIN_SESSION_KEY, keUser);//将登录的用户放到session
 				if(StringUtils.isNoneBlank(remeber_me))
 					GeneralUtil.addCookies(response, keUser.getAccount_number(), 60 * 30);//用户id存放到cookie
-				userService.resetPwdErrSum(keUser);
+				userService.resetPwdErrSum(keUser,WebConst.RESET);
 			}
-		} catch (Exception e) {
+		} catch (BusinessException e) {
 			return new ApiResponse(AjaxReturnCode.LoginCode.LOGIN_FAIL,e.getMessage());
 		}
 		return new ApiResponse(AjaxReturnCode.LoginCode.LOGIN_SUCCESS);

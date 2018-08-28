@@ -21,10 +21,11 @@ public interface UserService {
 	 */
 	KeUser login(String username, String password);
 	
-	int addUser(KeUser user);
-	
-	PageInfo<KeUser> findAllUser(int pageNum, int pageSize);
-	
-	void resetPwdErrSum(KeUser user);
+	/**
+	 * 重置密码错误次数
+	 * @param user
+	 * @param isadd
+	 */
+	void resetPwdErrSum(KeUser user, int isadd);
 	
 }

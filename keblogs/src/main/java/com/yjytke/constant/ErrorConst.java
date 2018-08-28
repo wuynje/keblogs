@@ -23,7 +23,7 @@ public enum ErrorConst {
 	/**
 	 * 密码输入错误超过3次
 	 */
-	PAWWORRDERROROVERTHREE("1003","密码输入错误超过3次，请30秒后重新输入"),
+	PAWWORRDERROROVERTHREE("1003","密码输入错误超过3次，请5分钟后重新输入"),
 	/**
 	 * 加密错误
 	 */
