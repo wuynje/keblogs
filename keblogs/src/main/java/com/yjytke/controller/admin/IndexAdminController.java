@@ -1,7 +1,12 @@
 package com.yjytke.controller.admin;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 /**
  * @author wuynje
@@ -9,11 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @version 1.0
  * @description:后台首页
  */
+@Api("后台首页")
 @Controller
 public class IndexAdminController {
 	
+	@ApiOperation("进入首页")
 	@RequestMapping("admin/index")
-	public String getIndexAdmin() {
+	public String getIndexAdmin(HttpServletRequest request) {
+		
 		return "admin/index";
 	}
 	

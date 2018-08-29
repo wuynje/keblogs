@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yjytke.dao.PropertiesDao">
+	<sql id="BASE_TABLE">
+		ke_properties
+	</sql>
+
+	<sql id="BASE_COLUMN">
+		id,type,ra_value,description
+	</sql>
+	
+	<select id="getTagAndType" resultType="">
+	
+	</select>
+	
+
+</mapper>

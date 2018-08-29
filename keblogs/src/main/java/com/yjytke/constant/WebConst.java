@@ -70,4 +70,27 @@ public class WebConst {
 	 * 上传文件最大1M
 	 */
 	public static Integer MAX_FILE_SIZE = 1048576;
+	
+	/**
+	 * 
+	 * @author wuynje
+	 * @time 2018年8月29日 下午4:33:55
+	 * @version 1.0
+	 * @description:对应的通用类型
+	 */
+	public interface TypeProperties{
+		/**
+		 * 链接
+		 */
+		String LINK="link"; 
+		/**
+		 * 标签
+		 */
+		String TAG="tag"; 
+		/**
+		 * 博客分类
+		 */
+		String BTYPE="blogtype"; 
+	}
+	
 }
