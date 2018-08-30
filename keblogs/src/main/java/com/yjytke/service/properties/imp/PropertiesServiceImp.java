@@ -1,14 +1,14 @@
-package com.yjytke.service.user.imp;
+package com.yjytke.service.properties.imp;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-import com.yjytke.constant.WebConst;
 import com.yjytke.dao.PropertiesDao;
 import com.yjytke.entity.KeProperties;
-import com.yjytke.service.user.PropertiesService;
+import com.yjytke.service.properties.PropertiesService;
 
 /**
  * @author wuynje
@@ -26,9 +26,14 @@ public class PropertiesServiceImp implements PropertiesService {
 	 * 获取标签和分类
 	 */
 	@Override
-	public List<KeProperties> getTagAndType() {
-		List<KeProperties> properties = proDao.getTagAndType(WebConst.TypeProperties.TAG,WebConst.TypeProperties.BTYPE);
-		return null;
+	@Cacheable(value="tagsAndType",key="#p0+#p1")
+	public List<KeProperties> getTagAndType(String tag,String btype) {
+		List<KeProperties> properties = proDao.getTagAndType(tag,btype);
+		if(properties != null && properties.size() > 0 ) {
+			return properties;
+		}else {
+			return null;
+		}
 	}
 	
 	

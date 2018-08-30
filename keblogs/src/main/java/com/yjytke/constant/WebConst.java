@@ -93,4 +93,15 @@ public class WebConst {
 		String BTYPE="blogtype"; 
 	}
 	
+	public interface FileType{
+		/**
+		 * 图片
+		 */
+		String IMG = "img";
+		/**
+		 * 一般压缩文件
+		 */
+		String YS = "ysfile";
+	}
+	
 }

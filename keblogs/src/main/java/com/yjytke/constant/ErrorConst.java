@@ -27,7 +27,11 @@ public enum ErrorConst {
 	/**
 	 * 加密错误
 	 */
-	ADDAECERROR("8001","加密错误");
+	ADDAECERROR("8001","加密错误"),
+	/**
+	 * 加密错误
+	 */
+	UPLOADFAIL("7001","上传失败");
 	private String errorCode;
 	private String message;
 

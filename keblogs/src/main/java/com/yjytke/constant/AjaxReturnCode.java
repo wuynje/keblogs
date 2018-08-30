@@ -16,6 +16,6 @@ public interface AjaxReturnCode {
 		static final String LOGIN_ERROR = "error";
 	}
 	interface errorCode{
-		static final String ERROR = "error";//通用错误
+		static final String FAIL = "fail";//通用错误
 	}
 }

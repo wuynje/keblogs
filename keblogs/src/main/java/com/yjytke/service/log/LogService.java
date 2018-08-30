@@ -1,4 +1,4 @@
-package com.yjytke.service.user;
+package com.yjytke.service.log;
 
 /**
  * @author wuynje

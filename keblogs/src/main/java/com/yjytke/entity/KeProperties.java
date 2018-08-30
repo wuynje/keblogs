@@ -24,6 +24,16 @@ public class KeProperties {
 	private String rea_value;
 	
 	/**
+	 * 链接排序
+	 */
+	private int sort;
+	
+	/**
+	 * 相应标识logo等图标
+	 */
+	private String picture;
+	
+	/**
 	 * 描述
 	 */
 	private String description;
@@ -59,7 +69,21 @@ public class KeProperties {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	
+
+	public int getSort() {
+		return sort;
+	}
+
+	public void setSort(int sort) {
+		this.sort = sort;
+	}
+
+	public String getPicture() {
+		return picture;
+	}
+
+	public void setPicture(String picture) {
+		this.picture = picture;
+	}
 	
 }

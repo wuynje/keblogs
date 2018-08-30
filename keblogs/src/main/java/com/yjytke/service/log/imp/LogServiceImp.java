@@ -1,4 +1,4 @@
-package com.yjytke.service.user.imp;
+package com.yjytke.service.log.imp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.yjytke.dao.LogDao;
 import com.yjytke.entity.KeLog;
-import com.yjytke.service.user.LogService;
+import com.yjytke.service.log.LogService;
 import com.yjytke.utils.GeneralUtil;
 
 /**

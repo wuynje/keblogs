@@ -8,8 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.yjytke.constant.WebConst;
 import com.yjytke.entity.KeProperties;
-import com.yjytke.service.user.PropertiesService;
+import com.yjytke.service.properties.PropertiesService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -31,7 +32,8 @@ public class ArticleController {
 	@ApiOperation("发布博客")
 	@RequestMapping("/publish")
 	public String publish(HttpServletRequest request) {
-		List<KeProperties> properties =  proService.getTagAndType();
+		List<KeProperties> properties =  proService.getTagAndType(null,WebConst.TypeProperties.BTYPE);
+		request.setAttribute("btype", properties);
 		return "admin/article_edit";
 	}
 	

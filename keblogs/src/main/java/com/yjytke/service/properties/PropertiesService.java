@@ -1,4 +1,4 @@
-package com.yjytke.service.user;
+package com.yjytke.service.properties;
 
 import java.util.List;
 
@@ -15,6 +15,6 @@ public interface PropertiesService {
 	/**
 	 * @return
 	 */
-	List<KeProperties> getTagAndType();
+	List<KeProperties> getTagAndType(String tag, String btype);
 
 }

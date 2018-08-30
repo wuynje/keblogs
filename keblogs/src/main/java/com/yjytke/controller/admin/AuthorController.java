@@ -20,7 +20,7 @@ import com.yjytke.constant.LogActions;
 import com.yjytke.constant.WebConst;
 import com.yjytke.entity.KeUser;
 import com.yjytke.exception.BusinessException;
-import com.yjytke.service.user.LogService;
+import com.yjytke.service.log.LogService;
 import com.yjytke.service.user.UserService;
 import com.yjytke.utils.ApiResponse;
 import com.yjytke.utils.GeneralUtil;

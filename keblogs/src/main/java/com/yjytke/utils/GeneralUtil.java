@@ -1,8 +1,13 @@
 package com.yjytke.utils;
 
+import java.io.UnsupportedEncodingException;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Random;
 
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
@@ -61,6 +66,15 @@ public class GeneralUtil {
 		return simplDateFormat.format(time);
 	}
 
+	/**
+	 * 按照月份返回云存储路径
+	 * @return
+	 */
+	public static String getPathByDate() {
+		DateFormat simplDateFormat = new SimpleDateFormat("/yyyy/MM");
+		return simplDateFormat.format(new Date());
+	}
+	
 	/**
 	 * 将用户的account加密存放到cookie中
 	 * 
@@ -165,6 +179,42 @@ public class GeneralUtil {
 			LOGGER.error(e.getMessage());
 			throw new BusinessException(ErrorConst.ADDAECERROR);
 		}
+	}
+	
+	/**
+	 * md5加密
+	 * @return
+	 */
+	public static String md5Code(String str) {
+		  //确定计算方法
+		String newstr = "";
+        MessageDigest md5;
+		try {
+			md5 = MessageDigest.getInstance("MD5");
+			BASE64Encoder base64en = new BASE64Encoder();
+			//加密后的字符串
+			newstr=base64en.encode(md5.digest(str.getBytes("utf-8")));
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+			LOGGER.error(e.getMessage());
+			throw new BusinessException(ErrorConst.ADDAECERROR);
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+			LOGGER.error(e.getMessage());
+			throw new BusinessException(ErrorConst.ADDAECERROR);
+		}
+        return newstr;
+	}
+	
+	/**
+	 * 生成存在云存储上的文件名
+	 * @param fileName
+	 * @return
+	 */
+	public static String getFileNameKey(String fileName) {
+		Random random = new Random();
+		String latsFileName = GeneralUtil.md5Code(System.currentTimeMillis()+random.nextLong()+fileName);
+		return GeneralUtil.getPathByDate()+"/"+latsFileName;
 	}
 
 }
