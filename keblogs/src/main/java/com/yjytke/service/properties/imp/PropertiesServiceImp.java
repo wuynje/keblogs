@@ -27,13 +27,19 @@ public class PropertiesServiceImp implements PropertiesService {
 	 */
 	@Override
 	@Cacheable(value="tagsAndType",key="#p0+#p1")
-	public List<KeProperties> getTagAndType(String tag,String btype) {
-		List<KeProperties> properties = proDao.getTagAndType(tag,btype);
+	public List<KeProperties> getTagAndType(String tag,String btype,int userid) {
+		List<KeProperties> properties = proDao.getTagAndType(tag,btype,userid);
 		if(properties != null && properties.size() > 0 ) {
 			return properties;
 		}else {
 			return null;
 		}
+	}
+
+	@Override
+	public void addProp(int id, String tags, String tag) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	

@@ -25,11 +25,31 @@ public enum ErrorConst {
 	 */
 	PAWWORRDERROROVERTHREE("1003","密码输入错误超过3次，请5分钟后重新输入"),
 	/**
+	 * 文章参数为空
+	 */
+	CONTENTPARAMISNULL("2000"," 文章参数为空"),
+	/**
+	 * 文章标题为空
+	 */
+	CONTENTTITLEISNULL("2001"," 文章标题为空"),
+	/**
+	 * 标题长度过长
+	 */
+	CONTENTTITLELENGTHERROR("2002"," 标题长度过长"),
+	/**
+	 *文章内容为空
+	 */
+	CONTENTISNULL("2003"," 文章内容为空"),
+	/**
+	 *文章长度过长
+	 */
+	CONTENTLENGTHERROE("2003","文章长度过长"),
+	/**
 	 * 加密错误
 	 */
 	ADDAECERROR("8001","加密错误"),
 	/**
-	 * 加密错误
+	 * 上传失败
 	 */
 	UPLOADFAIL("7001","上传失败");
 	private String errorCode;

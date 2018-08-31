@@ -17,6 +17,6 @@ public interface PropertiesDao {
 	 * @param btype
 	 * @return
 	 */
-	List<KeProperties> getTagAndType(String tag, String btype);
+	List<KeProperties> getTagAndType(String tag, String btype, int userid);
 	
 }

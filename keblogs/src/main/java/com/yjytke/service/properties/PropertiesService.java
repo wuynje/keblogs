@@ -13,8 +13,18 @@ import com.yjytke.entity.KeProperties;
 public interface PropertiesService {
 
 	/**
+	 * 查询tag和博客分类
+	 * @param userid 
 	 * @return
 	 */
-	List<KeProperties> getTagAndType(String tag, String btype);
+	List<KeProperties> getTagAndType(String tag, String btype, int userid);
+
+	/**
+	 * 新增属性
+	 * @param id
+	 * @param tags
+	 * @param tag
+	 */
+	void addProp(int id, String tags, String tag);
 
 }

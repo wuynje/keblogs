@@ -15,12 +15,12 @@
 		INSERT INTO
 		<include refid="BASE_TABLE" />
 		<trim prefix="(" suffix=")" suffixOverrides=",">
-			id,userId,fname,ftype,fkey,created
+			userId,fname,ftype,fkey,created
 		</trim>
 		<trim prefix="VALUES(" suffix=")" suffixOverrides=",">
             #{userId, jdbcType=INTEGER}, #{fname, jdbcType=VARCHAR},
-            #{ftype, jdbcType=VARCHAR}, #{created, jdbcType=BIGINT},
-            #{fkey, jdbcTypeVARCHAR}
+            #{ftype, jdbcType=VARCHAR},#{fkey, jdbcType=VARCHAR},
+            #{created, jdbcType=BIGINT}
         </trim>
 	</insert>
 

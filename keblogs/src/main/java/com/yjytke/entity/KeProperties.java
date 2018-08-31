@@ -38,6 +38,11 @@ public class KeProperties {
 	 */
 	private String description;
 
+	/**
+	 * 用户主键
+	 */
+	private int userid;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -84,6 +89,14 @@ public class KeProperties {
 
 	public void setPicture(String picture) {
 		this.picture = picture;
+	}
+
+	public int getUserid() {
+		return userid;
+	}
+
+	public void setUserid(int userid) {
+		this.userid = userid;
 	}
 	
 }

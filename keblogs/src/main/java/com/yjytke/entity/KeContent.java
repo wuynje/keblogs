@@ -29,9 +29,9 @@ public class KeContent {
     private String titlePic;
     
     /**
-     *   内容缩略名
+     *   内容
      */
-    private String slug;
+    private String content;
     
     /**
      * 文章类别：分为博文，生活
@@ -41,7 +41,7 @@ public class KeContent {
 	/**
 	 * 内容类别
 	 */
-	private int btypeid;
+	private String btype;
 	
 	/**
 	 * 文章状态：草稿，发布
@@ -105,12 +105,12 @@ public class KeContent {
 		this.titlePic = titlePic;
 	}
 
-	public String getSlug() {
-		return slug;
+	public String getContent() {
+		return content;
 	}
 
-	public void setSlug(String slug) {
-		this.slug = slug;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	public String getStyle() {
@@ -121,12 +121,12 @@ public class KeContent {
 		this.style = style;
 	}
 
-	public int getBtypeid() {
-		return btypeid;
+	public String getBtype() {
+		return btype;
 	}
 
-	public void setBtype(int btypeid) {
-		this.btypeid = btypeid;
+	public void setBtype(String btype) {
+		this.btype = btype;
 	}
 
 	public String getStatus() {

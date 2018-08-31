@@ -1,6 +1,5 @@
 package com.yjytke.api;
 
-import java.io.File;
 import java.io.IOException;
 
 import org.springframework.web.multipart.MultipartFile;
@@ -17,17 +16,17 @@ import com.qcloud.cos.region.Region;
 
 /**
  * 
- * @ClassName: QcloudDemo
- * @Description: 测试云储存
- * @author chengrui
- * @date 2017年7月25日 下午2:59:17
+ * @author wuynje
+ * @time 2018年8月31日 上午9:37:53
+ * @version 1.0
+ * @description:腾讯云存储服务
  */
 public class TenCentCloudService {
 
-	private static final String bucketName = "keblog-1252041665";
-	private static final String secretId = "AKID3eBaHu2cfXDmbMdVpxtqd0FKE2jGHqtP";
-	private static final String secretKey = "e7PVSEoDRq5B7sQmyzoTxFNL7h5IJ8mb";
-	private static final String url = "https://keblog-1252041665.cos.ap-beijing.myqcloud.com";
+	private static final String bucketName = "keblog-1252041665";//桶名
+	private static final String secretId = "AKID3eBaHu2cfXDmbMdVpxtqd0FKE2jGHqtP";//id
+	private static final String secretKey = "e7PVSEoDRq5B7sQmyzoTxFNL7h5IJ8mb";//密钥
+	private static final String url = "https://keblog-1252041665.cos.ap-beijing.myqcloud.com";//图片访问地址
     /**
      * 
      * @Title: getCOSClient
@@ -49,15 +48,16 @@ public class TenCentCloudService {
      * 
      * @param fileName 
      * @param file 
+     * @param contentLength 
      * @throws IOException 
      * @Title: uploadFile
      * @Description:上传文件
      */
-    public static String uploadFile(MultipartFile file, String fileName) throws IOException {
+    public static String uploadFile(MultipartFile file, String fileName, int contentLength) throws IOException {
         // 设置要操作的bucket
     	ObjectMetadata objectMetadata = new ObjectMetadata();
-    	// 设置输入流长度为 500
-    	objectMetadata.setContentLength(500);  
+    	// 设置输入流长度为 
+    	objectMetadata.setContentLength(file.getInputStream().available());  
         PutObjectRequest putObjectRequest = new PutObjectRequest(bucketName, fileName, file.getInputStream(), objectMetadata);
         PutObjectResult putObjectResult = getCOSClient().putObject(putObjectRequest);
         return url+fileName;

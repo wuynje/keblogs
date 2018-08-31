@@ -65,6 +65,20 @@ public class GeneralUtil {
 		DateFormat simplDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		return simplDateFormat.format(time);
 	}
+	
+	/**
+	 * 获取随机10位字符串
+	 * @return
+	 */
+	public static String getStrRandom() {
+		Random r = new Random();
+		StringBuffer sb = new StringBuffer();
+		for(int i = 0; i< 10; i++) {
+			int j = r.nextInt(WebConst.randomChar.length());
+			sb.append(WebConst.randomChar.charAt(j));
+		}
+		return sb.toString();
+	}
 
 	/**
 	 * 按照月份返回云存储路径
@@ -212,9 +226,8 @@ public class GeneralUtil {
 	 * @return
 	 */
 	public static String getFileNameKey(String fileName) {
-		Random random = new Random();
-		String latsFileName = GeneralUtil.md5Code(System.currentTimeMillis()+random.nextLong()+fileName);
-		return GeneralUtil.getPathByDate()+"/"+latsFileName;
+		String latsFileName = System.currentTimeMillis()+getStrRandom();
+		return getPathByDate()+"/"+latsFileName+fileName.substring(fileName.lastIndexOf("."), fileName.length());
 	}
 
 }

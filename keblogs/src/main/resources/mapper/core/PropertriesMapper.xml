@@ -22,6 +22,7 @@
 		<if test="btype!=null">
 		#{btype, jdbcType=VARCHAR}
 		</if>
-		)
+		) AND
+		userid = #{userid, jdbcType=INTEGER}
 	</select>
 </mapper>

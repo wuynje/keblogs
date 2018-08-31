@@ -24,7 +24,13 @@ public class WebConst {
 	 * aes加密key,ase比des安全
 	 */
 	public static String AES_KEY = "keblogs112993";
-
+	
+	/**
+	 * 生成随机字符串的取值
+	 */
+	public static String randomChar = "abcdefghijklmnopqABCDEF"
+			+ "GHIJKLMNOPQRSTUVWXYZ0123456789";
+	
 	/**
 	 * 增加登录错误次数标识
 	 */
@@ -102,6 +108,17 @@ public class WebConst {
 		 * 一般压缩文件
 		 */
 		String YS = "ysfile";
+	}
+	
+	public interface Articletype{
+		/**
+		 * 博文
+		 */
+		String BLOG = "blogs";
+		/**
+		 * 生活
+		 */
+		String LIFE = "life";
 	}
 	
 }

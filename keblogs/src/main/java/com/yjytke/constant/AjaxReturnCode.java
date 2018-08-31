@@ -11,10 +11,19 @@ public interface AjaxReturnCode {
 	 * 登录返回的参数
 	 */
 	interface LoginCode{
-		static final String LOGIN_SUCCESS = "success";
-		static final String LOGIN_FAIL = "fail";
-		static final String LOGIN_ERROR = "error";
+		static final String SUCCESS = "success";
+		static final String FAIL = "fail";
+		static final String ERROR = "error";
 	}
+	/**
+	 * 添加文章返回的参数
+	 */
+	interface ContentCode{
+		static final String SUCCESS = "success";
+		static final String FAIL = "fail";
+		static final String ERROR = "error";
+	}
+	
 	interface errorCode{
 		static final String FAIL = "fail";//通用错误
 	}

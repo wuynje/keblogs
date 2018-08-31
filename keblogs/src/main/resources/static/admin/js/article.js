@@ -39,10 +39,10 @@ function subArticle(status) {
     }
     $('#content-editor').val(content);
     $("#articleForm #status").val(status);
-    $("#articleForm #categories").val($('#multiple-sel').val());
-    $("#articleForm #type").val($('#multiple-type').val());
+    $("#articleForm #btype").val($('#multiple-sel').val());
+    $("#articleForm #style").val($('#multiple-type').val());
     var params = $("#articleForm").serialize();
-    var url = $('#articleForm #cid').val() != '' ? '/admin/article/modify' : '/admin/article/publish';
+    var url = $('#articleForm #id').val() != '' ? '/admin/article/modify' : '/admin/article/publish';
     tale.post({
         url:url,
         data:params,
@@ -113,7 +113,7 @@ $('#multiple-type').change(function () {
     var postType = $('#multiple-type').val();
     var tags = $('#tags');
     var categories = $('#multiple-sel');
-    if(postType == 'post'){
+    if(postType == 'blogs'){
         $('#tags_tagsinput').show(500);
         $('#s2id_multiple-sel').show(500);
         $('#comment-div').attr("style","display:block;");
@@ -129,7 +129,7 @@ $(function () {
     var postType = $('#multiple-type').val();
     var tags = $('#tags');
     var categories = $('#multiple-sel');
-    if(postType == 'post'){
+    if(postType == 'blogs'){
         $('#tags_tagsinput').show();
         $('#s2id_multiple-sel').show();
         $('#comment-div').attr("style","display:block;");
