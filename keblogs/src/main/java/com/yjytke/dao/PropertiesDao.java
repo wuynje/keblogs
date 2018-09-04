@@ -19,4 +19,18 @@ public interface PropertiesDao {
 	 */
 	List<KeProperties> getTagAndType(String tag, String btype, int userid);
 	
+	/**
+	 * 根据实际值和userid获取prop
+	 * @param rea_value
+	 * @param userid
+	 * @return
+	 */
+	KeProperties getPropByValueAndUserid(String rea_value, int userid);
+	
+	/**
+	 * 新增prop
+	 * @param prop
+	 */
+	void insertProp(KeProperties prop);
+	
 }

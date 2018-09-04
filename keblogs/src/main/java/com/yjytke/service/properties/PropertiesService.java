@@ -22,9 +22,10 @@ public interface PropertiesService {
 	/**
 	 * 新增属性
 	 * @param id
-	 * @param tags
-	 * @param tag
+	 * @param rea_value
+	 * @param type
+	 * @param userid 
 	 */
-	void addProp(int id, String tags, String tag);
+	void addProp(int contentid, String rea_value, String type, Integer userid);
 
 }

@@ -11,7 +11,7 @@
 
 	<!-- 新增博文 -->
 	<insert id="addArticle"
-		parameterType="com.yjytke.entity.KeContent">
+		parameterType="com.yjytke.entity.KeContent" useGeneratedKeys="true" keyProperty="id">
 		INSERT INTO
 		<include refid="BASE_TABLE" />
 		<trim prefix="(" suffix=")" suffixOverrides=",">
@@ -21,8 +21,32 @@
             #{userid, jdbcType=INTEGER}, #{title, jdbcType=VARCHAR}, #{titlePic, jdbcType=VARCHAR},
             #{content, jdbcType=LONGVARCHAR}, #{style, jdbcType=VARCHAR},
             #{btype, jdbcType=VARCHAR}, #{status, jdbcType=VARCHAR}, #{tags, jdbcType=VARCHAR},
-            UNIX_TIMESTAMP(NOW()),#{hits, jdbcType=INTEGER},#{allowComment, jdbcType=INTEGER},
+            #{created, jdbcType=BIGINT},#{hits, jdbcType=INTEGER},#{allowComment, jdbcType=INTEGER},
         </trim>
 	</insert>
-
+	
+	<!-- 根据用户查询博文列表 -->
+	<select id="getArticlesByUser" resultType="com.yjytke.entity.KeContent">
+		SELECT
+		<include refid="BASE_COLUMN"/>
+		FROM
+		<include refid="BASE_TABLE"/>
+		WHERE
+		<if test="_parameter!=null">
+		userid = #{_parameter, jdbcType=INTEGER}
+		</if>
+		ORDER BY CREATED DESC
+	</select>
+	
+	<!-- 根据主键查询博文列表 -->
+	<select id="getArticleByID" resultType="com.yjytke.entity.KeContent">
+		SELECT
+		<include refid="BASE_COLUMN"/>
+		FROM
+		<include refid="BASE_TABLE"/>
+		WHERE
+		<if test="_parameter!=null">
+		id = #{_parameter, jdbcType=INTEGER}
+		</if>
+	</select>
 </mapper>

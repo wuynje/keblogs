@@ -45,6 +45,10 @@ public enum ErrorConst {
 	 */
 	CONTENTLENGTHERROE("2003","文章长度过长"),
 	/**
+	 * 参数为空
+	 */
+	PARAMISNULL("3001","参数为空"),
+	/**
 	 * 加密错误
 	 */
 	ADDAECERROR("8001","加密错误"),

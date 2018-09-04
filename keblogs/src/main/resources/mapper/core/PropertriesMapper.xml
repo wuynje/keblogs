@@ -25,4 +25,39 @@
 		) AND
 		userid = #{userid, jdbcType=INTEGER}
 	</select>
+	
+	<!-- 根据实际值和用户id查询属性 -->
+	<select id="getPropByValueAndUserid" resultType="com.yjytke.entity.KeProperties">
+		SELECT
+		<include refid="BASE_COLUMN" />
+		FROM
+		<include refid="BASE_TABLE" />
+		WHERE
+		<if test="userid != null">
+			userid = #{userid, jdbcType=INTEGER}
+		</if> 
+		<if test="rea_value != null">
+			and rea_value = #{rea_value, jdbcType=INTEGER}
+		</if> 
+	</select>
+	
+	<!-- 新增prop -->
+	<insert id="insertProp" parameterType="com.yjytke.entity.KeProperties"
+	 useGeneratedKeys="true" keyProperty="id">
+	INSERT INTO
+	<include refid="BASE_TABLE"/>
+	<trim prefix="(" suffix=")" suffixOverrides=",">
+		userid,type,rea_value,picture,sort,description,
+	</trim>
+	<trim prefix="VALUES(" suffix=")" suffixOverrides=",">
+        #{userid, jdbcType=INTEGER}, 
+        #{type, jdbcType=VARCHAR},
+        #{rea_value, jdbcType=VARCHAR},
+        #{picture, jdbcType=VARCHAR},
+        #{sort, jdbcType=INTEGER},
+        #{description, jdbcType=VARCHAR},
+        </trim>
+	</insert>
+	
+	
 </mapper>

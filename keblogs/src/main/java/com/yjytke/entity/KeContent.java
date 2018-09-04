@@ -4,7 +4,7 @@ package com.yjytke.entity;
  * @author wuynje
  * @time 2018年8月30日 下午5:46:25
  * @version 1.0
- * @description:文章实体
+ * @description:博文实体
  */
 public class KeContent {
 

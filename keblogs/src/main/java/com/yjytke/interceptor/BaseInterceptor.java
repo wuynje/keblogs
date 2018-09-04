@@ -32,6 +32,8 @@ public class BaseInterceptor implements HandlerInterceptor {
 	@Autowired
 	private Common common;//公共类，在conntroller后的postHandle塞到request里
 	@Autowired
+	private GeneralUtil generalutil;//公共类，在conntroller后的postHandle塞到request里
+	@Autowired
 	private UserService userService;
 	
 	@Override
@@ -70,6 +72,7 @@ public class BaseInterceptor implements HandlerInterceptor {
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
 		request.setAttribute("common", common);
+		request.setAttribute("generalutil", generalutil);
 	}
 	
 	@Override

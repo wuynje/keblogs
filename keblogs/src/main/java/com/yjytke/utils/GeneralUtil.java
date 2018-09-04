@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import com.yjytke.constant.ErrorConst;
 import com.yjytke.constant.WebConst;
@@ -33,6 +34,7 @@ import sun.misc.BASE64Encoder;
  * @version 1.0
  * @description:一些规则的方法封装
  */
+@Component
 public class GeneralUtil {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(GeneralUtil.class);
