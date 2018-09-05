@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -98,7 +99,7 @@ public class ArticleController {
 	 */
 	@GetMapping(value = "{id}")
 	public String postArticleEdit(HttpServletRequest request,
-			@ApiParam(name = "id", value = "博文id", required = true) @RequestParam(name = "id", required = true) int cid) {
+			@ApiParam(name = "id", value = "博文id", required = true) @PathVariable(name = "id", required = true) int cid) {
 		KeContent content = contentService.getArticleById(cid);
 		request.setAttribute("contents", content);
 		return "";
