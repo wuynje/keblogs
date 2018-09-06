@@ -75,6 +75,9 @@ public class BaseInterceptor implements HandlerInterceptor {
 		request.setAttribute("generalutil", generalutil);
 	}
 	
+	/**
+	 * 整个请求完成后调用，可以用来清理资源
+	 */
 	@Override
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)
 			throws Exception {

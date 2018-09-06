@@ -59,5 +59,16 @@
         </trim>
 	</insert>
 	
+	<select id="getPropByContent" parameterType="com.yjytke.entity.KeContent"
+	resultType="com.yjytke.entity.KeProperties"
+	>
+	SELECT
+		<include refid="BASE_COLUMN" />
+		FROM
+		<include refid="BASE_TABLE" />
+	
+		
+	</select>
+	
 	
 </mapper>

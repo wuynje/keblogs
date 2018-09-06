@@ -18,6 +18,10 @@ public class KeCpRelation {
 	 */
 	private int propertiesid;
 
+	/**
+	 * userid
+	 */
+	private int userid;
 	public int getContentid() {
 		return contentid;
 	}
@@ -33,7 +37,13 @@ public class KeCpRelation {
 	public void setPropertiesid(int propertiesid) {
 		this.propertiesid = propertiesid;
 	}
-	
-	
+
+	public int getUserid() {
+		return userid;
+	}
+
+	public void setUserid(int userid) {
+		this.userid = userid;
+	}
 	
 }

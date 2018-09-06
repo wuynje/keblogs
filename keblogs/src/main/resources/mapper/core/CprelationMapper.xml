@@ -15,10 +15,11 @@
 		INSERT INTO
 		<include refid="BASE_TABLE" />
 		<trim prefix="(" suffix=")" suffixOverrides=",">
-			contentid,propertiesid
+			contentid,propertiesid,userid,
 		</trim>
 		<trim prefix="VALUES(" suffix=")" suffixOverrides=",">
             #{contentid, jdbcType=INTEGER}, #{propertiesid, jdbcType=INTEGER},
+            #{userid, jdbcType=INTEGER},
         </trim>
 	</insert>
 

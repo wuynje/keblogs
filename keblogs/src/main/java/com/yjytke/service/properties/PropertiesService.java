@@ -2,6 +2,7 @@ package com.yjytke.service.properties;
 
 import java.util.List;
 
+import com.yjytke.entity.KeContent;
 import com.yjytke.entity.KeProperties;
 
 /**
@@ -27,5 +28,12 @@ public interface PropertiesService {
 	 * @param userid 
 	 */
 	void addProp(int contentid, String rea_value, String type, Integer userid);
+
+	/**
+	 * 根据文章获取相关属性
+	 * @param content
+	 * @return
+	 */
+	List<KeProperties> getPropByContent(KeContent content);
 
 }

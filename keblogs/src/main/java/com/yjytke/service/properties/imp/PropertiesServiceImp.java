@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.yjytke.dao.CpRelationDao;
 import com.yjytke.dao.PropertiesDao;
+import com.yjytke.entity.KeContent;
 import com.yjytke.entity.KeCpRelation;
 import com.yjytke.entity.KeProperties;
 import com.yjytke.service.properties.PropertiesService;
@@ -57,6 +58,7 @@ public class PropertiesServiceImp implements PropertiesService {
 		for(String s : str) {
 			KeCpRelation cpRelation = new KeCpRelation();
 			cpRelation.setContentid(contentid);
+			cpRelation.setUserid(userid);
 			KeProperties prop = proDao.getPropByValueAndUserid(s, userid);
 			if(null != prop) {
 				cpRelation.setPropertiesid(prop.getId());
@@ -69,6 +71,20 @@ public class PropertiesServiceImp implements PropertiesService {
 				cpRelation.setPropertiesid(addprop.getId());
 			}
 			cprelationDao.insert(cpRelation);
+		}
+	}
+
+	
+	/**
+	 * 根据文章获取相应标签和分类
+	 */
+	@Override
+	public List<KeProperties> getPropByContent(KeContent content) {
+		List<KeProperties> properties = proDao.getPropByContent(content);
+		if(properties != null && properties.size() > 0 ) {
+			return properties;
+		}else {
+			return null;
 		}
 	}
 	

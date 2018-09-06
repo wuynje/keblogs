@@ -1,6 +1,5 @@
 package com.yjytke;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -34,7 +33,7 @@ public class Swagger {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("KeBlogs Site Swagger Restful API")
-                .description("nothing")
+                .description("author wuynje")
                 .termsOfServiceUrl("nothing")
                 .contact("KeBlogs")
                 .version("1.0")

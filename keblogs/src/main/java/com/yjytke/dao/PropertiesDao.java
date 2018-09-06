@@ -2,6 +2,7 @@ package com.yjytke.dao;
 
 import java.util.List;
 
+import com.yjytke.entity.KeContent;
 import com.yjytke.entity.KeProperties;
 
 /**
@@ -32,5 +33,12 @@ public interface PropertiesDao {
 	 * @param prop
 	 */
 	void insertProp(KeProperties prop);
+
+	/**
+	 * 查询属性根据博文
+	 * @param content
+	 * @return
+	 */
+	List<KeProperties> getPropByContent(KeContent content);
 	
 }
