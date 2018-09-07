@@ -76,8 +76,8 @@ public class GeneralUtil {
 		Random r = new Random();
 		StringBuffer sb = new StringBuffer();
 		for(int i = 0; i< 10; i++) {
-			int j = r.nextInt(WebConst.randomChar.length());
-			sb.append(WebConst.randomChar.charAt(j));
+			int j = r.nextInt(WebConst.RANDOMCHAR.length());
+			sb.append(WebConst.RANDOMCHAR.charAt(j));
 		}
 		return sb.toString();
 	}

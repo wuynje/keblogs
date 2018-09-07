@@ -28,7 +28,7 @@ public class WebConst {
 	/**
 	 * 生成随机字符串的取值
 	 */
-	public static String randomChar = "abcdefghijklmnopqABCDEF"
+	public static String RANDOMCHAR = "abcdefghijklmnopqABCDEF"
 			+ "GHIJKLMNOPQRSTUVWXYZ0123456789";
 	
 	/**

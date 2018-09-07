@@ -102,6 +102,9 @@ public class ArticleController {
 			@ApiParam(name = "id", value = "博文id", required = true) @PathVariable(name = "id", required = true) int cid) {
 		KeContent content = contentService.getArticleById(cid);
 		List<KeProperties> properties = proService.getPropByContent(content);
+//		if(properties !) {
+//			
+//		}
 //        request.setAttribute("categories", categories);
         request.setAttribute("active", "article");
 		request.setAttribute("contents", content);
