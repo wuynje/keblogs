@@ -68,6 +68,9 @@ public class BaseInterceptor implements HandlerInterceptor {
 		return true;
 	}
 	
+	/**
+	 * 该方法在调用了controller之后被调用
+	 */
 	@Override
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {

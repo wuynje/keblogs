@@ -12,6 +12,7 @@ import org.commonmark.renderer.html.HtmlRenderer;
 import org.springframework.stereotype.Component;
 
 import com.vdurmont.emoji.EmojiParser;
+import com.yjytke.entity.KeProperties;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -79,4 +80,22 @@ public class Common {
     public static String emoji(String value) {
         return EmojiParser.parseToUnicode(value);
     }
+    
+    /**
+     * @param prop
+     * @param btype
+     * @return
+     */
+    public boolean isselect(KeProperties prop, String btype) {
+    	if(btype != null) {
+    		String[] btypes = btype.split(",");
+    		for(String s : btypes) {
+    			if(s.equals(prop.getRea_value())) {
+    				return true;
+    			}
+    		}
+    	}
+    	return false;
+    }
+    
 }

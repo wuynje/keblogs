@@ -22,12 +22,11 @@ public interface PropertiesService {
 
 	/**
 	 * 新增属性
-	 * @param id
+	 * @param content
 	 * @param rea_value
 	 * @param type
-	 * @param userid 
 	 */
-	void addProp(int contentid, String rea_value, String type, Integer userid);
+	void addProp(KeContent content, String rea_value, String type);
 
 	/**
 	 * 根据文章获取相关属性

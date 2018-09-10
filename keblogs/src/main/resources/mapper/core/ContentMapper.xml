@@ -49,4 +49,41 @@
 		id = #{_parameter, jdbcType=INTEGER}
 		</if>
 	</select>
+	
+	<update id="updateContent" parameterType="com.yjytke.entity.KeContent">
+		UPDATE 
+		<include refid="BASE_COLUMN" />
+		<set>
+			<if test="btype!=null">
+				btype = #{btype, jdbcType=VARCHAR},
+			</if>
+			<if test="title!=null">
+				title = #{title, jdbcType=VARCHAR},
+			</if>
+			<if test="titlePic!=null">
+				titlePic = #{titlePic, jdbcType=VARCHAR},
+			</if>
+			<if test="content!=null">
+				content = #{content, jdbcType=VARCHAR},
+			</if>
+			<if test="style!=null">
+				style = #{style, jdbcType=VARCHAR},
+			</if>
+			<if test="status!=null">
+				status = #{status, jdbcType=VARCHAR},
+			</if>
+				tags = #{tags, jdbcType=VARCHAR},
+			<if test="modifiedtime!=null">
+				modifiedtime = #{modifiedtime, jdbcType=VARCHAR},
+			</if>
+			<if test="hits!=null">
+				hits = #{hits, jdbcType=INTEGER},
+			</if>
+				<if test="allowComment!=null">
+				allowComment = #{allowComment, jdbcType=INTEGER},
+			</if>
+		</set>
+		WHERE id = #{id ,jdbcType=INTEGER}
+	</update>
+	
 </mapper>

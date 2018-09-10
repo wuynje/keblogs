@@ -15,5 +15,12 @@ public interface CpRelationDao {
 	 * @param cpRelation
 	 */
 	void insert(KeCpRelation cpRelation);
+
+	/**
+	 * 根据博文id和属性id删除关系
+	 * @param contentId
+	 * @param propId
+	 */
+	void deleteByContentIdAndPropID(Integer contentId, Integer propId);
 	
 }

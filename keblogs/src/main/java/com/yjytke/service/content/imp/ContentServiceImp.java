@@ -57,9 +57,8 @@ public class ContentServiceImp implements ContentService {
         String btype = keContent.getBtype();
         keContent.setCreated(GeneralUtil.getcurrenttime());
         contentDao.addArticle(keContent);
-        int id = keContent.getId();
-        propertiesService.addProp(id, tags, WebConst.TypeProperties.TAG,keContent.getUserid());
-        propertiesService.addProp(id, btype, WebConst.TypeProperties.BTYPE,keContent.getUserid());
+        propertiesService.addProp(keContent, tags, WebConst.TypeProperties.TAG);
+        propertiesService.addProp(keContent, btype, WebConst.TypeProperties.BTYPE);
 	}
 
 	/**
@@ -74,9 +73,22 @@ public class ContentServiceImp implements ContentService {
 		return pageInfo;
 	}
 
+	@Cacheable(value= {"article"}, key = "'cid'+#p0")
 	@Override
 	public KeContent getArticleById(int cid) {
 		return contentDao.getArticleByID(cid);
+	}
+
+	
+	@Transactional
+	@CacheEvict(value= {"article","articles"} ,beforeInvocation=true,allEntries=true)
+	@Override
+	public void updateContentById(KeContent keContent) {
+		if(keContent.getId() != null && keContent.getId() != 0) {
+			keContent.setModifiedtime(GeneralUtil.getcurrenttime());
+			contentDao.updateContent(keContent);
+//			propertiesService
+		}
 	}
 
 }

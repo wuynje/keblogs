@@ -13,7 +13,7 @@ import com.yjytke.entity.KeContent;
 public interface ContentDao {
 	
 	/**
-	 *新增博客
+	 *新增博文
 	 * @param content
 	 */
 	void addArticle(KeContent content);
@@ -26,9 +26,16 @@ public interface ContentDao {
 	List<KeContent> getArticlesByUser(int userid);
 
 	/**
+	 * 根据主键获取博文
 	 * @param cid
 	 * @return 
 	 */
 	KeContent getArticleByID(int cid);
+
+	/**
+	 * 修改博文
+	 * @param keContent
+	 */
+	void updateContent(KeContent keContent);
 	
 }

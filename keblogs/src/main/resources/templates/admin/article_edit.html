@@ -69,8 +69,8 @@
                                         <option value="life" >生活</option>
                                     </th:block>
                                     <th:block th:unless="${null == contents}">
-                                        <option value="blogs" th:selected="${null != contents and contents.type=='blogs'} ? true : false">博文</option>
-                                        <option value="life" th:selected="${null != contents and contents.type=='life'} ? true : false" >生活</option>
+                                        <option value="blogs" th:selected="${null != contents and contents.style=='blogs'} ? true : false">博文</option>
+                                        <option value="life" th:selected="${null != contents and contents.style=='life'} ? true : false" >生活</option>
                                     </th:block>
                                 </select>
                             </div>
@@ -89,8 +89,8 @@
                                         </th:block>
                                         <th:block th:unless="${null == btype}">
                                             <th:block th:each="c : ${btype}">
-                                                <option th:value="${c.rea_value}" th:text="${c.rea_value}"
-                                                        th:selected="${null !=contents and adminCommons.exist_cat(c, contents.btype)}?true:false"></option>
+                                               	<option th:value="${c.rea_value}" th:text="${c.rea_value}"
+                                                       th:selected="${null !=contents and common.isselect(c, contents.btype)}?true:false"></option>
                                             </th:block>
                                         </th:block>
                                     </select>

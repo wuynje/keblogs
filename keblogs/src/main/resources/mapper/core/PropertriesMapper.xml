@@ -74,5 +74,14 @@
 		)
 	</select>
 	
+	<delete id="deleteByContentIdAndPropID">
+		DELETE
+		FROM
+		<include refid="BASE_TABLE" />
+		WHERE
+		contentid = #{contentId, jdbcType=INTEGER}
+		AND
+		propertiesid = #{propId, jdbcType=INTEGER}
+	</delete>
 	
 </mapper>

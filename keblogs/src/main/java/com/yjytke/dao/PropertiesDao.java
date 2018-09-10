@@ -37,6 +37,7 @@ public interface PropertiesDao {
 	/**
 	 * 查询属性根据博文
 	 * @param content
+	 * @param type 
 	 * @return
 	 */
 	List<KeProperties> getPropByContent(KeContent content);

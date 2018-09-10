@@ -31,4 +31,10 @@ public interface ContentService {
 	 */
 	KeContent getArticleById(int cid);
 
+	/**
+	 * 根据id修改博文内容
+	 * @param keContent
+	 */
+	void updateContentById(KeContent keContent);
+
 }

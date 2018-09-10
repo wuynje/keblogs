@@ -1,5 +1,6 @@
 package com.yjytke.service.properties.imp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
@@ -51,27 +52,62 @@ public class PropertiesServiceImp implements PropertiesService {
 	@Transactional
 	@Override
 	@CacheEvict(value= {"tagsAndType"},beforeInvocation = true, allEntries = true)
-	public void addProp(int contentid, String rea_value, String type, Integer userid) {
+	public void addProp(KeContent content, String rea_value, String type) {
 		if(StringUtils.isBlank(rea_value))
+			//TODO删除所有的关系
 			return;
 		String[] str = rea_value.split(",");
-		for(String s : str) {
-			KeCpRelation cpRelation = new KeCpRelation();
-			cpRelation.setContentid(contentid);
-			cpRelation.setUserid(userid);
-			KeProperties prop = proDao.getPropByValueAndUserid(s, userid);
-			if(null != prop) {
-				cpRelation.setPropertiesid(prop.getId());
-			}else {
-				KeProperties addprop = new KeProperties();
-				addprop.setType(type);
-				addprop.setRea_value(s);
-				addprop.setUserid(userid);
-				proDao.insertProp(addprop);
-				cpRelation.setPropertiesid(addprop.getId());
+		List<KeProperties> props = proDao.getPropByContent(content);
+		List<KeProperties> propType = new ArrayList<KeProperties>();//将获取的属性按照类型取出来
+		for(KeProperties p :props) {
+			if(p.getType().equals(type)) {
+				propType.add(p);
 			}
-			cprelationDao.insert(cpRelation);
 		}
+		
+		/**
+		 * 如果没有相应的属性，一般为新增
+		 */
+		if(propType.size() == 0) {
+			for(String s : str) {
+				KeCpRelation cpRelation = new KeCpRelation();
+				cpRelation.setContentid(content.getId());
+				cpRelation.setUserid(content.getUserid());
+				KeProperties prop = proDao.getPropByValueAndUserid(s, content.getUserid());
+				if(null != prop) {
+					cpRelation.setPropertiesid(prop.getId());
+				}else {
+					KeProperties addprop = new KeProperties();
+					addprop.setType(type);
+					addprop.setRea_value(s);
+					addprop.setUserid(content.getUserid());
+					proDao.insertProp(addprop);
+					cpRelation.setPropertiesid(addprop.getId());
+				}
+				cprelationDao.insert(cpRelation);
+			}
+		}
+		
+		/**
+		 * 如果该博文有相应的属性，一般为修改
+		 */
+		List<String> strList = new ArrayList<String>();
+		for(String s : str) {
+			for(KeProperties p :propType){
+				if(s.equals(p.getRea_value())&&p.getType().equals(type)) { //如果已经存在，不做修改
+					continue;
+				}
+				if(!StringUtils.equals(s, p.getRea_value())) {
+					strList.add(s);
+				}
+				if((!StringUtils.equals(s, p.getRea_value()))&&s.equals(str[str.length-1])) { //如果不存在删除关联关系
+					strList.remove(s);
+					cprelationDao.deleteByContentIdAndPropID(content.getId(),p.getId());
+				}
+			}
+			
+		}
+
 	}
 
 	
