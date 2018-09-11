@@ -37,5 +37,11 @@ public interface ContentDao {
 	 * @param keContent
 	 */
 	void updateContent(KeContent keContent);
+
+	/**
+	 * 删除博文
+	 * @param id
+	 */
+	void deleteArticleById(Integer id);
 	
 }

@@ -50,9 +50,10 @@
 		</if>
 	</select>
 	
+	<!-- 修改博文 -->
 	<update id="updateContent" parameterType="com.yjytke.entity.KeContent">
 		UPDATE 
-		<include refid="BASE_COLUMN" />
+		<include refid="BASE_TABLE" />
 		<set>
 			<if test="btype!=null">
 				btype = #{btype, jdbcType=VARCHAR},
@@ -86,4 +87,12 @@
 		WHERE id = #{id ,jdbcType=INTEGER}
 	</update>
 	
+	<!-- 删除博文 -->
+	<delete id="deleteArticleById">
+		DELETE
+		FROM
+		<include refid="BASE_TABLE" />
+		WHERE
+		id = #{id ,jdbcType=INTEGER}
+	</delete>
 </mapper>

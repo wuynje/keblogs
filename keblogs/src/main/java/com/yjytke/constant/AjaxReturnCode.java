@@ -7,24 +7,13 @@ package com.yjytke.constant;
  * @description:异步调用返回的code
  */
 public interface AjaxReturnCode {
+
 	/**
-	 * 登录返回的参数
+	 * 通用返回的code
 	 */
-	interface LoginCode{
-		static final String SUCCESS = "success";
-		static final String FAIL = "fail";
-		static final String ERROR = "error";
-	}
-	/**
-	 * 添加文章返回的参数
-	 */
-	interface ContentCode{
-		static final String SUCCESS = "success";
-		static final String FAIL = "fail";
-		static final String ERROR = "error";
-	}
-	
-	interface errorCode{
-		static final String FAIL = "fail";//通用错误
+	interface Common{
+		static final String FAIL = "fail";//通用失败
+		static final String SUCCESS = "success";//通用成功
+		static final String ERROR = "error";//通用错误
 	}
 }

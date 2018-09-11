@@ -14,6 +14,7 @@ import com.github.pagehelper.PageInfo;
 import com.yjytke.constant.ErrorConst;
 import com.yjytke.constant.WebConst;
 import com.yjytke.dao.ContentDao;
+import com.yjytke.dao.CpRelationDao;
 import com.yjytke.entity.KeContent;
 import com.yjytke.exception.BusinessException;
 import com.yjytke.service.content.ContentService;
@@ -33,14 +34,17 @@ public class ContentServiceImp implements ContentService {
 	private ContentDao contentDao;
 	
 	@Autowired
-	private PropertiesService propertiesService;
+	private CpRelationDao cpRelationDao;
 	
+	@Autowired
+	private PropertiesService propertiesService;
+
 	/**
 	 * 添加文章
 	 */
 	@Transactional
 	@Override
-	@CacheEvict(value= {"articles"}, beforeInvocation=true, allEntries=true)
+	@CacheEvict(value = { "articles" }, beforeInvocation = true, allEntries = true)
 	public void addContent(KeContent keContent) {
 		if (null == keContent)
 			throw new BusinessException(ErrorConst.CONTENTPARAMISNULL);
@@ -52,20 +56,20 @@ public class ContentServiceImp implements ContentService {
 			throw new BusinessException(ErrorConst.CONTENTISNULL);
 		if (keContent.getContent().length() > WebConst.MAX_TEXT_COUNT)
 			throw new BusinessException(ErrorConst.CONTENTLENGTHERROE);
-		//标签和分类
-        String tags = keContent.getTags();
-        String btype = keContent.getBtype();
-        keContent.setCreated(GeneralUtil.getcurrenttime());
-        contentDao.addArticle(keContent);
-        propertiesService.addProp(keContent, tags, WebConst.TypeProperties.TAG);
-        propertiesService.addProp(keContent, btype, WebConst.TypeProperties.BTYPE);
+		// 标签和分类
+		String tags = keContent.getTags();
+		String btype = keContent.getBtype();
+		keContent.setCreated(GeneralUtil.getcurrenttime());
+		contentDao.addArticle(keContent);
+		propertiesService.addProp(keContent, tags, WebConst.TypeProperties.TAG);
+		propertiesService.addProp(keContent, btype, WebConst.TypeProperties.BTYPE);
 	}
 
 	/**
 	 * 获取文章列表
 	 */
 	@Override
-	@Cacheable(value= {"articles"},key="'page'+#p0+'limit'+#p1+'userid'+#p2")
+	@Cacheable(value = { "articles" }, key = "'page'+#p0+'limit'+#p1+'userid'+#p2")
 	public PageInfo<KeContent> getArticles(int page, int limit, int userid) {
 		PageHelper.startPage(page, limit);
 		List<KeContent> articles = contentDao.getArticlesByUser(userid);
@@ -73,22 +77,39 @@ public class ContentServiceImp implements ContentService {
 		return pageInfo;
 	}
 
-	@Cacheable(value= {"article"}, key = "'cid'+#p0")
+	@Cacheable(value = { "article" }, key = "'cid'+#p0")
 	@Override
 	public KeContent getArticleById(int cid) {
 		return contentDao.getArticleByID(cid);
 	}
 
-	
 	@Transactional
-	@CacheEvict(value= {"article","articles"} ,beforeInvocation=true,allEntries=true)
+	@CacheEvict(value = { "article", "articles" }, beforeInvocation = true, allEntries = true)
 	@Override
 	public void updateContentById(KeContent keContent) {
-		if(keContent.getId() != null && keContent.getId() != 0) {
+		if (keContent.getId() != null && keContent.getId() != 0) {
 			keContent.setModifiedtime(GeneralUtil.getcurrenttime());
 			contentDao.updateContent(keContent);
-//			propertiesService
+			// 标签和分类
+			String tags = keContent.getTags();
+			String btype = keContent.getBtype();
+			keContent.setCreated(GeneralUtil.getcurrenttime());
+			propertiesService.addProp(keContent, tags, WebConst.TypeProperties.TAG);
+			propertiesService.addProp(keContent, btype, WebConst.TypeProperties.BTYPE);
 		}
 	}
 
+	/**
+	 * 根据主键删除博文
+	 */
+	@Transactional
+	@Override
+	@CacheEvict(value = { "article", "articles" }, beforeInvocation = true, allEntries = true)
+	public void deleteArticle(Integer id) {
+		if(id==null||id==0) {
+			throw new BusinessException(ErrorConst.CONTENTIDISERROE);
+		}
+		contentDao.deleteArticleById(id);
+		cpRelationDao.deleteByContentId(id);
+	}
 }

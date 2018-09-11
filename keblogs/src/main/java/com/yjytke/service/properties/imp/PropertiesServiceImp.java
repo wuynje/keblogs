@@ -1,7 +1,10 @@
 package com.yjytke.service.properties.imp;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,23 +28,23 @@ import com.yjytke.service.properties.PropertiesService;
  */
 @Service
 public class PropertiesServiceImp implements PropertiesService {
-	
+
 	@Autowired
 	private PropertiesDao proDao;
-	
+
 	@Autowired
 	private CpRelationDao cprelationDao;
-	
+
 	/**
 	 * 获取标签和分类
 	 */
 	@Override
-	@Cacheable(value="tagsAndType")
-	public List<KeProperties> getTagAndType(String tag,String btype,int userid) {
-		List<KeProperties> properties = proDao.getTagAndType(tag,btype,userid);
-		if(properties != null && properties.size() > 0 ) {
+	@Cacheable(value = "tagsAndType")
+	public List<KeProperties> getTagAndType(String tag, String btype, int userid) {
+		List<KeProperties> properties = proDao.getTagAndType(tag, btype, userid);
+		if (properties != null && properties.size() > 0) {
 			return properties;
-		}else {
+		} else {
 			return null;
 		}
 	}
@@ -51,77 +54,93 @@ public class PropertiesServiceImp implements PropertiesService {
 	 */
 	@Transactional
 	@Override
-	@CacheEvict(value= {"tagsAndType"},beforeInvocation = true, allEntries = true)
+	@CacheEvict(value = { "tagsAndType" }, beforeInvocation = true, allEntries = true)
 	public void addProp(KeContent content, String rea_value, String type) {
-		if(StringUtils.isBlank(rea_value))
-			//TODO删除所有的关系
-			return;
-		String[] str = rea_value.split(",");
 		List<KeProperties> props = proDao.getPropByContent(content);
-		List<KeProperties> propType = new ArrayList<KeProperties>();//将获取的属性按照类型取出来
-		for(KeProperties p :props) {
-			if(p.getType().equals(type)) {
+		List<KeProperties> propType = new ArrayList<KeProperties>();// 将获取的属性按照类型取出来
+		for (KeProperties p : props) {
+			if (p.getType().equals(type)) {
 				propType.add(p);
 			}
 		}
-		
+		/**传入的rea_value为空**/
+		if (StringUtils.isBlank(rea_value) && propType.size()==0) {//如果属性为空;
+			return;
+		}
+		if (StringUtils.isBlank(rea_value) && propType.size()>0) {//新编辑的属性为空，已经存在属性，直接全部删除;
+			for(KeProperties p : propType) {
+				cprelationDao.deleteByContentIdAndPropID(content.getId(), p.getId());
+			}
+			return;
+		}
+		/**传入的rea_value不为空**/
+		String[] str = rea_value.split(",");
+		List<String> strListArray = Arrays.asList(str);
+		List<String> strList = new ArrayList<String>(strListArray);//必须进行一次new arrayList，因为Arrays.asList方法返回的ArrayList的add,remove等方法直接跑出异常
 		/**
 		 * 如果没有相应的属性，一般为新增
 		 */
-		if(propType.size() == 0) {
-			for(String s : str) {
-				KeCpRelation cpRelation = new KeCpRelation();
-				cpRelation.setContentid(content.getId());
-				cpRelation.setUserid(content.getUserid());
-				KeProperties prop = proDao.getPropByValueAndUserid(s, content.getUserid());
-				if(null != prop) {
-					cpRelation.setPropertiesid(prop.getId());
+		if (propType.size() == 0) {
+			this.newPropAdd(strList, content, type);
+		}else {
+			/**
+			 * 如果该博文有相应的属性，一般为修改
+			 */
+			Set<KeProperties> propSet = new HashSet<KeProperties>();//存放要删除的属性
+			for(KeProperties p : propType) {
+				if(strList.contains(p.getRea_value())) {
+					strList.remove(p.getRea_value());//remove之后的strList中只有需要新增的属性
 				}else {
-					KeProperties addprop = new KeProperties();
-					addprop.setType(type);
-					addprop.setRea_value(s);
-					addprop.setUserid(content.getUserid());
-					proDao.insertProp(addprop);
-					cpRelation.setPropertiesid(addprop.getId());
-				}
-				cprelationDao.insert(cpRelation);
-			}
-		}
-		
-		/**
-		 * 如果该博文有相应的属性，一般为修改
-		 */
-		List<String> strList = new ArrayList<String>();
-		for(String s : str) {
-			for(KeProperties p :propType){
-				if(s.equals(p.getRea_value())&&p.getType().equals(type)) { //如果已经存在，不做修改
-					continue;
-				}
-				if(!StringUtils.equals(s, p.getRea_value())) {
-					strList.add(s);
-				}
-				if((!StringUtils.equals(s, p.getRea_value()))&&s.equals(str[str.length-1])) { //如果不存在删除关联关系
-					strList.remove(s);
-					cprelationDao.deleteByContentIdAndPropID(content.getId(),p.getId());
+					propSet.add(p);
 				}
 			}
-			
+			this.newPropAdd(strList, content, type);
+			for(KeProperties p : propSet) {
+				cprelationDao.deleteByContentIdAndPropID(content.getId(), p.getId());
+			}
 		}
-
 	}
 
-	
 	/**
 	 * 根据文章获取相应标签和分类
 	 */
 	@Override
 	public List<KeProperties> getPropByContent(KeContent content) {
 		List<KeProperties> properties = proDao.getPropByContent(content);
-		if(properties != null && properties.size() > 0 ) {
+		if (properties != null && properties.size() > 0) {
 			return properties;
-		}else {
+		} else {
 			return null;
 		}
 	}
+	
+	
+	/**
+	 * 需要新增的属性
+	 * @param strList
+	 * @param content
+	 * @param type
+	 */
+	private void newPropAdd(List<String> strList, KeContent content, String type) {
+		for (String s : strList) {
+			KeCpRelation cpRelation = new KeCpRelation();
+			cpRelation.setContentid(content.getId());
+			cpRelation.setUserid(content.getUserid());
+			KeProperties prop = proDao.getPropByValueAndUserid(s, content.getUserid());
+			if (null != prop) {
+				cpRelation.setPropertiesid(prop.getId());
+			} else {
+				KeProperties addprop = new KeProperties();
+				addprop.setType(type);
+				addprop.setRea_value(s);
+				addprop.setUserid(content.getUserid());
+				proDao.insertProp(addprop);
+				cpRelation.setPropertiesid(addprop.getId());
+			}
+			cprelationDao.insert(cpRelation);
+		}
+	
+	}
+	
 	
 }

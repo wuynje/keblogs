@@ -45,6 +45,10 @@ public enum ErrorConst {
 	 */
 	CONTENTLENGTHERROE("2003","文章长度过长"),
 	/**
+	 * 获取文章错误
+	 */
+	CONTENTIDISERROE("2004","获取文章错误"),
+	/**
 	 * 参数为空
 	 */
 	PARAMISNULL("3001","参数为空"),

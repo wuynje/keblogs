@@ -22,5 +22,23 @@
             #{userid, jdbcType=INTEGER},
         </trim>
 	</insert>
-
+	
+	<delete id="deleteByContentIdAndPropID">
+		DELETE
+		FROM
+		<include refid="BASE_TABLE" />
+		WHERE
+		contentid = #{contentId, jdbcType=INTEGER}
+		AND
+		propertiesid = #{propId, jdbcType=INTEGER}
+	</delete>
+	
+	<delete id="deleteByContentId">
+		DELETE
+		FROM
+		<include refid="BASE_TABLE" />
+		WHERE
+		contentid = #{id, jdbcType=INTEGER}
+	</delete>
+	
 </mapper>

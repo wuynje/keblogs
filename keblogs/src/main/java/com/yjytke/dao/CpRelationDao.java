@@ -22,5 +22,14 @@ public interface CpRelationDao {
 	 * @param propId
 	 */
 	void deleteByContentIdAndPropID(Integer contentId, Integer propId);
+
+	/**
+	 *  根据博文id删除关联关系
+	 *  不可跟上面删除方法通用的原因是
+	 *上面方法并不是动态sql，没有if
+	 *如果通用可能会导致误删
+	 * @param id
+	 */
+	void deleteByContentId(Integer id);
 	
 }

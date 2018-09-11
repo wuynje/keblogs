@@ -80,12 +80,12 @@ public class AuthorController {
 			}
 		} catch (BusinessException e) {
 			LOGGER.error("login fail ,msg:{}",e.getMessage());
-			return new ApiResponse(AjaxReturnCode.LoginCode.FAIL,e.getMessage());
+			return new ApiResponse(AjaxReturnCode.Common.FAIL,e.getMessage());
 		}
 		LOGGER.info("login success , time is {}",GeneralUtil.timeMillsToDate(System.currentTimeMillis()));
 		/**登录成功添加登录日志**/
 		logService.addLog(IPKit.getIpAddrByRequest(request), LogActions.MANAGERLOGIN.toString(), keUser.getId());
-		return new ApiResponse(AjaxReturnCode.LoginCode.SUCCESS);
+		return new ApiResponse(AjaxReturnCode.Common.SUCCESS);
 	}
 
 }

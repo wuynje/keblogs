@@ -37,4 +37,10 @@ public interface ContentService {
 	 */
 	void updateContentById(KeContent keContent);
 
+	/**
+	 * 删除博文
+	 * @param id
+	 */
+	void deleteArticle(Integer id);
+
 }

@@ -21,6 +21,7 @@ import com.yjytke.constant.WebConst;
 import com.yjytke.entity.KeContent;
 import com.yjytke.entity.KeProperties;
 import com.yjytke.entity.KeUser;
+import com.yjytke.exception.BusinessException;
 import com.yjytke.service.content.ContentService;
 import com.yjytke.service.properties.PropertiesService;
 import com.yjytke.utils.ApiResponse;
@@ -41,7 +42,7 @@ import io.swagger.annotations.ApiParam;
 public class ArticleController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(ArticleController.class);
-	
+
 	@Autowired
 	private PropertiesService proService;
 
@@ -94,11 +95,13 @@ public class ArticleController {
 		keContent.setTags(style.equals(WebConst.Articletype.BLOG) ? tags : null);
 		keContent.setAllowComment(allowComment ? 1 : 0);
 		contentService.addContent(keContent);
-		return new ApiResponse(AjaxReturnCode.ContentCode.SUCCESS);
+		//TODO 写日志
+		return new ApiResponse(AjaxReturnCode.Common.SUCCESS);
 	}
 
 	/**
 	 * 根据id回显文本内容
+	 * 
 	 * @param request
 	 * @param cid
 	 * @return
@@ -111,7 +114,7 @@ public class ArticleController {
 		List<KeProperties> btype = proService.getTagAndType(null, WebConst.TypeProperties.BTYPE, userid);
 //		List<KeProperties> properties = proService.getPropByContent(content);
 		request.setAttribute("btype", btype);
-        request.setAttribute("active", "article");
+		request.setAttribute("active", "article");
 		request.setAttribute("contents", content);
 		return "admin/article_edit";
 	}
@@ -142,6 +145,22 @@ public class ArticleController {
 		keContent.setTags(style.equals(WebConst.Articletype.BLOG) ? tags : null);
 		keContent.setAllowComment(allowComment ? 1 : 0);
 		contentService.updateContentById(keContent);
-		return new ApiResponse(AjaxReturnCode.ContentCode.SUCCESS);
+		//TODO 写日志
+		return new ApiResponse(AjaxReturnCode.Common.SUCCESS);
 	}
+
+	@ApiOperation(value = "删除博文")
+	@RequestMapping(value = "/delete")
+	@ResponseBody
+	public ApiResponse deleteArticle(
+			@ApiParam(name = "id", value = "id", required = true)@RequestParam(name = "id", required = true) Integer id) {
+		try {
+			contentService.deleteArticle(id);
+		} catch (BusinessException e) {
+			return new ApiResponse(AjaxReturnCode.Common.FAIL, "获取文章错误，删除失败");
+		}
+		//TODO 写日志
+		return new ApiResponse(AjaxReturnCode.Common.SUCCESS, "删除成功");
+	}
+
 }

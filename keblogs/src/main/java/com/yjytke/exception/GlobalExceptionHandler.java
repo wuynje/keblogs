@@ -28,7 +28,7 @@ public class GlobalExceptionHandler {
 	public ApiResponse exceptionHandler(Exception e) {
 		e.printStackTrace();
 		LOGGER.error("find exception:e={}",e.getMessage());
-		return new ApiResponse(AjaxReturnCode.errorCode.FAIL, "请求错误。");
+		return new ApiResponse(AjaxReturnCode.Common.FAIL, "请求错误。");
 	}
 	
 }

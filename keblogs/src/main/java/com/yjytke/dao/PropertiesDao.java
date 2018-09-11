@@ -41,5 +41,11 @@ public interface PropertiesDao {
 	 * @return
 	 */
 	List<KeProperties> getPropByContent(KeContent content);
+
+	/**
+	 * 根据主键删除属性
+	 * @param id
+	 */
+	void deletePropById(Integer id);
 	
 }
