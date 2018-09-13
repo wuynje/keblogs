@@ -320,14 +320,24 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-12 blog-grid-style hover-effect-one">
+			<th:block th:each="article:${contents.list}">
 				<div class="single-blog-post">
-					<div class="image-box"><img th:src="@{comm/images/blog/1.jpg}" alt=""></div>
+				
+					<div class="image-box"><img th:src="@{${article.titlePic}}" alt=""></div>
 					<div class="post-meta-box bg-box">
 						<ul class="author-meta clearfix">
-							<li class="tag"><a href="#">Lifestyle</a></li>
-							<li class="date"><a href="#">15 may , 2018</a></li>
+			 				<th:block th:if="${article.style == 'blogs'}">
+                                <li class="tag"><a href="javascript: void(0)">博文</a></li>
+                            </th:block>
+                            <th:block th:if="${article.style == 'life'}">
+                                <li class="tag"><a href="javascript: void(0)">生活</a></li>
+                            </th:block>
+							<li class="date"><a href="javascript: void(0)" th:text="${generalutil.timeMillsToDate(article.created)}"></a></li>
 						</ul>
-						<h4 class="title"><a href="#">This is a standard post with an image</a></h4>
+						<h4 class="title">
+							<a th:href="${article.style=='blogs' ? '/blogs/article/'+{article.id} : '/life/article/'+{article.id}}" th:text="${article.title}">
+							</a>
+						</h4>
 						<ul class="share-meta clearfix">
 							<li><a href="#"><i class="icon flaticon-comment"></i>Comments (04)</a></li>
 							<li><a href="#"><i class="icon flaticon-like-heart"></i>Likes (02)</a></li>
@@ -341,131 +351,15 @@
 								</ul>
 							</li> <!-- /.share-option -->
 						</ul>
-						<p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
+						<p><th:block th:text="${common.htmlToText(article.content,100)}" /></p>
 					</div> <!-- /.post-meta-box -->
 				</div> <!-- /.single-blog-post -->
-				<div class="single-blog-post">
-					<div class="image-box"><img src="images/blog/2.jpg" alt=""></div>
-					<div class="post-meta-box bg-box">
-						<ul class="author-meta clearfix">
-							<li class="tag"><a href="#">Travel</a></li>
-							<li class="date"><a href="#">14 may , 2018</a></li>
-						</ul>
-						<h4 class="title"><a href="#">This is a standard post with an image</a></h4>
-						<ul class="share-meta clearfix">
-							<li><a href="#"><i class="icon flaticon-comment"></i>Comments (03)</a></li>
-							<li><a href="#"><i class="icon flaticon-like-heart"></i>Likes (05)</a></li>
-							<li class="share-option">
-								<button><i class="icon flaticon-arrows"></i> Share</button>
-								<ul class="share-icon">
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-									<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-								</ul>
-							</li> <!-- /.share-option -->
-						</ul>
-						<p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
-					</div> <!-- /.post-meta-box -->
-				</div> <!-- /.single-blog-post -->
-				<div class="single-blog-post">
-					<div class="image-box"><img src="images/blog/3.jpg" alt=""></div>
-					<div class="post-meta-box bg-box">
-						<ul class="author-meta clearfix">
-							<li class="tag"><a href="#">Art</a></li>
-							<li class="date"><a href="#">13 may , 2018</a></li>
-						</ul>
-						<h4 class="title"><a href="#">This is a standard post with an image</a></h4>
-						<ul class="share-meta clearfix">
-							<li><a href="#"><i class="icon flaticon-comment"></i>Comments (13)</a></li>
-							<li><a href="#"><i class="icon flaticon-like-heart"></i>Likes (25)</a></li>
-							<li class="share-option">
-								<button><i class="icon flaticon-arrows"></i>(03) Shares</button>
-								<ul class="share-icon">
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-									<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-								</ul>
-							</li> <!-- /.share-option -->
-						</ul>
-						<p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
-					</div> <!-- /.post-meta-box -->
-				</div> <!-- /.single-blog-post -->
-				<div class="single-blog-post">
-					<div class="image-box"><img src="images/blog/4.jpg" alt=""></div>
-					<div class="post-meta-box bg-box">
-						<ul class="author-meta clearfix">
-							<li class="tag"><a href="#">Lifestyle</a></li>
-							<li class="date"><a href="#">10 may , 2018</a></li>
-						</ul>
-						<h4 class="title"><a href="#">This is a standard post with an image</a></h4>
-						<ul class="share-meta clearfix">
-							<li><a href="#"><i class="icon flaticon-comment"></i>Comments (07)</a></li>
-							<li><a href="#"><i class="icon flaticon-like-heart"></i>Likes (10)</a></li>
-							<li class="share-option">
-								<button><i class="icon flaticon-arrows"></i>(01) Shares</button>
-								<ul class="share-icon">
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-									<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-								</ul>
-							</li> <!-- /.share-option -->
-						</ul>
-						<p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
-					</div> <!-- /.post-meta-box -->
-				</div> <!-- /.single-blog-post -->
-				<div class="single-blog-post">
-					<div class="image-box"><img src="images/blog/9.jpg" alt=""></div>
-					<div class="post-meta-box bg-box">
-						<ul class="author-meta clearfix">
-							<li class="tag"><a href="#">Art</a></li>
-							<li class="date"><a href="#">10 may , 2018</a></li>
-						</ul>
-						<h4 class="title"><a href="#">This is a standard post with an image</a></h4>
-						<ul class="share-meta clearfix">
-							<li><a href="#"><i class="icon flaticon-comment"></i>Comments (02)</a></li>
-							<li><a href="#"><i class="icon flaticon-like-heart"></i>Likes (01)</a></li>
-							<li class="share-option">
-								<button><i class="icon flaticon-arrows"></i>Share</button>
-								<ul class="share-icon">
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-									<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-								</ul>
-							</li> <!-- /.share-option -->
-						</ul>
-						<p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
-					</div> <!-- /.post-meta-box -->
-				</div> <!-- /.single-blog-post -->
-				<div class="single-blog-post">
-					<div class="image-box"><img src="images/blog/10.jpg" alt=""></div>
-					<div class="post-meta-box bg-box">
-						<ul class="author-meta clearfix">
-							<li class="tag"><a href="#">Lifestyle</a></li>
-							<li class="date"><a href="#">05 may , 2018</a></li>
-						</ul>
-						<h4 class="title"><a href="#">This is a standard post with an image</a></h4>
-						<ul class="share-meta clearfix">
-							<li><a href="#"><i class="icon flaticon-comment"></i>Comments (10)</a></li>
-							<li><a href="#"><i class="icon flaticon-like-heart"></i>Likes (15)</a></li>
-							<li class="share-option">
-								<button><i class="icon flaticon-arrows"></i>(05) Shares</button>
-								<ul class="share-icon">
-									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-									<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-								</ul>
-							</li> <!-- /.share-option -->
-						</ul>
-						<p>One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections. The bedding was hardly able to cover it and seemed ready to slide off any moment.</p>
-					</div> <!-- /.post-meta-box -->
-				</div> <!-- /.single-blog-post -->
-
-				<div class="theme-pagination text-center">
+			</th:block>
+				
+				
+				 <div th:replace="comm/pagehelp :: pageAdminNav(${contents})"></div>
+				
+				<!-- <div class="theme-pagination text-center">
 					<ul class="clearfix">
 						<li><a href="#"><i class="icon flaticon-left-arrow"></i></a></li>
 						<li class="active"><a href="#">1</a></li>
@@ -473,19 +367,19 @@
 						<li><a href="#">3</a></li>
 						<li><a href="#"><i class="icon flaticon-right-arrow"></i></a></li>
 					</ul>
-				</div> <!-- /.theme-pagination -->
+				</div> --> <!-- /.theme-pagination -->
 			</div> <!-- /.col- -->
 			
 			<!-- ======================== Theme Sidebar =============================== -->
 			<div class="col-lg-4 col-md-7 col-12 theme-main-sidebar">
 				<div class="sidebar-box bg-box about-me">
-					<h6 class="sidebar-title">About me</h6>
+					<h6 class="sidebar-title">关于我</h6>
 					<img src="images/home/1.jpg" alt="">
-					<p>Hi, I am David Walmart. As for now I'm only focusing my attention on enjoyment. I'm being my true self with the values, dreams and goals that I have....</p>
+					<p>大家好，我是渣渣杰</p>
 					<div class="clearfix"><img src="images/home/sign.png" alt="" class="signature float-right"></div>
 				</div> <!-- /.about-me -->
 				<div class="sidebar-box bg-box sidebar-categories">
-					<h6 class="sidebar-title">Categories</h6>
+					<h6 class="sidebar-title">分类</h6>
 					<ul>
 						<li><a href="#">Web Design</a></li>
 						<li><a href="#">Fashion</a></li>
@@ -541,7 +435,7 @@
 					</div> <!-- /.single-trending-post -->
 				</div> <!-- /.sidebar-trending-post -->
 				<div class="sidebar-box bg-box sidebar-categories">
-					<h6 class="sidebar-title">Archives</h6>
+					<h6 class="sidebar-title">时间轴</h6>
 					<ul>
 						<li><a href="#">May 2018</a></li>
 						<li><a href="#">April 2018</a></li>
@@ -554,7 +448,7 @@
 					</ul>
 				</div> <!-- /.sidebar-categories -->
 				<div class="sidebar-box bg-box sidebar-tags">
-					<h6 class="sidebar-title">Keyword</h6>
+					<h6 class="sidebar-title">标签</h6>
 					<ul class="clearfix">
 						<li><a href="#">Design</a></li>
 						<li><a href="#">Fashion</a></li>
@@ -593,7 +487,7 @@
 				<li class="icon"><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
 				<li class="icon"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
 			</ul>
-			<p class="copyright">Copyright &copy; 2018.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+			<p class="copyright">Copyright &copy; 2018 wuynje.</p>
 		</div> <!-- /.container -->
 	</footer> <!-- /.theme-footer -->
 	

@@ -9,9 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.github.pagehelper.PageInfo;
+import com.yjytke.entity.KeContent;
 import com.yjytke.entity.KeUser;
-import com.yjytke.exception.BusinessException;
+import com.yjytke.service.content.ContentService;
 import com.yjytke.service.user.UserService;
 
 import io.swagger.annotations.Api;
@@ -31,21 +34,27 @@ public class IndexController {
 	@Autowired
 	private UserService userService;
 	
+	@Autowired
+	private ContentService contentService;
+	
 	@RequestMapping("/{account}-index")
 	public String returnIndex(HttpServletRequest request,
-			@ApiParam(name = "account", value = "用户帐号", required = false) @PathVariable(name = "account", required = false) String account) {
+			@ApiParam(name = "account", value = "用户帐号", required = false) @PathVariable(name = "account", required = false) String account,
+			@ApiParam(name = "page", value = "页数", required = false) @RequestParam(name = "page", required = false, defaultValue = "1") int page,
+			@ApiParam(name = "limit", value = "每页数量", required = false) @RequestParam(name = "limit", required = false, defaultValue = "1") int limit) {
 		if(StringUtils.isEmpty(account)) {//没有账户直接返回查不到
-			request.setAttribute("indexerror", "用户不存在，请输入正确的地址！");
-//			return "error/404";
-			throw new BusinessException();
-		}
-		KeUser user = userService.findUserByUsername(account);//根据账户查询用户
-		if(null == user) {
 			request.setAttribute("indexerror", "用户不存在，请输入正确的地址！");
 			return "error/404";
 		}
-		
+		KeUser user = userService.findUserByUsername(account);//根据账户查询用户
+		if(null == user) {
+			LOGGER.error("Users do not exist, user_account: {}", account);
+			request.setAttribute("indexerror", "用户不存在，请输入正确的地址！");
+			return "error/404";
+		}
+		PageInfo<KeContent> contents = contentService.getArticles(page, limit, user.getId());
+//		contents.setNavigatePages(1);
+		request.setAttribute("contents", contents);		
 		return "comm/index";
 	}
-
 }

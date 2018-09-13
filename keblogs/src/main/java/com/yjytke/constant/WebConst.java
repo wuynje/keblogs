@@ -21,7 +21,7 @@ public class WebConst {
 	public static final String USER_IN_COOKIE = "ACCT";
 
 	/**
-	 * aes加密key,ase比des安全
+	 * aes加密key,aes比des安全
 	 */
 	public static String AES_KEY = "keblogs112993";
 	

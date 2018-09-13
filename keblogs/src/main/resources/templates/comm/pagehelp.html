@@ -8,7 +8,7 @@
 
 
     <th:block th:each="navIndex :${ pageInfo.navigatepageNums}">
-        <li th:class="${pageInfo.pageNum==navIndex}?'current':''"><a th:href="@{'/page/'+${navIndex}}"
+        <li th:class="${pageInfo.pageNum==navIndex}?'current':''"><a th:href="@{'/'+${prefix}+'/'+ ${navIndex}}"
                                                                      th:text="${navIndex}"></a></li>
     </th:block>
 
@@ -19,12 +19,11 @@
 
 </ol>
 
-<div th:fragment="pageAdminNav(pageInfo)">
-    <div class="clearfix">
-        <ul class="pagination m-b-5 pull-right">
+<div th:fragment="pageAdminNav(pageInfo)" class="theme-pagination text-center">
+        <ul class="clearfix">
             <li th:if="${pageInfo.hasPreviousPage}">
                 <a th:href="@{'?page='+${pageInfo.prePage}}" aria-label="Previous">
-                    <i class="fa fa-angle-left"></i>&nbsp;上一页
+                    <i class="icon flaticon-left-arrow"></i>
                 </a>
             </li>
 
@@ -36,14 +35,13 @@
             <th:block th:if="${pageInfo.hasNextPage}">
                 <li>
                     <a th:href="@{'?page='+${pageInfo.nextPage}}" aria-label="Next">
-                        下一页&nbsp;<i class="fa fa-angle-right"></i>
+                        <i class="icon flaticon-right-arrow"></i>
                     </a>
                 </li>
             </th:block>
 
             <li><span th:text="'共'+${pageInfo.pages}+'页'"></span></li>
         </ul>
-    </div>
 </div>
 
 </body>
