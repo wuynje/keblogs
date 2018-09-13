@@ -48,7 +48,7 @@ public class BaseInterceptor implements HandlerInterceptor {
 		if(uri.startsWith("/admin")&& !uri.startsWith("/admin/login")
                 && !uri.startsWith("/admin/css") && !uri.startsWith("/admin/images")
                 && !uri.startsWith("/admin/js") && !uri.startsWith("/admin/plugins")
-                && !uri.startsWith("/admin/editormd")) {
+                && !uri.startsWith("/admin/editormd") && !uri.startsWith("/admin-")) {
 			KeUser keUser = (KeUser) request.getSession().getAttribute(WebConst.LOGIN_SESSION_KEY);
 			if(keUser == null) {
 				String username = GeneralUtil.getUserBycookies(request, WebConst.USER_IN_COOKIE);

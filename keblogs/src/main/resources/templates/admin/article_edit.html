@@ -74,14 +74,28 @@
                                     </th:block>
                                 </select>
                             </div>
-
+							
+							<div class="form-group col-md-6" style="padding: 0 10px 0 0;">
+	                                <input type="text" class="form-control" placeholder="标题图片链接，（可在编辑框中点击图片上传之后将返回的链接赋值到此处）" name="titlePic"
+	                                       required="required"
+	                                       aria-required="true"
+	                                       th:value="${contents!=null and contents.titlePic!=null }?${contents.titlePic}: ''"/>
+                            	</div>
+                            	
+                            <div class="form-group col-md-6" style="padding: 0 0 0 10px;">
+	                                <input type="text" class="form-control" placeholder="请输入文章简介" name="description"
+	                                       required="required"
+	                                       aria-required="true"
+	                                       th:value="${contents!=null and contents.description!=null }?${contents.description}: ''"/>
+                            	</div>
+							
 
                                 <div class="form-group col-md-6" style="padding: 0 10px 0 0;">
                                     <!-- 如果是作品类，那么暂时不允许使用标签 -->
                                     <input name="tags" id="tags"  type="text" class="form-control" placeholder="请填写文章标签"
                                            th:value="${contents!=null and contents.tags !=null}?${contents.tags}: ''"/>
                                 </div>
-                                <div class="form-group col-md-6" >
+                                <div class="form-group col-md-6" style="padding: 0 0 0 10px;" >
                                     <select id="multiple-sel"   class="select2 form-control" multiple="multiple"
                                             data-placeholder="请选择分类...">
                                         <th:block th:if="${null == btype}">
@@ -95,7 +109,6 @@
                                         </th:block>
                                     </select>
                                 </div>
-
                             <div class="clearfix"></div>
                             <div id="my-editormd" >
                                 <textarea id="my-text" name="my-text" style="display:none;" class="markdown-textarea"
@@ -176,7 +189,7 @@
 <script th:src="@{/admin/plugins/jquery-multi-select/jquery.quicksearch.js}"></script>
 
 <!-- editor.md -->
-<script th:src="@{/admin/editormd/src/editormd.js}"></script>
+<script th:src="@{/admin/editormd/editormd.js}"></script>
 
 
 <!--<script th:src="@{/admin/plugins/md/js/jquery.scrollto.js}"></script>-->

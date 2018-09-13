@@ -54,6 +54,11 @@ public class KeContent {
 	private String tags;
 	
 	/**
+	 * 文章的简介
+	 */
+	private String description;
+	
+	/**
 	 * 创建时间
 	 */
 	private long created;
@@ -72,6 +77,7 @@ public class KeContent {
      * 是否允许评论
      */
     private Integer allowComment;
+
 
 	public Integer getId() {
 		return id;
@@ -175,6 +181,20 @@ public class KeContent {
 
 	public void setAllowComment(Integer allowComment) {
 		this.allowComment = allowComment;
+	}
+
+	/**
+	 * @return the description
+	 */
+	public String getDescription() {
+		return description;
+	}
+
+	/**
+	 * @param description the description to set
+	 */
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 }

@@ -6,7 +6,7 @@
 	</sql>
 
 	<sql id="BASE_COLUMN">
-		id,userid,title,titlePic,content,style,btype,status,tags,created,modifiedtime,hits,allowComment
+		id,userid,title,titlePic,content,style,btype,status,tags,description,created,modifiedtime,hits,allowComment
 	</sql>
 
 	<!-- 新增博文 -->
@@ -15,12 +15,12 @@
 		INSERT INTO
 		<include refid="BASE_TABLE" />
 		<trim prefix="(" suffix=")" suffixOverrides=",">
-			userid,title,titlePic,content,style,btype,status,tags,created,hits,allowComment,
+			userid,title,titlePic,content,style,btype,status,tags,description,created,hits,allowComment,
 		</trim>
 		<trim prefix="VALUES(" suffix=")" suffixOverrides=",">
             #{userid, jdbcType=INTEGER}, #{title, jdbcType=VARCHAR}, #{titlePic, jdbcType=VARCHAR},
-            #{content, jdbcType=LONGVARCHAR}, #{style, jdbcType=VARCHAR},
-            #{btype, jdbcType=VARCHAR}, #{status, jdbcType=VARCHAR}, #{tags, jdbcType=VARCHAR},
+            #{content, jdbcType=LONGVARCHAR}, #{style, jdbcType=VARCHAR},#{btype, jdbcType=VARCHAR},
+            #{status, jdbcType=VARCHAR}, #{tags, jdbcType=VARCHAR},#{description, jdbcType=VARCHAR}
             #{created, jdbcType=BIGINT},#{hits, jdbcType=INTEGER},#{allowComment, jdbcType=INTEGER},
         </trim>
 	</insert>
@@ -74,6 +74,9 @@
 				status = #{status, jdbcType=VARCHAR},
 			</if>
 				tags = #{tags, jdbcType=VARCHAR},
+			<if test="titlePic!=null">
+				description = #{description, jdbcType=VARCHAR},
+			</if>
 			<if test="modifiedtime!=null">
 				modifiedtime = #{modifiedtime, jdbcType=VARCHAR},
 			</if>

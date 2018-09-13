@@ -22,14 +22,14 @@
 <div th:fragment="header-body">
 <div class="topbar">
     <div class="topbar-left">
-        <div class="text-center p-t-10" style="margin: 0 auto;">
-            <div class="pull-left" style="padding-left: 10px;">
+        <div class="text-center p-t-10" style="margin-left: 0px;">
+            <div class="pull-left" style="padding-left: 10px;padding-right: 0px">
                 <a th:href="@{/admin/index}">
-                    <img th:src="@{/admin/images/logo.png}" width="50" height="50"/>
+                    <img th:src="@{/admin/images/logo.png}" width="50" height="48"/>
                 </a>
             </div>
-            <div class="pull-left" style="padding-left: 10px;">
-                <span style="font-size: 28px; color: #2f353f; line-height: 50px;">KeBlogs</span>
+            <div class="pull-left" style="padding-left: 0px; margin-left: -10px">
+                <span style="font-size: 21px; color: #2f353f; line-height: 58px;">KeBlogs</span>
             </div>
         </div>
     </div>
@@ -46,7 +46,7 @@
                 <ul class="nav navbar-nav navbar-right pull-right">
                     <li class="dropdown">
                         <a th:href="@{index.html}" class="dropdown-toggle profile" data-toggle="dropdown"
-                           aria-expanded="true"><img th:src="121" alt="user-img"
+                           aria-expanded="true"><img src="121" alt="user-img"
                                                      class="img-circle"/> </a>
                         <ul class="dropdown-menu">
                             <li><a th:href="@{/admin/profile}" target="_blank"><i class="fa fa-eye"
