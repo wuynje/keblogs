@@ -40,8 +40,8 @@ public class PropertiesServiceImp implements PropertiesService {
 	 */
 	@Override
 	@Cacheable(value = "tagsAndType")
-	public List<KeProperties> getTagAndType(String tag, String btype, int userid) {
-		List<KeProperties> properties = proDao.getTagAndType(tag, btype, userid);
+	public List<KeProperties> getTagAndTypeAndLink(String tag, String btype, String link, int userid) {
+		List<KeProperties> properties = proDao.getTagAndTypeAndLink(tag, btype, link, userid);
 		if (properties != null && properties.size() > 0) {
 			return properties;
 		} else {

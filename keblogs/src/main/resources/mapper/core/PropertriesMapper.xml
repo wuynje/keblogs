@@ -9,7 +9,7 @@
 		id,type,rea_value,sort,picture,description
 	</sql>
 	
-	<select id="getTagAndType" resultType="com.yjytke.entity.KeProperties">
+	<select id="getTagAndTypeAndLink" resultType="com.yjytke.entity.KeProperties">
 		SELECT 
 		<include refid="BASE_COLUMN" />
 		FROM
@@ -20,7 +20,10 @@
 		#{tag, jdbcType=VARCHAR},
 		</if>
 		<if test="btype!=null">
-		#{btype, jdbcType=VARCHAR}
+		#{btype, jdbcType=VARCHAR},
+		</if>
+		<if test="link!=null">
+		#{link, jdbcType=VARCHAR}
 		</if>
 		) AND
 		userid = #{userid, jdbcType=INTEGER}

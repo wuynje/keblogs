@@ -2,6 +2,7 @@ package com.yjytke.exception;
 
 import java.io.IOException;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -30,17 +31,19 @@ public class GlobalExceptionHandler {
 		if (e instanceof BusinessException) {
 			errormsg = e.getMessage();
 		}
-		request.setAttribute("errormsg", errormsg);
 		String requestType = request.getHeader("x-requested-with");//区分请求方式是AJAX异步请求，还是传统请求方式，异步的话Header区域会多一个x-requested-with属性
 		try {
-			if (requestType.equals("XMLHttpRequest")) {// 如果是异步请求
+			if (requestType != null && requestType.equals("XMLHttpRequest")) {// 如果是异步请求
 				response.setHeader("Content-type", "text/html;charset=UTF-8");
 				response.setCharacterEncoding("UTF-8");
 				response.getWriter().write("{\"code\": \"fail\", \"msg\":\"" + errormsg + "\"}");
 			} else {
-				response.sendRedirect("error/500");//非异步请求的话，直接返回500
+				request.setAttribute("errormsg", errormsg);
+				//非异步请求的话，直接返回500，这里有个问题，不知道为什么有时候会返回400页面。可能页面没有跳转，js就直接控制返回404页面了，
+				//在400，500页面都取同样的request的name值，这样不影响结果。先不管了就这样吧，
+				request.getRequestDispatcher("error/500").forward(request, response);
 			}
-		} catch (IOException e1) {
+		} catch (IOException | ServletException e1) {
 			LOGGER.error(e1.getMessage());
 		}
 	}

@@ -61,7 +61,7 @@
 				<p><th:block th:text="${errormsg==null}?'The page you are looking for is not here.':${errormsg}">
 				</th:block>
 				<br />
-				This is the <a href="/">homepage</a>?</p>
+				This is the <a th:href="@{'/index/'+${account}}">homepage</a>?</p>
 			</div>
 		</div>
 	</div>

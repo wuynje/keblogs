@@ -65,7 +65,7 @@ public class ArticleController {
 	@GetMapping("/publish")
 	public String publish(HttpServletRequest request) {
 		int userid = ((KeUser) request.getSession().getAttribute(WebConst.LOGIN_SESSION_KEY)).getId();
-		List<KeProperties> properties = proService.getTagAndType(null, WebConst.TypeProperties.BTYPE, userid);
+		List<KeProperties> properties = proService.getTagAndTypeAndLink(null, WebConst.TypeProperties.BTYPE, null, userid);
 		request.setAttribute("btype", properties);
 		LOGGER.info("action : {}", "获取博文类别，跳转编辑博文页面");
 		return "admin/article_edit";
@@ -113,7 +113,7 @@ public class ArticleController {
 			@ApiParam(name = "id", value = "博文id", required = true) @PathVariable(name = "id", required = true) int cid) {
 		int userid = ((KeUser) request.getSession().getAttribute(WebConst.LOGIN_SESSION_KEY)).getId();
 		KeContent content = contentService.getArticleById(cid);
-		List<KeProperties> btype = proService.getTagAndType(null, WebConst.TypeProperties.BTYPE, userid);
+		List<KeProperties> btype = proService.getTagAndTypeAndLink(null, WebConst.TypeProperties.BTYPE, null, userid);
 //		List<KeProperties> properties = proService.getPropByContent(content);
 		request.setAttribute("btype", btype);
 		request.setAttribute("active", "article");

@@ -43,5 +43,13 @@ public interface ContentDao {
 	 * @param id
 	 */
 	void deleteArticleById(Integer id);
+
+	/**
+	 * 根据博文类型和用户获取博文
+	 * @param btypeid
+	 * @param userid
+	 * @return
+	 */
+	List<KeContent> getArticlesByUserAndBtype(String btypeid, Integer userid);
 	
 }

@@ -4,6 +4,10 @@
 	<sql id="BASE_TABLE">
 		ke_content
 	</sql>
+	
+	<sql id="KE_CPRELATION">
+		ke_cprelation
+	</sql>
 
 	<sql id="BASE_COLUMN">
 		id,userid,title,titlePic,content,style,btype,status,tags,description,created,modifiedtime,hits,allowComment
@@ -35,6 +39,27 @@
 		<if test="_parameter!=null">
 		userid = #{_parameter, jdbcType=INTEGER}
 		</if>
+		ORDER BY CREATED DESC
+	</select>
+	<select id="getArticlesByUserAndBtype" resultType="com.yjytke.entity.KeContent">
+		SELECT
+		<include refid="BASE_COLUMN"/>
+		FROM
+		<include refid="BASE_TABLE"/>
+		WHERE
+		id in
+		(
+		SELECT contentid
+		FROM 
+		<include refid="KE_CPRELATION"/>
+		WHERE
+		<if test="userid != null">
+			userid = #{_parameter, jdbcType=INTEGER}
+		</if>
+		<if test="userid != null">
+			AND propertiesid = #{btypeid, jdbcType=INTEGER}
+		</if>
+		)
 		ORDER BY CREATED DESC
 	</select>
 	

@@ -18,7 +18,7 @@ public interface PropertiesService {
 	 * @param userid 
 	 * @return
 	 */
-	List<KeProperties> getTagAndType(String tag, String btype, int userid);
+	List<KeProperties> getTagAndTypeAndLink(String tag, String btype, String link, int userid);
 
 	/**
 	 * 新增属性
@@ -34,5 +34,6 @@ public interface PropertiesService {
 	 * @return
 	 */
 	List<KeProperties> getPropByContent(KeContent content);
+
 
 }
