@@ -41,7 +41,7 @@ public class IndexController {
 	public String returnIndex(HttpServletRequest request,
 			@ApiParam(name = "account", value = "用户帐号", required = false) @PathVariable(name = "account", required = false) String account,
 			@ApiParam(name = "page", value = "页数", required = false) @RequestParam(name = "page", required = false, defaultValue = "1") int page,
-			@ApiParam(name = "limit", value = "每页数量", required = false) @RequestParam(name = "limit", required = false, defaultValue = "1") int limit) {
+			@ApiParam(name = "limit", value = "每页数量", required = false) @RequestParam(name = "limit", required = false, defaultValue = "6") int limit) {
 		if(StringUtils.isEmpty(account)) {//没有账户直接返回查不到
 			request.setAttribute("indexerror", "用户不存在，请输入正确的地址！");
 			return "error/404";
@@ -53,7 +53,6 @@ public class IndexController {
 			return "error/404";
 		}
 		PageInfo<KeContent> contents = contentService.getArticles(page, limit, user.getId());
-//		contents.setNavigatePages(1);
 		request.setAttribute("contents", contents);		
 		return "comm/index";
 	}

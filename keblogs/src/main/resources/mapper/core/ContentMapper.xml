@@ -20,7 +20,7 @@
 		<trim prefix="VALUES(" suffix=")" suffixOverrides=",">
             #{userid, jdbcType=INTEGER}, #{title, jdbcType=VARCHAR}, #{titlePic, jdbcType=VARCHAR},
             #{content, jdbcType=LONGVARCHAR}, #{style, jdbcType=VARCHAR},#{btype, jdbcType=VARCHAR},
-            #{status, jdbcType=VARCHAR}, #{tags, jdbcType=VARCHAR},#{description, jdbcType=VARCHAR}
+            #{status, jdbcType=VARCHAR}, #{tags, jdbcType=VARCHAR},#{description, jdbcType=VARCHAR},
             #{created, jdbcType=BIGINT},#{hits, jdbcType=INTEGER},#{allowComment, jdbcType=INTEGER},
         </trim>
 	</insert>
