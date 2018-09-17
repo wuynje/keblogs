@@ -15,17 +15,19 @@
 		FROM
 		<include refid="BASE_TABLE" />
 		WHERE
-		TYPE IN (
-		<if test="tag!=null">
-		#{tag, jdbcType=VARCHAR},
-		</if>
-		<if test="btype!=null">
-		#{btype, jdbcType=VARCHAR},
-		</if>
-		<if test="link!=null">
-		#{link, jdbcType=VARCHAR}
-		</if>
-		) AND
+		TYPE IN 
+			<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="tag!=null">
+			#{tag, jdbcType=VARCHAR},
+			</if>
+			<if test="btype!=null">
+			#{btype, jdbcType=VARCHAR},
+			</if>
+			<if test="link!=null">
+			#{link, jdbcType=VARCHAR},
+			</if>
+		</trim>
+		 AND
 		userid = #{userid, jdbcType=INTEGER}
 	</select>
 	

@@ -23,6 +23,7 @@ import com.yjytke.service.properties.PropertiesService;
 import com.yjytke.service.user.UserService;
 
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 
 /**
@@ -45,6 +46,7 @@ public class IndexController {
 	@Autowired
 	private PropertiesService propertiesService;
 
+	@ApiOperation("首页内容显示")
 	@RequestMapping(value = {"/index/{account}","/index/{account}/btype/{btypeid}","/index/{account}/tag/{tagid}"})
 	public String returnIndex(HttpServletRequest request,
 			@ApiParam(name = "account", value = "用户帐号", required = false) @PathVariable(name = "account", required = false) String account,
@@ -63,10 +65,13 @@ public class IndexController {
 			return "error/404";
 		}
 		PageInfo<KeContent> contents = null;
-		if(btypeid != null) {
-			contents = contentService.getArticlesByUserIdAndPrpoId(page, limit, btypeid, user.getId());
+		if(!StringUtils.isEmpty(btypeid)) {
+			contents = contentService.getArticlesByUserIdAndPrpoId(page, limit, btypeid, user.getId());//按照博文分类获取
+		}else if(!StringUtils.isEmpty(tagid)) {
+			contents = contentService.getArticlesByUserIdAndPrpoId(page, limit, tagid, user.getId());//按照标签获取
+		}else {
+			contents = contentService.getArticles(page, limit, user.getId());// 文章列列表
 		}
-		contents = contentService.getArticles(page, limit, user.getId());// 文章列列表
 		List<KeProperties> properties = propertiesService.getTagAndTypeAndLink(WebConst.TypeProperties.BTYPE,
 				WebConst.TypeProperties.TAG, WebConst.TypeProperties.LINK, user.getId());//获取到分类，标签，链接属性
 		request.setAttribute("properties", properties);

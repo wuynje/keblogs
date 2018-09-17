@@ -10,7 +10,7 @@
 	<packaging>jar</packaging>
 
 	<name>keblogs</name>
-	<description>Demo project for Spring Boot</description>
+	<description>keblogs</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -154,6 +154,7 @@
 				<!-- 热部署 -->
 				<configuration>
 					<fork>true</fork>
+					<mainClass>com.yjytke.KeblogsApplication</mainClass>
 				</configuration>
 			</plugin>
 			<plugin>

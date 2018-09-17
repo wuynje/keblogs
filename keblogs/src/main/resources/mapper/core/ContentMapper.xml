@@ -41,6 +41,7 @@
 		</if>
 		ORDER BY CREATED DESC
 	</select>
+	<!--  根据博文类型和用户获取博文 -->
 	<select id="getArticlesByUserAndBtype" resultType="com.yjytke.entity.KeContent">
 		SELECT
 		<include refid="BASE_COLUMN"/>
@@ -54,7 +55,7 @@
 		<include refid="KE_CPRELATION"/>
 		WHERE
 		<if test="userid != null">
-			userid = #{_parameter, jdbcType=INTEGER}
+			userid = #{userid, jdbcType=INTEGER}
 		</if>
 		<if test="userid != null">
 			AND propertiesid = #{btypeid, jdbcType=INTEGER}

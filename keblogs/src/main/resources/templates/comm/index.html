@@ -337,6 +337,17 @@
 							<a th:href="${article.style=='blogs' ? '/blogs/article/'+{article.id} : '/life/article/'+{article.id}}" th:text="${article.title}">
 							</a>
 						</h4>
+						<th:block th:if="${article.style == 'blogs'}">
+							<!-- 博文分类 -->
+							<ul class="share-meta clearfix">
+								<li style="color: rgb(172,200,211);">分类：<th:block th:text="${article.btype}" /></li>
+							</ul>
+							<!-- 博文标签 -->
+							<ul class="share-meta clearfix">
+								<li style="color: rgb(172,200,211);">标签：<th:block th:text="${article.tags}" /></li>
+							</ul>
+						</th:block>
+						<br/>
 						<ul class="share-meta clearfix">
 							<li><a href="#"><i class="icon flaticon-comment"></i>Comments (04)</a></li>
 							<li><a href="#"><i class="icon flaticon-like-heart"></i>Likes (02)</a></li>
@@ -375,50 +386,41 @@
 							</th:block>
 						</th:block>
 					</ul>
-				</div> <!-- /.sidebar-categories -->
+				</div> <!-- 博文分类 -->
+				<div class="sidebar-box bg-box sidebar-tags">
+					<h6 class="sidebar-title">标签</h6>
+					<ul class="clearfix">
+						<th:block th:each="p:${properties}">
+							<th:block th:if="${p.type == 'tag'}">
+								<li><a th:href="@{'/index/'+${account}+'/tag/'+${p.id}}" th:text="${p.rea_value}"></a></li>
+							</th:block>
+						</th:block>
+					</ul>
+				</div> <!-- 标签  -->
+				
 				<div class="sidebar-box bg-box sidebar-trending-post">
-					<h6 class="sidebar-title">Trending Post</h6>
+					<h6 class="sidebar-title">链接</h6>
 					<div class="single-trending-post clearfix">
-						<img src="images/blog/5.jpg" alt="" class="float-left">
+						<img src="/comm/images/blog/5.jpg" alt="" class="float-left">
 						<div class="post float-left">
-							<h6><a href="#">New Benefits For Small Business </a></h6>
+							<h6><a href="#">这是我的github </a></h6>
 							<ul>
-								<li class="tag">lifestyle</li>
-								<li class="date">16 march</li>
+								<li class="tag">LINK</li>
 							</ul>
-						</div> <!-- /.post -->
-					</div> <!-- /.single-trending-post -->
+						</div>
+					</div>
 					<div class="single-trending-post clearfix">
-						<img src="images/blog/6.jpg" alt="" class="float-left">
+						<img src="/comm/images/blog/6.jpg" alt="" class="float-left">
 						<div class="post float-left">
-							<h6><a href="#">New Benefits For Small Business </a></h6>
+							<h6><a href="#">这是我的球球</a></h6>
 							<ul>
-								<li class="tag">art</li>
-								<li class="date">15 march</li>
+								<li class="tag">LINK</li>
 							</ul>
-						</div> <!-- /.post -->
-					</div> <!-- /.single-trending-post -->
-					<div class="single-trending-post clearfix">
-						<img src="images/blog/7.jpg" alt="" class="float-left">
-						<div class="post float-left">
-							<h6><a href="#">New Benefits For Small Business </a></h6>
-							<ul>
-								<li class="tag">travel</li>
-								<li class="date">13 march</li>
-							</ul>
-						</div> <!-- /.post -->
-					</div> <!-- /.single-trending-post -->
-					<div class="single-trending-post clearfix">
-						<img src="images/blog/8.jpg" alt="" class="float-left">
-						<div class="post float-left">
-							<h6><a href="#">New Benefits For Small Business </a></h6>
-							<ul>
-								<li class="tag">life</li>
-								<li class="date">10 march</li>
-							</ul>
-						</div> <!-- /.post -->
-					</div> <!-- /.single-trending-post -->
-				</div> <!-- /.sidebar-trending-post -->
+						</div>
+					</div>
+				</div>
+				
+				
 				<div class="sidebar-box bg-box sidebar-categories">
 					<h6 class="sidebar-title">时间轴</h6>
 					<ul>
@@ -432,16 +434,6 @@
 						<li><a href="#">October 2017</a></li>
 					</ul>
 				</div> <!-- /.sidebar-categories -->
-				<div class="sidebar-box bg-box sidebar-tags">
-					<h6 class="sidebar-title">标签</h6>
-					<ul class="clearfix">
-						<th:block th:each="p:${properties}">
-							<th:block th:if="${p.type == 'tag'}">
-								<li><a th:href="@{'/index/'+${account}+'/tag/'+${p.id}}" th:text="${p.rea_value}"></a></li>
-							</th:block>
-						</th:block>
-					</ul>
-				</div> <!-- /.sidebar-tags -->
 				<div class="sidebar-box bg-box sidebar-newsletter">
 					<h6 class="sidebar-title">newsletter</h6>
 					<form action="#">
@@ -456,7 +448,7 @@
 
 	<!--
 	=====================================================
-		Footer
+		底部
 	=====================================================
 	-->
 	<footer class="theme-footer">
@@ -470,13 +462,13 @@
 				<li class="icon"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
 			</ul>
 			<p class="copyright">Copyright &copy; 2018 wuynje.</p>
-		</div> <!-- /.container -->
-	</footer> <!-- /.theme-footer -->
+		</div>
+	</footer>
 	
 
 	
 
-	<!-- Scroll Top Button -->
+	<!-- 右下角返回顶部的按钮 -->
 	<button class="scroll-top tran3s">
 		<i class="fa fa-angle-up" aria-hidden="true"></i>
 	</button>
