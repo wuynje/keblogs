@@ -9380,3 +9380,688 @@
 2018-09-14 17:18:49.220  INFO 24368 --- [Thread-34] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
 2018-09-14 17:18:49.221  INFO 24368 --- [Thread-34] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
 2018-09-14 17:18:49.223  INFO 24368 --- [Thread-34] com.alibaba.druid.pool.DruidDataSource   : {dataSource-6} closed
+2018-09-14 17:18:49.824 DEBUG 24368 --- [restartedMain] o.s.w.c.s.StandardServletEnvironment     : Adding PropertySource 'configurationProperties' with highest search precedence
+2018-09-14 17:18:49.827 DEBUG 24368 --- [restartedMain] o.s.w.c.s.StandardServletEnvironment     : Adding PropertySource 'servletConfigInitParams' with lowest search precedence
+2018-09-14 17:18:49.827 DEBUG 24368 --- [restartedMain] o.s.w.c.s.StandardServletEnvironment     : Adding PropertySource 'servletContextInitParams' with lowest search precedence
+2018-09-14 17:18:49.827 DEBUG 24368 --- [restartedMain] o.s.w.c.s.StandardServletEnvironment     : Adding PropertySource 'systemProperties' with lowest search precedence
+2018-09-14 17:18:49.827 DEBUG 24368 --- [restartedMain] o.s.w.c.s.StandardServletEnvironment     : Adding PropertySource 'systemEnvironment' with lowest search precedence
+2018-09-14 17:18:49.827 DEBUG 24368 --- [restartedMain] o.s.w.c.s.StandardServletEnvironment     : Initialized StandardServletEnvironment with PropertySources [StubPropertySource {name='servletConfigInitParams'}, StubPropertySource {name='servletContextInitParams'}, MapPropertySource {name='systemProperties'}, SystemEnvironmentPropertySource {name='systemEnvironment'}]
+2018-09-14 17:18:49.833  INFO 24368 --- [restartedMain] com.yjytke.KeblogsApplication            : Starting KeblogsApplication on EDZ-20180505XZT with PID 24368 (D:\githubRepository\keblogs\keblogs\target\classes started by Administrator in D:\githubRepository\keblogs\keblogs)
+2018-09-14 17:18:49.833  INFO 24368 --- [restartedMain] com.yjytke.KeblogsApplication            : No active profile set, falling back to default profiles: default
+2018-09-14 17:18:49.841  INFO 24368 --- [restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@113ad28e: startup date [Fri Sep 14 17:18:49 CST 2018]; root of context hierarchy
+2018-09-14 17:18:50.823 DEBUG 24368 --- [restartedMain] o.s.w.c.s.StandardServletEnvironment     : Removing PropertySource 'defaultProperties'
+2018-09-14 17:18:50.871  INFO 24368 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$68770494] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-14 17:18:50.887  INFO 24368 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.hateoas.config.HateoasConfiguration' of type [org.springframework.hateoas.config.HateoasConfiguration$$EnhancerBySpringCGLIB$$e7f751c6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-14 17:18:51.070  INFO 24368 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2018-09-14 17:18:51.072  INFO 24368 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-09-14 17:18:51.072  INFO 24368 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-09-14 17:18:51.109  INFO 24368 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-09-14 17:18:51.110 DEBUG 24368 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2018-09-14 17:18:51.110  INFO 24368 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1270 ms
+2018-09-14 17:18:51.147  INFO 24368 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-09-14 17:18:51.148  INFO 24368 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet statViewServlet mapped to [/druid/*]
+2018-09-14 17:18:51.148  INFO 24368 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-14 17:18:51.148  INFO 24368 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-14 17:18:51.148  INFO 24368 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-14 17:18:51.148  INFO 24368 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-14 17:18:51.149  INFO 24368 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'webStatFilter' to urls: [/*]
+2018-09-14 17:18:51.152 DEBUG 24368 --- [restartedMain] o.s.w.c.s.StandardServletEnvironment     : Replacing PropertySource 'servletContextInitParams' with 'servletContextInitParams'
+2018-09-14 17:18:51.202  INFO 24368 --- [restartedMain] c.a.d.s.b.a.DruidDataSourceAutoConfigure : Init DruidDataSource
+2018-09-14 17:18:51.336  INFO 24368 --- [restartedMain] com.alibaba.druid.pool.DruidDataSource   : {dataSource-7} inited
+2018-09-14 17:18:51.679 DEBUG 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Looking for request mappings in application context: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@113ad28e: startup date [Fri Sep 14 17:18:49 CST 2018]; root of context hierarchy
+2018-09-14 17:18:51.682 DEBUG 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 6 request handler methods found on class com.yjytke.controller.admin.ArticleController: {public java.lang.String com.yjytke.controller.admin.ArticleController.publish(javax.servlet.http.HttpServletRequest)={[/admin/article/publish],methods=[GET]}, public java.lang.String com.yjytke.controller.admin.ArticleController.getArticle(javax.servlet.http.HttpServletRequest,int,int)={[/admin/article],methods=[GET]}, public com.yjytke.utils.ApiResponse com.yjytke.controller.admin.ArticleController.publishArticle(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Boolean)={[/admin/article/publish],methods=[POST]}, public java.lang.String com.yjytke.controller.admin.ArticleController.postArticleEdit(javax.servlet.http.HttpServletRequest,int)={[/admin/article/{id}],methods=[GET]}, public com.yjytke.utils.ApiResponse com.yjytke.controller.admin.ArticleController.modifyArticle(javax.servlet.http.HttpServletRequest,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Boolean)={[/admin/article/modify],methods=[POST]}, public com.yjytke.utils.ApiResponse com.yjytke.controller.admin.ArticleController.deleteArticle(java.lang.Integer)={[/admin/article/delete]}}
+2018-09-14 17:18:51.683  INFO 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/article/publish],methods=[GET]}" onto public java.lang.String com.yjytke.controller.admin.ArticleController.publish(javax.servlet.http.HttpServletRequest)
+2018-09-14 17:18:51.683  INFO 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/article],methods=[GET]}" onto public java.lang.String com.yjytke.controller.admin.ArticleController.getArticle(javax.servlet.http.HttpServletRequest,int,int)
+2018-09-14 17:18:51.683  INFO 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/article/publish],methods=[POST]}" onto public com.yjytke.utils.ApiResponse com.yjytke.controller.admin.ArticleController.publishArticle(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Boolean)
+2018-09-14 17:18:51.684  INFO 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/article/{id}],methods=[GET]}" onto public java.lang.String com.yjytke.controller.admin.ArticleController.postArticleEdit(javax.servlet.http.HttpServletRequest,int)
+2018-09-14 17:18:51.684  INFO 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/article/modify],methods=[POST]}" onto public com.yjytke.utils.ApiResponse com.yjytke.controller.admin.ArticleController.modifyArticle(javax.servlet.http.HttpServletRequest,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.Boolean)
+2018-09-14 17:18:51.684  INFO 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/article/delete]}" onto public com.yjytke.utils.ApiResponse com.yjytke.controller.admin.ArticleController.deleteArticle(java.lang.Integer)
+2018-09-14 17:18:51.685 DEBUG 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 request handler methods found on class com.yjytke.controller.admin.AuthorController: {public java.lang.String com.yjytke.controller.admin.AuthorController.login()={[/admin/login],methods=[GET]}, public com.yjytke.utils.ApiResponse com.yjytke.controller.admin.AuthorController.toLogin(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String)={[/admin/login],methods=[POST]}}
+2018-09-14 17:18:51.685  INFO 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/login],methods=[GET]}" onto public java.lang.String com.yjytke.controller.admin.AuthorController.login()
+2018-09-14 17:18:51.685  INFO 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/login],methods=[POST]}" onto public com.yjytke.utils.ApiResponse com.yjytke.controller.admin.AuthorController.toLogin(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,java.lang.String,java.lang.String,java.lang.String)
+2018-09-14 17:18:51.686 DEBUG 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 1 request handler methods found on class com.yjytke.controller.admin.FilePutController: {public void com.yjytke.controller.admin.FilePutController.upLoadFile(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.web.multipart.MultipartFile)={[/admin/file/uploadfile],methods=[POST]}}
+2018-09-14 17:18:51.686  INFO 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/file/uploadfile],methods=[POST]}" onto public void com.yjytke.controller.admin.FilePutController.upLoadFile(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse,org.springframework.web.multipart.MultipartFile)
+2018-09-14 17:18:51.686 DEBUG 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 1 request handler methods found on class com.yjytke.controller.admin.IndexAdminController: {public java.lang.String com.yjytke.controller.admin.IndexAdminController.getIndexAdmin(javax.servlet.http.HttpServletRequest)={[/admin/index]}}
+2018-09-14 17:18:51.686  INFO 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/admin/index]}" onto public java.lang.String com.yjytke.controller.admin.IndexAdminController.getIndexAdmin(javax.servlet.http.HttpServletRequest)
+2018-09-14 17:18:51.687 DEBUG 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 1 request handler methods found on class com.yjytke.controller.ArticleDetailController: {public java.lang.String com.yjytke.controller.ArticleDetailController.getArticleDetail(javax.servlet.http.HttpServletRequest,int)={[/blogs/article/{id}],methods=[GET]}}
+2018-09-14 17:18:51.687  INFO 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/blogs/article/{id}],methods=[GET]}" onto public java.lang.String com.yjytke.controller.ArticleDetailController.getArticleDetail(javax.servlet.http.HttpServletRequest,int)
+2018-09-14 17:18:51.687 DEBUG 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 1 request handler methods found on class com.yjytke.controller.IndexController: {public java.lang.String com.yjytke.controller.IndexController.returnIndex(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String,java.lang.String,int,int)={[/index/{account} || /index/{account}/btype/{btypeid} || /index/{account}/tag/{tagid}]}}
+2018-09-14 17:18:51.688  INFO 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/index/{account} || /index/{account}/btype/{btypeid} || /index/{account}/tag/{tagid}]}" onto public java.lang.String com.yjytke.controller.IndexController.returnIndex(javax.servlet.http.HttpServletRequest,java.lang.String,java.lang.String,java.lang.String,int,int)
+2018-09-14 17:18:51.688 DEBUG 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 1 request handler methods found on class com.yjytke.controller.UserController: {public int com.yjytke.controller.UserController.addUser(com.yjytke.entity.KeUser)={[/add],methods=[POST]}}
+2018-09-14 17:18:51.689  INFO 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/add],methods=[POST]}" onto public int com.yjytke.controller.UserController.addUser(com.yjytke.entity.KeUser)
+2018-09-14 17:18:51.689 DEBUG 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 1 request handler methods found on class springfox.documentation.swagger2.web.Swagger2Controller: {public org.springframework.http.ResponseEntity springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String)={[/v2/api-docs],methods=[GET]}}
+2018-09-14 17:18:51.690  INFO 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/v2/api-docs],methods=[GET]}" onto public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String)
+2018-09-14 17:18:51.693 DEBUG 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 request handler methods found on class springfox.documentation.swagger.web.ApiResourceController: {org.springframework.http.ResponseEntity springfox.documentation.swagger.web.ApiResourceController.swaggerResources()={[/swagger-resources]}, org.springframework.http.ResponseEntity springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()={[/configuration/ui]}, org.springframework.http.ResponseEntity springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()={[/configuration/security]}}
+2018-09-14 17:18:51.693  INFO 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/swagger-resources]}" onto org.springframework.http.ResponseEntity<java.util.List<springfox.documentation.swagger.web.SwaggerResource>> springfox.documentation.swagger.web.ApiResourceController.swaggerResources()
+2018-09-14 17:18:51.693  INFO 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/configuration/ui]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.UiConfiguration> springfox.documentation.swagger.web.ApiResourceController.uiConfiguration()
+2018-09-14 17:18:51.693  INFO 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/configuration/security]}" onto org.springframework.http.ResponseEntity<springfox.documentation.swagger.web.SecurityConfiguration> springfox.documentation.swagger.web.ApiResourceController.securityConfiguration()
+2018-09-14 17:18:51.695 DEBUG 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 2 request handler methods found on class org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController: {public org.springframework.http.ResponseEntity org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)={[/error]}, public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)={[/error],produces=[text/html]}}
+2018-09-14 17:18:51.696  INFO 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-09-14 17:18:51.696  INFO 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-14 17:18:51.788  INFO 24368 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-14 17:18:51.881  INFO 24368 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@113ad28e: startup date [Fri Sep 14 17:18:49 CST 2018]; root of context hierarchy
+2018-09-14 17:18:51.904 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Looking for URL mappings in application context: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@113ad28e: startup date [Fri Sep 14 17:18:49 CST 2018]; root of context hierarchy
+2018-09-14 17:18:51.904 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor': no URL paths identified
+2018-09-14 17:18:51.904 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor': no URL paths identified
+2018-09-14 17:18:51.904 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.internalRequiredAnnotationProcessor': no URL paths identified
+2018-09-14 17:18:51.904 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.internalCommonAnnotationProcessor': no URL paths identified
+2018-09-14 17:18:51.904 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.event.internalEventListenerProcessor': no URL paths identified
+2018-09-14 17:18:51.904 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.event.internalEventListenerFactory': no URL paths identified
+2018-09-14 17:18:51.904 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'keblogsApplication': no URL paths identified
+2018-09-14 17:18:51.904 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory': no URL paths identified
+2018-09-14 17:18:51.904 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'webConst': no URL paths identified
+2018-09-14 17:18:51.904 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'articleController': no URL paths identified
+2018-09-14 17:18:51.904 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'authorController': no URL paths identified
+2018-09-14 17:18:51.904 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'filePutController': no URL paths identified
+2018-09-14 17:18:51.904 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'indexAdminController': no URL paths identified
+2018-09-14 17:18:51.904 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'articleDetailController': no URL paths identified
+2018-09-14 17:18:51.904 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'indexController': no URL paths identified
+2018-09-14 17:18:51.904 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'userController': no URL paths identified
+2018-09-14 17:18:51.904 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'globalExceptionHandler': no URL paths identified
+2018-09-14 17:18:51.904 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'baseInterceptor': no URL paths identified
+2018-09-14 17:18:51.904 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'webMvcConfig': no URL paths identified
+2018-09-14 17:18:51.904 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'contentServiceImp': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'fileServiceImp': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'logServiceImp': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'propertiesServiceImp': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'userServiceImp': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'swagger': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'common': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'generalUtil': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'swagger2ParameterNameReader': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'swagger2Controller': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'licenseMapperImpl': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'modelMapperImpl': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'parameterMapperImpl': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'securityMapperImpl': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'serviceModelToSwagger2MapperImpl': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'vendorExtensionsMapperImpl': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'apiDescriptionLookup': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'apiDescriptionReader': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'apiDocumentationScanner': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'apiListingReferenceScanner': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'apiListingScanner': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'apiModelReader': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mediaTypeReader': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'apiOperationReader': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'cachingOperationNameGenerator': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaultOperationReader': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaultTagsProvider': no URL paths identified
+2018-09-14 17:18:51.905 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'operationDeprecatedReader': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'operationModelsProvider': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'operationParameterReader': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'operationParameterRequestConditionReader': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'operationResponseClassReader': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'operationTagsReader': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'responseMessagesReader': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'expandedParameterBuilder': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'modelAttributeParameterExpander': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'parameterDataTypeReader': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'parameterDefaultReader': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'parameterMultiplesReader': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'parameterNameReader': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'parameterRequiredReader': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'parameterTypeReader': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'documentationPluginsBootstrapper': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'documentationPluginsManager': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'webMvcRequestHandlerProvider': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'operationPathDecorator': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'pathMappingDecorator': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'pathSanitizer': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'queryStringUriTemplateDecorator': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'cachingAspect': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaultModelProvider': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'modelDependencyProvider': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'typeNameExtractor': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'schemaPluginsManager': no URL paths identified
+2018-09-14 17:18:51.906 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'factoryMethodProvider': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'objectMapperBeanPropertyNamingStrategy': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'optimized': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'accessorsProvider': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'fieldProvider': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'apiModelBuilder': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'apiModelPropertyPropertyBuilder': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'apiModelTypeNameProvider': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'operationAuthReader': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'operationHiddenReader': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'operationHttpMethodReader': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'operationImplicitParameterReader': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'operationImplicitParametersReader': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'operationNicknameIntoUniqueIdReader': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'operationNotesReader': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'operationPositionReader': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'operationSummaryReader': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'swaggerMediaTypeReader': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'swaggerOperationModelsProvider': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'swaggerOperationResponseClassReader': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'swaggerOperationTagsReader': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'swaggerResponseMessageReader': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'vendorExtensionsReader': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'swaggerParameterAccessReader': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'swaggerParameterAllowableReader': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'swaggerParameterDefaultReader': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'swaggerParameterDescriptionReader': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'swaggerParameterMultiplesReader': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'swaggerParameterRequiredReader': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'swaggerExpandedParameterBuilder': no URL paths identified
+2018-09-14 17:18:51.907 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'apiListingTagReader': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'apiResourceController': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'classOrApiAnnotationResourceGrouping': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springfox.documentation.schema.configuration.ModelsConfiguration': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'typeResolver': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'modelBuilderPluginRegistry': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'modelPropertyBuilderPluginRegistry': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'typeNameProviderPluginRegistry': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springfox.documentation.spring.web.SpringfoxWebMvcConfiguration': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaults': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'resourceGroupCache': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'objectMapperConfigurer': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jsonSerializer': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'documentationPluginRegistry': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'apiListingBuilderPluginRegistry': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'operationBuilderPluginRegistry': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'parameterBuilderPluginRegistry': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'expandedParameterBuilderPluginRegistry': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'resourceGroupingStrategyRegistry': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'operationModelsProviderPluginRegistry': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaultsProviderPluginRegistry': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'pathDecoratorRegistry': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.aop.config.internalAutoProxyCreator': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springfox.documentation.swagger.configuration.SwaggerCommonConfiguration': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'swaggerProperties': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springfox.documentation.swagger2.configuration.Swagger2DocumentationConfiguration': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'swagger2Module': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'createRestApi': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.cache.annotation.ProxyCachingConfiguration': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.cache.config.internalCacheAdvisor': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'cacheOperationSource': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'cacheInterceptor': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.AutoConfigurationPackages': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'contentDao': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'cpRelationDao': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'fileDao': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'logDao': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'propertiesDao': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'userDao': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.condition.BeanTypeRegistry': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration$TomcatWebSocketConfiguration': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'websocketContainerCustomizer': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.websocket.servlet.WebSocketServletAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryConfiguration$EmbeddedTomcat': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'tomcatServletWebServerFactory': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.ServletWebServerFactoryAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'servletWebServerFactoryCustomizer': no URL paths identified
+2018-09-14 17:18:51.908 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'tomcatServletWebServerFactoryCustomizer': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'server-org.springframework.boot.autoconfigure.web.ServerProperties': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.context.properties.ConfigurationPropertiesBindingPostProcessor': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.context.properties.ConfigurationBeanFactoryMetadata': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'webServerFactoryCustomizerBeanPostProcessor': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'errorPageRegistrarBeanPostProcessor': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletConfiguration': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dispatcherServlet': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.mvc-org.springframework.boot.autoconfigure.web.servlet.WebMvcProperties': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration$DispatcherServletRegistrationConfiguration': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dispatcherServletRegistration': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.DispatcherServletAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaultValidator': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'methodValidationPostProcessor': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$WhitelabelErrorViewConfiguration': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'error': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'beanNameViewResolver': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration$DefaultErrorViewResolverConfiguration': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'conventionErrorViewResolver': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'errorAttributes': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'basicErrorController': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'errorPageCustomizer': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'preserveErrorControllerTargetClassPostProcessor': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.resources-org.springframework.boot.autoconfigure.web.ResourceProperties': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter$FaviconConfiguration': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'faviconHandlerMapping': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'faviconRequestHandler': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$EnableWebMvcConfiguration': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'requestMappingHandlerAdapter': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'requestMappingHandlerMapping': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcConversionService': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcValidator': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcContentNegotiationManager': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcPathMatcher': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcUrlPathHelper': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'viewControllerHandlerMapping': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'beanNameHandlerMapping': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'resourceHandlerMapping': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcResourceUrlProvider': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaultServletHandlerMapping': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcUriComponentsContributor': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'httpRequestHandlerAdapter': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'simpleControllerHandlerAdapter': no URL paths identified
+2018-09-14 17:18:51.909 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'handlerExceptionResolver': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcViewResolver': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mvcHandlerMappingIntrospector': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration$WebMvcAutoConfigurationAdapter': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaultViewResolver': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'viewResolver': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'welcomePageHandlerMapping': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'requestContextFilter': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'hiddenHttpMethodFilter': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'httpPutFormContentFilter': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidStatViewServletConfiguration': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'statViewServletRegistrationBean': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidWebStatFilterConfiguration': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'webStatFilterRegistrationBean': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'com.alibaba.druid.spring.boot.autoconfigure.stat.DruidFilterConfiguration': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'statFilter': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dataSource': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.datasource.druid-com.alibaba.druid.spring.boot.autoconfigure.properties.DruidStatProperties': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.datasource-org.springframework.boot.autoconfigure.jdbc.DataSourceProperties': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration$HikariPoolDataSourceMetadataProviderConfiguration': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'hikariPoolDataSourceMetadataProvider': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.metadata.DataSourcePoolMetadataProvidersConfiguration': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializationConfiguration': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'dataSourceInitializerPostProcessor': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.mybatis.spring.boot.autoconfigure.MybatisAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'sqlSessionFactory': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'sqlSessionTemplate': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mybatis-org.mybatis.spring.boot.autoconfigure.MybatisProperties': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'com.github.pagehelper.autoconfigure.PageHelperAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'pageHelperProperties': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'pagehelper-com.github.pagehelper.autoconfigure.PageHelperProperties': no URL paths identified
+2018-09-14 17:18:51.910 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mbeanExporter': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'objectNamingStrategy': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mbeanServer': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.admin.SpringApplicationAdminJmxAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springApplicationAdminRegistrar': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration$CglibAutoProxyConfiguration': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.aop.AopAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.cache.SimpleCacheConfiguration': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'cacheManager': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'cacheManagerCustomizers': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'cacheAutoConfigurationValidator': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.cache-org.springframework.boot.autoconfigure.cache.CacheProperties': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.context.ConfigurationPropertiesAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.dao.PersistenceExceptionTranslationAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'persistenceExceptionTranslationPostProcessor': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$Jackson2ObjectMapperBuilderCustomizerConfiguration': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'standardJacksonObjectMapperBuilderCustomizer': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.jackson-org.springframework.boot.autoconfigure.jackson.JacksonProperties': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperBuilderConfiguration': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jacksonObjectMapperBuilder': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$ParameterNamesModuleConfiguration': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'parameterNamesModule': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JodaDateTimeJacksonConfiguration': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jodaDateTimeSerializationModule': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration$JacksonObjectMapperConfiguration': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jacksonObjectMapper': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jsonComponentModule': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration$StringHttpMessageConverterConfiguration': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'stringHttpMessageConverter': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.http.encoding-org.springframework.boot.autoconfigure.http.HttpEncodingProperties': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration$MappingJackson2HttpMessageConverterConfiguration': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'mappingJackson2HttpMessageConverter': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.http.JacksonHttpMessageConvertersConfiguration': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'messageConverters': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.hateoas.config.EntityLinksConfiguration': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'entityLinksPluginRegistry': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'delegatingEntityLinks': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'controllerEntityLinks': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'controllerLinkBuilderFactoryBean': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration$EntityLinksConfiguration': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.hateoas.config.HateoasConfiguration': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'linkRelationMessageSource': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jackson2ModuleRegisteringBeanPostProcessor': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaultRelProvider': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'annotationRelProvider': no URL paths identified
+2018-09-14 17:18:51.911 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name '_relProvider': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'relProviderPluginRegistry': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'linkDiscoverers': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'linkDiscovererRegistry': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration$HypermediaConfiguration': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.hateoas.config.ConverterRegisteringWebMvcConfigurer#0': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.hateoas.HypermediaHttpMessageConverterConfiguration': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'halMessageConverterSupportedMediaTypeCustomizer': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.hateoas.HypermediaAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.hateoas-org.springframework.boot.autoconfigure.hateoas.HateoasProperties': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.http.codec.CodecsAutoConfiguration$JacksonCodecConfiguration': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jacksonCodecCustomizer': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.http.codec.CodecsAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.info.ProjectInfoAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.info-org.springframework.boot.autoconfigure.info.ProjectInfoProperties': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration$JdbcTemplateConfiguration': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'jdbcTemplate': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration$NamedParameterJdbcTemplateConfiguration': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'namedParameterJdbcTemplate': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.jdbc-org.springframework.boot.autoconfigure.jdbc.JdbcProperties': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.security.reactive.ReactiveSecurityAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.security-org.springframework.boot.autoconfigure.security.SecurityProperties': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafJava8TimeDialect': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'java8TimeDialect': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafWebMvcConfiguration$ThymeleafViewResolverConfiguration': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'thymeleafViewResolver': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafWebMvcConfiguration': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$ThymeleafDefaultConfiguration': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'templateEngine': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration$DefaultTemplateResolverConfiguration': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'defaultTemplateResolver': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.thymeleaf.ThymeleafAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.thymeleaf-org.springframework.boot.autoconfigure.thymeleaf.ThymeleafProperties': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration$DataSourceTransactionManagerConfiguration': no URL paths identified
+2018-09-14 17:18:51.912 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'transactionManager': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.transaction.config.internalTransactionAdvisor': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'transactionAttributeSource': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'transactionInterceptor': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.transaction.config.internalTransactionalEventListenerFactory': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$EnableTransactionManagementConfiguration$CglibAutoProxyConfiguration': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$EnableTransactionManagementConfiguration': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration$TransactionTemplateConfiguration': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'transactionTemplate': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.transaction.TransactionAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'platformTransactionManagerCustomizers': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.transaction-org.springframework.boot.autoconfigure.transaction.TransactionProperties': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'restTemplateBuilder': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration$TomcatWebServerFactoryCustomizerConfiguration': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'tomcatWebServerFactoryCustomizer': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.HttpEncodingAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'characterEncodingFilter': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'localeCharsetMappingsCustomizer': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.autoconfigure.web.servlet.MultipartAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'multipartConfigElement': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'multipartResolver': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.servlet.multipart-org.springframework.boot.autoconfigure.web.servlet.MultipartProperties': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$RestartConfiguration': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'classPathFileSystemWatcher': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'classPathRestartStrategy': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'hateoasObjenesisCacheDisabler': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'fileSystemWatcherFactory': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'conditionEvaluationDeltaLoggingListener': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration$LiveReloadConfiguration': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'liveReloadServer': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'optionalLiveReloadServer': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'liveReloadServerEventListener': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.devtools.autoconfigure.LocalDevToolsAutoConfiguration': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'spring.devtools-org.springframework.boot.devtools.autoconfigure.DevToolsProperties': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'autoConfigurationReport': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.boot.context.ContextIdApplicationContextInitializer$ContextId': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springApplicationArguments': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springBootBanner': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'springBootLoggingSystem': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'environment': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'systemProperties': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'systemEnvironment': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'org.springframework.context.annotation.ConfigurationClassPostProcessor.importRegistry': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'messageSource': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'applicationEventMulticaster': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'servletContext': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'contextParameters': no URL paths identified
+2018-09-14 17:18:51.913 DEBUG 24368 --- [restartedMain] o.s.w.s.h.BeanNameUrlHandlerMapping      : Rejected bean name 'contextAttributes': no URL paths identified
+2018-09-14 17:18:51.918  INFO 24368 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-14 17:18:51.918  INFO 24368 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-14 17:18:51.926 DEBUG 24368 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : Looking for exception mappings: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@113ad28e: startup date [Fri Sep 14 17:18:49 CST 2018]; root of context hierarchy
+2018-09-14 17:18:51.944  INFO 24368 --- [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : Detected @ExceptionHandler methods in globalExceptionHandler
+2018-09-14 17:18:51.971  WARN 24368 --- [restartedMain] org.thymeleaf.templatemode.TemplateMode  : [THYMELEAF][restartedMain] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+2018-09-14 17:18:52.301  INFO 24368 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-09-14 17:18:52.336  INFO 24368 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-09-14 17:18:52.337  INFO 24368 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'statFilter' has been autodetected for JMX exposure
+2018-09-14 17:18:52.338  INFO 24368 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-09-14 17:18:52.346  INFO 24368 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.alibaba.druid.spring.boot.autoconfigure:name=dataSource,type=DruidDataSourceWrapper]
+2018-09-14 17:18:52.347  INFO 24368 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2018-09-14 17:18:52.351 DEBUG 24368 --- [restartedMain] o.s.w.s.resource.ResourceUrlProvider     : Looking for resource handler mappings
+2018-09-14 17:18:52.353 DEBUG 24368 --- [restartedMain] o.s.w.s.resource.ResourceUrlProvider     : Found resource handler mapping: URL pattern="/**/favicon.ico", locations=[class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], ServletContext resource [/], class path resource []], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@5b1aa798]
+2018-09-14 17:18:52.353 DEBUG 24368 --- [restartedMain] o.s.w.s.resource.ResourceUrlProvider     : Found resource handler mapping: URL pattern="/webjars/**", locations=[class path resource [META-INF/resources/webjars/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@30a0c10]
+2018-09-14 17:18:52.353 DEBUG 24368 --- [restartedMain] o.s.w.s.resource.ResourceUrlProvider     : Found resource handler mapping: URL pattern="/**", locations=[class path resource [META-INF/resources/], class path resource [resources/], class path resource [static/], class path resource [public/], ServletContext resource [/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@711ae1dc]
+2018-09-14 17:18:52.353  INFO 24368 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2018-09-14 17:18:52.355  INFO 24368 --- [restartedMain] d.s.w.p.DocumentationPluginsBootstrapper : Found {0} custom documentation plugin(s)
+2018-09-14 17:18:52.358  INFO 24368 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2018-09-14 17:18:52.359  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method addUser was user-controller
+2018-09-14 17:18:52.359  INFO 24368 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: addUser belongs to groups: [[ResourceGroup{groupName='user-controller', position=0, controller=com.yjytke.controller.UserController}]] 
+2018-09-14 17:18:52.359  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method deleteArticle was 博客相关
+2018-09-14 17:18:52.359  INFO 24368 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: deleteArticle belongs to groups: [[ResourceGroup{groupName='博客相关', position=0, controller=com.yjytke.controller.admin.ArticleController}]] 
+2018-09-14 17:18:52.359  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method modifyArticle was 博客相关
+2018-09-14 17:18:52.360  INFO 24368 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: modifyArticle belongs to groups: [[ResourceGroup{groupName='博客相关', position=0, controller=com.yjytke.controller.admin.ArticleController}]] 
+2018-09-14 17:18:52.360  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method publish was 博客相关
+2018-09-14 17:18:52.360  INFO 24368 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: publish belongs to groups: [[ResourceGroup{groupName='博客相关', position=0, controller=com.yjytke.controller.admin.ArticleController}]] 
+2018-09-14 17:18:52.360  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method publishArticle was 博客相关
+2018-09-14 17:18:52.360  INFO 24368 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: publishArticle belongs to groups: [[ResourceGroup{groupName='博客相关', position=0, controller=com.yjytke.controller.admin.ArticleController}]] 
+2018-09-14 17:18:52.360  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method postArticleEdit was 博客相关
+2018-09-14 17:18:52.360  INFO 24368 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: postArticleEdit belongs to groups: [[ResourceGroup{groupName='博客相关', position=0, controller=com.yjytke.controller.admin.ArticleController}]] 
+2018-09-14 17:18:52.361  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getArticle was 博客相关
+2018-09-14 17:18:52.361  INFO 24368 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: getArticle belongs to groups: [[ResourceGroup{groupName='博客相关', position=0, controller=com.yjytke.controller.admin.ArticleController}]] 
+2018-09-14 17:18:52.361  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method upLoadFile was 文件上传
+2018-09-14 17:18:52.361  INFO 24368 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: upLoadFile belongs to groups: [[ResourceGroup{groupName='文件上传', position=0, controller=com.yjytke.controller.admin.FilePutController}]] 
+2018-09-14 17:18:52.361  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getIndexAdmin was 后台首页
+2018-09-14 17:18:52.361  INFO 24368 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: getIndexAdmin belongs to groups: [[ResourceGroup{groupName='后台首页', position=0, controller=com.yjytke.controller.admin.IndexAdminController}]] 
+2018-09-14 17:18:52.361  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method login was 登录相关
+2018-09-14 17:18:52.361  INFO 24368 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: login belongs to groups: [[ResourceGroup{groupName='登录相关', position=0, controller=com.yjytke.controller.admin.AuthorController}]] 
+2018-09-14 17:18:52.361  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method toLogin was 登录相关
+2018-09-14 17:18:52.361  INFO 24368 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: toLogin belongs to groups: [[ResourceGroup{groupName='登录相关', position=0, controller=com.yjytke.controller.admin.AuthorController}]] 
+2018-09-14 17:18:52.362  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getArticleDetail was 查看博文
+2018-09-14 17:18:52.362  INFO 24368 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: getArticleDetail belongs to groups: [[ResourceGroup{groupName='查看博文', position=0, controller=com.yjytke.controller.ArticleDetailController}]] 
+2018-09-14 17:18:52.362  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.362  INFO 24368 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Request mapping: returnIndex belongs to groups: [[ResourceGroup{groupName='首页相关', position=0, controller=com.yjytke.controller.IndexController}]] 
+2018-09-14 17:18:52.362  INFO 24368 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Created resource listing Path: /default/查看博文 Description: 查看博文 Position: 0
+2018-09-14 17:18:52.363  INFO 24368 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Created resource listing Path: /default/后台首页 Description: 后台首页 Position: 0
+2018-09-14 17:18:52.363  INFO 24368 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Created resource listing Path: /default/user-controller Description: user-controller Position: 0
+2018-09-14 17:18:52.363  INFO 24368 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Created resource listing Path: /default/文件上传 Description: 文件上传 Position: 0
+2018-09-14 17:18:52.363  INFO 24368 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Created resource listing Path: /default/博客相关 Description: 博客相关 Position: 0
+2018-09-14 17:18:52.363  INFO 24368 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Created resource listing Path: /default/首页相关 Description: 首页相关 Position: 0
+2018-09-14 17:18:52.363  INFO 24368 --- [restartedMain] s.d.s.w.s.ApiListingReferenceScanner     : Created resource listing Path: /default/登录相关 Description: 登录相关 Position: 0
+2018-09-14 17:18:52.365  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: int(true)
+2018-09-14 17:18:52.366  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key int(true)
+2018-09-14 17:18:52.369  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: int(true)
+2018-09-14 17:18:52.369  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key int(true)
+2018-09-14 17:18:52.372  INFO 24368 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /add.com.yjytke.controller.UserController.addUser.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.372  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /add.com.yjytke.controller.UserController.addUser.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.380  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method addUser was user-controller
+2018-09-14 17:18:52.381  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method addUser was user-controller
+2018-09-14 17:18:52.386  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.yjytke.utils.ApiResponse(true)
+2018-09-14 17:18:52.386  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.yjytke.utils.ApiResponse(true)
+2018-09-14 17:18:52.387  INFO 24368 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.yjytke.utils.ApiResponse(true)
+2018-09-14 17:18:52.387  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.yjytke.utils.ApiResponse(true)
+2018-09-14 17:18:52.391  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.yjytke.utils.ApiResponse(true)
+2018-09-14 17:18:52.391  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.yjytke.utils.ApiResponse(true)
+2018-09-14 17:18:52.391  INFO 24368 --- [restartedMain] s.d.s.p.ModelPropertiesKeyGenerator      : Cache key generated: com.yjytke.utils.ApiResponse(true)
+2018-09-14 17:18:52.392  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelProperties with key com.yjytke.utils.ApiResponse(true)
+2018-09-14 17:18:52.392  INFO 24368 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /admin/article/delete.com.yjytke.controller.admin.ArticleController.deleteArticle.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.392  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /admin/article/delete.com.yjytke.controller.admin.ArticleController.deleteArticle.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.395  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method deleteArticle was 博客相关
+2018-09-14 17:18:52.396  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method deleteArticle was 博客相关
+2018-09-14 17:18:52.400  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method deleteArticle was 博客相关
+2018-09-14 17:18:52.402  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method deleteArticle was 博客相关
+2018-09-14 17:18:52.406  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method deleteArticle was 博客相关
+2018-09-14 17:18:52.408  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method deleteArticle was 博客相关
+2018-09-14 17:18:52.412  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method deleteArticle was 博客相关
+2018-09-14 17:18:52.413  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method deleteArticle was 博客相关
+2018-09-14 17:18:52.417  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method deleteArticle was 博客相关
+2018-09-14 17:18:52.419  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method deleteArticle was 博客相关
+2018-09-14 17:18:52.423  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method deleteArticle was 博客相关
+2018-09-14 17:18:52.425  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method deleteArticle was 博客相关
+2018-09-14 17:18:52.428  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method deleteArticle was 博客相关
+2018-09-14 17:18:52.430  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method deleteArticle was 博客相关
+2018-09-14 17:18:52.433  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method deleteArticle was 博客相关
+2018-09-14 17:18:52.435  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method deleteArticle was 博客相关
+2018-09-14 17:18:52.437  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2018-09-14 17:18:52.438  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key java.lang.String(true)
+2018-09-14 17:18:52.438  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2018-09-14 17:18:52.438  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key java.lang.String(true)
+2018-09-14 17:18:52.438  INFO 24368 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /admin/article.com.yjytke.controller.admin.ArticleController.getArticle.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.438  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /admin/article.com.yjytke.controller.admin.ArticleController.getArticle.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.441  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getArticle was 博客相关
+2018-09-14 17:18:52.443  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getArticle was 博客相关
+2018-09-14 17:18:52.446  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.yjytke.utils.ApiResponse(true)
+2018-09-14 17:18:52.446  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.yjytke.utils.ApiResponse(true)
+2018-09-14 17:18:52.446  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.yjytke.utils.ApiResponse(true)
+2018-09-14 17:18:52.446  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.yjytke.utils.ApiResponse(true)
+2018-09-14 17:18:52.446  INFO 24368 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /admin/article/modify.com.yjytke.controller.admin.ArticleController.modifyArticle.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.446  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /admin/article/modify.com.yjytke.controller.admin.ArticleController.modifyArticle.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.455  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method modifyArticle was 博客相关
+2018-09-14 17:18:52.456  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method modifyArticle was 博客相关
+2018-09-14 17:18:52.459  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2018-09-14 17:18:52.460  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key java.lang.String(true)
+2018-09-14 17:18:52.460  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2018-09-14 17:18:52.460  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key java.lang.String(true)
+2018-09-14 17:18:52.460  INFO 24368 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /admin/article/{id}.com.yjytke.controller.admin.ArticleController.postArticleEdit.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.460  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /admin/article/{id}.com.yjytke.controller.admin.ArticleController.postArticleEdit.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.463  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method postArticleEdit was 博客相关
+2018-09-14 17:18:52.465  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method postArticleEdit was 博客相关
+2018-09-14 17:18:52.469  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2018-09-14 17:18:52.469  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key java.lang.String(true)
+2018-09-14 17:18:52.469  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2018-09-14 17:18:52.469  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key java.lang.String(true)
+2018-09-14 17:18:52.469  INFO 24368 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /admin/article/publish.com.yjytke.controller.admin.ArticleController.publish.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.469  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /admin/article/publish.com.yjytke.controller.admin.ArticleController.publish.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.471  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method publish was 博客相关
+2018-09-14 17:18:52.474  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method publish was 博客相关
+2018-09-14 17:18:52.477  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.yjytke.utils.ApiResponse(true)
+2018-09-14 17:18:52.477  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.yjytke.utils.ApiResponse(true)
+2018-09-14 17:18:52.477  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.yjytke.utils.ApiResponse(true)
+2018-09-14 17:18:52.477  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.yjytke.utils.ApiResponse(true)
+2018-09-14 17:18:52.477  INFO 24368 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /admin/article/publish.com.yjytke.controller.admin.ArticleController.publishArticle.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.477  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /admin/article/publish.com.yjytke.controller.admin.ArticleController.publishArticle.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.485  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method publishArticle was 博客相关
+2018-09-14 17:18:52.487  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method publishArticle was 博客相关
+2018-09-14 17:18:52.488  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2018-09-14 17:18:52.488  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key java.lang.String(true)
+2018-09-14 17:18:52.488  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2018-09-14 17:18:52.488  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key java.lang.String(true)
+2018-09-14 17:18:52.488  INFO 24368 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /admin/index.com.yjytke.controller.admin.IndexAdminController.getIndexAdmin.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.488  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /admin/index.com.yjytke.controller.admin.IndexAdminController.getIndexAdmin.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.488  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getIndexAdmin was 后台首页
+2018-09-14 17:18:52.489  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getIndexAdmin was 后台首页
+2018-09-14 17:18:52.489  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getIndexAdmin was 后台首页
+2018-09-14 17:18:52.489  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getIndexAdmin was 后台首页
+2018-09-14 17:18:52.489  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getIndexAdmin was 后台首页
+2018-09-14 17:18:52.490  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getIndexAdmin was 后台首页
+2018-09-14 17:18:52.490  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getIndexAdmin was 后台首页
+2018-09-14 17:18:52.490  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getIndexAdmin was 后台首页
+2018-09-14 17:18:52.490  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getIndexAdmin was 后台首页
+2018-09-14 17:18:52.490  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getIndexAdmin was 后台首页
+2018-09-14 17:18:52.491  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getIndexAdmin was 后台首页
+2018-09-14 17:18:52.491  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getIndexAdmin was 后台首页
+2018-09-14 17:18:52.491  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getIndexAdmin was 后台首页
+2018-09-14 17:18:52.491  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getIndexAdmin was 后台首页
+2018-09-14 17:18:52.491  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getIndexAdmin was 后台首页
+2018-09-14 17:18:52.492  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getIndexAdmin was 后台首页
+2018-09-14 17:18:52.493  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.Void(true)
+2018-09-14 17:18:52.493  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key java.lang.Void(true)
+2018-09-14 17:18:52.493  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.Void(true)
+2018-09-14 17:18:52.493  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key java.lang.Void(true)
+2018-09-14 17:18:52.493  INFO 24368 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /admin/file/uploadfile.com.yjytke.controller.admin.FilePutController.upLoadFile.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.493  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /admin/file/uploadfile.com.yjytke.controller.admin.FilePutController.upLoadFile.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.494  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method upLoadFile was 文件上传
+2018-09-14 17:18:52.494  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method upLoadFile was 文件上传
+2018-09-14 17:18:52.495  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2018-09-14 17:18:52.495  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key java.lang.String(true)
+2018-09-14 17:18:52.495  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2018-09-14 17:18:52.495  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key java.lang.String(true)
+2018-09-14 17:18:52.495  INFO 24368 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /blogs/article/{id}.com.yjytke.controller.ArticleDetailController.getArticleDetail.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.495  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /blogs/article/{id}.com.yjytke.controller.ArticleDetailController.getArticleDetail.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.496  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getArticleDetail was 查看博文
+2018-09-14 17:18:52.496  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method getArticleDetail was 查看博文
+2018-09-14 17:18:52.497  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2018-09-14 17:18:52.497  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key java.lang.String(true)
+2018-09-14 17:18:52.498  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2018-09-14 17:18:52.498  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key java.lang.String(true)
+2018-09-14 17:18:52.498  INFO 24368 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /admin/login.com.yjytke.controller.admin.AuthorController.login.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.498  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /admin/login.com.yjytke.controller.admin.AuthorController.login.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.498  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method login was 登录相关
+2018-09-14 17:18:52.499  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method login was 登录相关
+2018-09-14 17:18:52.500  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.yjytke.utils.ApiResponse(true)
+2018-09-14 17:18:52.500  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key com.yjytke.utils.ApiResponse(true)
+2018-09-14 17:18:52.500  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: com.yjytke.utils.ApiResponse(true)
+2018-09-14 17:18:52.500  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key com.yjytke.utils.ApiResponse(true)
+2018-09-14 17:18:52.500  INFO 24368 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /admin/login.com.yjytke.controller.admin.AuthorController.toLogin.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.500  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /admin/login.com.yjytke.controller.admin.AuthorController.toLogin.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.502  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method toLogin was 登录相关
+2018-09-14 17:18:52.503  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method toLogin was 登录相关
+2018-09-14 17:18:52.505  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2018-09-14 17:18:52.505  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache models with key java.lang.String(true)
+2018-09-14 17:18:52.505  INFO 24368 --- [restartedMain] s.d.schema.ModelContextKeyGenerator      : Cache Key Generated: java.lang.String(true)
+2018-09-14 17:18:52.505  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache modelDependencies with key java.lang.String(true)
+2018-09-14 17:18:52.505  INFO 24368 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /index/{account}.com.yjytke.controller.IndexController.returnIndex.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.505  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /index/{account}.com.yjytke.controller.IndexController.returnIndex.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.510  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.510  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.513  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.514  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.516  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.517  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.519  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.520  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.522  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.522  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.524  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.525  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.527  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.528  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.530  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.531  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.531  INFO 24368 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /index/{account}/btype/{btypeid}.com.yjytke.controller.IndexController.returnIndex.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.531  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /index/{account}/btype/{btypeid}.com.yjytke.controller.IndexController.returnIndex.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.533  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.534  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.534  INFO 24368 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: returnIndexUsingGET_1
+2018-09-14 17:18:52.536  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.537  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.537  INFO 24368 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: returnIndexUsingHEAD_1
+2018-09-14 17:18:52.539  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.540  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.540  INFO 24368 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: returnIndexUsingPOST_1
+2018-09-14 17:18:52.542  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.542  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.542  INFO 24368 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: returnIndexUsingPUT_1
+2018-09-14 17:18:52.545  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.546  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.546  INFO 24368 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: returnIndexUsingPATCH_1
+2018-09-14 17:18:52.550  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.551  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.551  INFO 24368 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: returnIndexUsingDELETE_1
+2018-09-14 17:18:52.553  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.554  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.554  INFO 24368 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: returnIndexUsingOPTIONS_1
+2018-09-14 17:18:52.556  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.557  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.557  INFO 24368 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: returnIndexUsingTRACE_1
+2018-09-14 17:18:52.557  INFO 24368 --- [restartedMain] s.d.spring.web.OperationsKeyGenerator    : Cache key generated: /index/{account}/tag/{tagid}.com.yjytke.controller.IndexController.returnIndex.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.557  INFO 24368 --- [restartedMain] s.d.spring.web.caching.CachingAspect     : Caching aspect applied for cache operations with key /index/{account}/tag/{tagid}.com.yjytke.controller.IndexController.returnIndex.DefaultGenericTypeNamingStrategy
+2018-09-14 17:18:52.559  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.560  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.560  INFO 24368 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: returnIndexUsingGET_2
+2018-09-14 17:18:52.562  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.563  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.563  INFO 24368 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: returnIndexUsingHEAD_2
+2018-09-14 17:18:52.565  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.566  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.566  INFO 24368 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: returnIndexUsingPOST_2
+2018-09-14 17:18:52.568  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.569  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.569  INFO 24368 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: returnIndexUsingPUT_2
+2018-09-14 17:18:52.571  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.571  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.572  INFO 24368 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: returnIndexUsingPATCH_2
+2018-09-14 17:18:52.573  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.574  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.574  INFO 24368 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: returnIndexUsingDELETE_2
+2018-09-14 17:18:52.576  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.577  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.577  INFO 24368 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: returnIndexUsingOPTIONS_2
+2018-09-14 17:18:52.579  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.580  INFO 24368 --- [restartedMain] s.w.ClassOrApiAnnotationResourceGrouping : Group for method returnIndex was 首页相关
+2018-09-14 17:18:52.580  INFO 24368 --- [restartedMain] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: returnIndexUsingTRACE_2
+2018-09-14 17:18:52.590  INFO 24368 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2018-09-14 17:18:52.591 DEBUG 24368 --- [restartedMain] o.s.w.c.s.StandardServletEnvironment     : Adding PropertySource 'server.ports' with highest search precedence
+2018-09-14 17:18:52.592  INFO 24368 --- [restartedMain] com.yjytke.KeblogsApplication            : Started KeblogsApplication in 2.827 seconds (JVM running for 330.737)
+2018-09-14 17:18:52.598  INFO 24368 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
