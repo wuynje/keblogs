@@ -14,11 +14,14 @@ import com.yjytke.entity.KeProperties;
 public interface PropertiesDao {
 
 	/**
+	 * 根据用户id获取所有属性
 	 * @param tag
 	 * @param btype
+	 * @param link
+	 * @param userid
 	 * @return
 	 */
-	List<KeProperties> getTagAndType(String tag, String btype, int userid);
+	List<KeProperties> getTagAndTypeAndLink(String tag, String btype,String link, int userid);
 	
 	/**
 	 * 根据实际值和userid获取prop

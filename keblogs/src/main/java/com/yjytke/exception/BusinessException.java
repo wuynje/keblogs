@@ -13,7 +13,7 @@ public class BusinessException extends RuntimeException {
 	private String error_code;
 	
 	public BusinessException() {
-		super();
+		super("业务异常，请检查");
 	}
 	
 	public BusinessException(String message) {

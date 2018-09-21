@@ -26,76 +26,93 @@ import io.swagger.annotations.ApiOperation;
 @Api("公共类")
 @Component
 public class Common {
-	
+
 	private static Random random;
-	
+
 	@ApiOperation("获取0-max的随机数")
 	public static String random(int max, String str) {
 		random = new Random();
-		return (random.nextInt(max-1)+1)+str;
+		return (random.nextInt(max - 1) + 1) + str;
 	}
-	
-	   /**
-     * 显示文章内容，转换markdown为html
-     *
-     * @param value
-     * @return
-     */
-    public static String article(String value) {
-        if (StringUtils.isNotBlank(value)) {
-            value = value.replace("<!--more-->", "\r\n");
-            value = value.replace("<!-- more -->", "\r\n");
-            return mdToHtml(value);
-        }
-        return "";
-    }
-	
-    /**
-     * markdown转换为html
-     *
-     * @param markdown
-     * @return
-     */
-    public static String mdToHtml(String markdown) {
-        if (StringUtils.isBlank(markdown)) {
-            return "";
-        }
-        java.util.List<Extension> extensions = Arrays.asList(TablesExtension.create());
-        Parser parser = Parser.builder().extensions(extensions).build();
-        Node document = parser.parse(markdown);
-        HtmlRenderer renderer = HtmlRenderer.builder().extensions(extensions).build();
-        String content = renderer.render(document);
-        content = emoji(content);
-        return content;
-    }
-    
-    /**
-     * An :grinning:awesome :smiley:string &#128516;with a few :wink:emojis!
-     * <p>
-     * 这种格式的字符转换为emoji表情
-     *
-     * @param value
-     * @return
-     */
-    public static String emoji(String value) {
-        return EmojiParser.parseToUnicode(value);
-    }
-    
-    /**
-     * @param prop
-     * @param btype
-     * @return
-     */
-    public boolean isselect(KeProperties prop, String btype) {
-    	if(btype != null) {
-    		String[] btypes = btype.split(",");
-    		for(String s : btypes) {
-    			if(s.equals(prop.getRea_value())) {
-    				return true;
-    			}
-    		}
-    	}
-    	return false;
-    }
-    
+
+	/**
+	 * 显示文章内容，转换markdown为html
+	 *
+	 * @param value
+	 * @return
+	 */
+	public static String article(String value) {
+		if (StringUtils.isNotBlank(value)) {
+			value = value.replace("<!--more-->", "\r\n");
+			value = value.replace("<!-- more -->", "\r\n");
+			return mdToHtml(value);
+		}
+		return "";
+	}
+
+	/**
+	 * markdown转换为html
+	 *
+	 * @param markdown
+	 * @return
+	 */
+	public static String mdToHtml(String markdown) {
+		if (StringUtils.isBlank(markdown)) {
+			return "";
+		}
+		java.util.List<Extension> extensions = Arrays.asList(TablesExtension.create());
+		Parser parser = Parser.builder().extensions(extensions).build();
+		Node document = parser.parse(markdown);
+		HtmlRenderer renderer = HtmlRenderer.builder().extensions(extensions).build();
+		String content = renderer.render(document);
+		content = emoji(content);
+		return content;
+	}
+
+	/**
+	 * An :grinning:awesome :smiley:string &#128516;with a few :wink:emojis!
+	 * <p>
+	 * 这种格式的字符转换为emoji表情
+	 *
+	 * @param value
+	 * @return
+	 */
+	public static String emoji(String value) {
+		return EmojiParser.parseToUnicode(value);
+	}
+
+	/**
+	 * 判断博客类型的select属性是true还是false
+	 * 
+	 * @param prop
+	 * @param btype
+	 * @return
+	 */
+	public static boolean isselect(KeProperties prop, String btype) {
+		if (btype != null) {
+			String[] btypes = btype.split(",");
+			for (String s : btypes) {
+				if (s.equals(prop.getRea_value())) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * 将html内容去除标签，留下纯文本， 用于文章的缩略显示
+	 * 
+	 * @return
+	 */
+	public static String htmlToText(String content, int length) {
+		content = mdToHtml(content);
+		content = content.replaceAll(PatternKit.REGEX_SCRIPT, "").replaceAll(PatternKit.REGEX_STYLE, "")
+				.replaceAll(PatternKit.REGEX_HTML, "").replaceAll("\\s*|\t|\r|\n", "").replaceAll(" ", "");
+		if(content.length() >= length) {
+			return content.substring(0, length);
+		}
+		return content;
+	}
+
 }

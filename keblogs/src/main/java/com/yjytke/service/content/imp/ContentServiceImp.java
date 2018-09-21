@@ -44,7 +44,7 @@ public class ContentServiceImp implements ContentService {
 	 */
 	@Transactional
 	@Override
-	@CacheEvict(value = { "articles" }, beforeInvocation = true, allEntries = true)
+	@CacheEvict(value = { "articles", "articlesBtype" }, beforeInvocation = true, allEntries = true)
 	public void addContent(KeContent keContent) {
 		if (null == keContent)
 			throw new BusinessException(ErrorConst.CONTENTPARAMISNULL);
@@ -84,7 +84,7 @@ public class ContentServiceImp implements ContentService {
 	}
 
 	@Transactional
-	@CacheEvict(value = { "article", "articles" }, beforeInvocation = true, allEntries = true)
+	@CacheEvict(value = { "article", "articles", "articlesBtype" }, beforeInvocation = true, allEntries = true)
 	@Override
 	public void updateContentById(KeContent keContent) {
 		if (keContent.getId() != null && keContent.getId() != 0) {
@@ -104,12 +104,22 @@ public class ContentServiceImp implements ContentService {
 	 */
 	@Transactional
 	@Override
-	@CacheEvict(value = { "article", "articles" }, beforeInvocation = true, allEntries = true)
+	@CacheEvict(value = { "article", "articles", "articlesBtype" }, beforeInvocation = true, allEntries = true)
 	public void deleteArticle(Integer id) {
 		if(id==null||id==0) {
 			throw new BusinessException(ErrorConst.CONTENTIDISERROE);
 		}
 		contentDao.deleteArticleById(id);
 		cpRelationDao.deleteByContentId(id);
+	}
+
+	
+	@Override
+	@Cacheable(value = {"articlesBtype"}, key ="'page'+#p0+'limit'+#p1+'btypeid'+#p2+'userid'+#p3")
+	public PageInfo<KeContent> getArticlesByUserIdAndPrpoId(int page, int limit, String btypeid, Integer userid) {
+		PageHelper.startPage(page, limit);
+		List<KeContent> articles = contentDao.getArticlesByUserAndBtype(btypeid,userid);
+		PageInfo<KeContent> pageInfo = new PageInfo<KeContent>(articles);
+		return pageInfo;
 	}
 }

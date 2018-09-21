@@ -43,4 +43,14 @@ public interface ContentService {
 	 */
 	void deleteArticle(Integer id);
 
+	/**
+	 * 根据博文类型和用户获取文章列表
+	 * @param page
+	 * @param limit
+	 * @param btypeid
+	 * @param id
+	 * @return
+	 */
+	PageInfo<KeContent> getArticlesByUserIdAndPrpoId(int page, int limit, String btypeid, Integer userid);
+
 }

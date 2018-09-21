@@ -4,9 +4,13 @@
 	<sql id="BASE_TABLE">
 		ke_content
 	</sql>
+	
+	<sql id="KE_CPRELATION">
+		ke_cprelation
+	</sql>
 
 	<sql id="BASE_COLUMN">
-		id,userid,title,titlePic,content,style,btype,status,tags,created,modifiedtime,hits,allowComment
+		id,userid,title,titlePic,content,style,btype,status,tags,description,created,modifiedtime,hits,allowComment
 	</sql>
 
 	<!-- 新增博文 -->
@@ -15,12 +19,12 @@
 		INSERT INTO
 		<include refid="BASE_TABLE" />
 		<trim prefix="(" suffix=")" suffixOverrides=",">
-			userid,title,titlePic,content,style,btype,status,tags,created,hits,allowComment,
+			userid,title,titlePic,content,style,btype,status,tags,description,created,hits,allowComment,
 		</trim>
 		<trim prefix="VALUES(" suffix=")" suffixOverrides=",">
             #{userid, jdbcType=INTEGER}, #{title, jdbcType=VARCHAR}, #{titlePic, jdbcType=VARCHAR},
-            #{content, jdbcType=LONGVARCHAR}, #{style, jdbcType=VARCHAR},
-            #{btype, jdbcType=VARCHAR}, #{status, jdbcType=VARCHAR}, #{tags, jdbcType=VARCHAR},
+            #{content, jdbcType=LONGVARCHAR}, #{style, jdbcType=VARCHAR},#{btype, jdbcType=VARCHAR},
+            #{status, jdbcType=VARCHAR}, #{tags, jdbcType=VARCHAR},#{description, jdbcType=VARCHAR},
             #{created, jdbcType=BIGINT},#{hits, jdbcType=INTEGER},#{allowComment, jdbcType=INTEGER},
         </trim>
 	</insert>
@@ -35,6 +39,28 @@
 		<if test="_parameter!=null">
 		userid = #{_parameter, jdbcType=INTEGER}
 		</if>
+		ORDER BY CREATED DESC
+	</select>
+	<!--  根据博文类型和用户获取博文 -->
+	<select id="getArticlesByUserAndBtype" resultType="com.yjytke.entity.KeContent">
+		SELECT
+		<include refid="BASE_COLUMN"/>
+		FROM
+		<include refid="BASE_TABLE"/>
+		WHERE
+		id in
+		(
+		SELECT contentid
+		FROM 
+		<include refid="KE_CPRELATION"/>
+		WHERE
+		<if test="userid != null">
+			userid = #{userid, jdbcType=INTEGER}
+		</if>
+		<if test="userid != null">
+			AND propertiesid = #{btypeid, jdbcType=INTEGER}
+		</if>
+		)
 		ORDER BY CREATED DESC
 	</select>
 	
@@ -74,6 +100,9 @@
 				status = #{status, jdbcType=VARCHAR},
 			</if>
 				tags = #{tags, jdbcType=VARCHAR},
+			<if test="titlePic!=null">
+				description = #{description, jdbcType=VARCHAR},
+			</if>
 			<if test="modifiedtime!=null">
 				modifiedtime = #{modifiedtime, jdbcType=VARCHAR},
 			</if>
