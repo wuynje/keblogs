@@ -44,7 +44,7 @@ public class ContentServiceImp implements ContentService {
 	 */
 	@Transactional
 	@Override
-	@CacheEvict(value = { "articles", "articlesBtype","articlestime" }, beforeInvocation = true, allEntries = true)
+	@CacheEvict(value = { "articles", "articlesBtype","times","articlestime" }, beforeInvocation = true, allEntries = true)
 	public void addContent(KeContent keContent) {
 		if (null == keContent)
 			throw new BusinessException(ErrorConst.CONTENTPARAMISNULL);
@@ -69,10 +69,10 @@ public class ContentServiceImp implements ContentService {
 	 * 获取文章列表
 	 */
 	@Override
-	@Cacheable(value = { "articles" }, key = "'page'+#p0+'limit'+#p1+'userid'+#p2")
-	public PageInfo<KeContent> getArticles(int page, int limit, int userid) {
+	@Cacheable(value = { "articles" }, key = "'page'+#p0+'limit'+#p1+'userid'+#p2+'status'+#p3+'style+#p4'")
+	public PageInfo<KeContent> getArticles(int page, int limit, int userid, String status, String style) {
 		PageHelper.startPage(page, limit);
-		List<KeContent> articles = contentDao.getArticlesByUser(userid);
+		List<KeContent> articles = contentDao.getArticlesByUser(userid,status,style);
 		PageInfo<KeContent> pageInfo = new PageInfo<KeContent>(articles);
 		return pageInfo;
 	}
@@ -84,7 +84,7 @@ public class ContentServiceImp implements ContentService {
 	}
 
 	@Transactional
-	@CacheEvict(value = { "article", "articles", "articlesBtype" }, beforeInvocation = true, allEntries = true)
+	@CacheEvict(value = { "article", "articles", "articlesBtype","articlestime"  }, beforeInvocation = true, allEntries = true)
 	@Override
 	public void updateContentById(KeContent keContent) {
 		if (keContent.getId() != null && keContent.getId() != 0) {
@@ -104,7 +104,7 @@ public class ContentServiceImp implements ContentService {
 	 */
 	@Transactional
 	@Override
-	@CacheEvict(value = { "article", "articles", "articlesBtype","articlestime" }, beforeInvocation = true, allEntries = true)
+	@CacheEvict(value = { "article", "articles", "articlesBtype","times","articlestime"  }, beforeInvocation = true, allEntries = true)
 	public void deleteArticle(Integer id) {
 		if(id==null||id==0) {
 			throw new BusinessException(ErrorConst.CONTENTIDISERROE);
@@ -115,25 +115,28 @@ public class ContentServiceImp implements ContentService {
 
 	
 	@Override
-	@Cacheable(value = {"articlesBtype"}, key ="'page'+#p0+'limit'+#p1+'btypeid'+#p2+'userid'+#p3")
-	public PageInfo<KeContent> getArticlesByUserIdAndPrpoId(int page, int limit, String btypeid, Integer userid) {
+	@Cacheable(value = {"articlesBtype"}, key ="'page'+#p0+'limit'+#p1+'btypeid'+#p2+'userid'+#p3+'status'+#p4+'style+#p5'")
+	public PageInfo<KeContent> getArticlesByUserIdAndPrpoId(int page, int limit, String btypeid,
+			Integer userid, String status, String style) {
 		PageHelper.startPage(page, limit);
-		List<KeContent> articles = contentDao.getArticlesByUserAndBtype(btypeid,userid);
+		List<KeContent> articles = contentDao.getArticlesByUserAndBtype(btypeid,userid,status,style);
 		PageInfo<KeContent> pageInfo = new PageInfo<KeContent>(articles);
 		return pageInfo;
 	}
 
 	@Override
-	@Cacheable(value = {"articlestime"}, key = "'userid'+#p0")
+	@Cacheable(value = {"times"}, key = "'userid'+#p0")
 	public List<String> getTimeBase(Integer userid) {
 		List<String> lists = contentDao.getTimeList(userid);
 		return lists;
 	}
 
 	@Override
-	public PageInfo<KeContent> getArticlesByUserIdAndTime(int page, int limit, String timevalue, Integer userid) {
+	@Cacheable(value = {"articlestime"}, key = "'page'+#p0+'limit'+#p1+'timevalue'+#p2+'userid'+#p3+'status'+#p4+'style+#p5'")
+	public PageInfo<KeContent> getArticlesByUserIdAndTime(int page, int limit, String timevalue, 
+			Integer userid, String status, String style) {
 		PageHelper.startPage(page, limit);
-		List<KeContent> articles = contentDao.getarticleByUserAndTime(timevalue,userid);
+		List<KeContent> articles = contentDao.getarticleByUserAndTime(timevalue,userid,status,style);
 		PageInfo<KeContent> pageInfo = new PageInfo<KeContent>(articles);
 		return pageInfo;
 	}

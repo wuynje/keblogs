@@ -68,14 +68,17 @@ public class IndexController {
 		}
 		PageInfo<KeContent> contents = null;
 		if(!StringUtils.isEmpty(btypeid)) {
-			contents = contentService.getArticlesByUserIdAndPrpoId(page, limit, btypeid, user.getId());//按照博文分类获取
+			contents = contentService.getArticlesByUserIdAndPrpoId(page, limit, btypeid, 
+					user.getId(),WebConst.ArticleStatus.PUBLISH,WebConst.Articletype.BLOG);//按照博文分类获取
 		}else if(!StringUtils.isEmpty(tagid)) {
-			contents = contentService.getArticlesByUserIdAndPrpoId(page, limit, tagid, user.getId());//按照标签获取
+			contents = contentService.getArticlesByUserIdAndPrpoId(page, limit, tagid,
+					user.getId(),WebConst.ArticleStatus.PUBLISH,WebConst.Articletype.BLOG);//按照标签获取
 		}else if(!StringUtils.isEmpty(timevalue)) {
-			contents = contentService.getArticlesByUserIdAndTime(page, limit,timevalue, user.getId());//按照时间获取
+			contents = contentService.getArticlesByUserIdAndTime(page, limit,timevalue, 
+					user.getId(),WebConst.ArticleStatus.PUBLISH,WebConst.Articletype.BLOG);//按照时间获取
 		}
 		else {
-			contents = contentService.getArticles(page, limit, user.getId());// 文章列列表
+			contents = contentService.getArticles(page, limit, user.getId(),WebConst.ArticleStatus.PUBLISH,WebConst.Articletype.BLOG);// 文章列列表
 		}
 		List<KeProperties> properties = propertiesService.getTagAndTypeAndLink(WebConst.TypeProperties.BTYPE,
 				WebConst.TypeProperties.TAG, WebConst.TypeProperties.LINK, user.getId());//获取到分类，标签，链接属性

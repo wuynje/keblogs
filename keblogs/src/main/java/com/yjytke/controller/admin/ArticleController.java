@@ -55,7 +55,7 @@ public class ArticleController {
 			@ApiParam(name = "page", value = "页数", required = false) @RequestParam(name = "page", required = false, defaultValue = "1") int page,
 			@ApiParam(name = "limit", value = "每页数量", required = false) @RequestParam(name = "limit", required = false, defaultValue = "10") int limit) {
 		int userid = ((KeUser) request.getSession().getAttribute(WebConst.LOGIN_SESSION_KEY)).getId();
-		PageInfo<KeContent> articles = contentService.getArticles(page, limit, userid);
+		PageInfo<KeContent> articles = contentService.getArticles(page, limit, userid, null, null);
 		request.setAttribute("articles", articles);
 		LOGGER.info("action : {}", "获取博文列表");
 		return "admin/article_list";
