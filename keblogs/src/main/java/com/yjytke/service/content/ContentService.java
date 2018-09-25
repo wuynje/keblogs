@@ -1,5 +1,7 @@
 package com.yjytke.service.content;
 
+import java.util.List;
+
 import com.github.pagehelper.PageInfo;
 import com.yjytke.entity.KeContent;
 
@@ -52,5 +54,22 @@ public interface ContentService {
 	 * @return
 	 */
 	PageInfo<KeContent> getArticlesByUserIdAndPrpoId(int page, int limit, String btypeid, Integer userid);
+
+	/**
+	 * 根据用户ID获取博文的时间轴
+	 * @param id
+	 * @return
+	 */
+	List<String> getTimeBase(Integer user);
+
+	/**
+	 * 根据用户ID和时间轴获取博文列表
+	 * @param limit 
+	 * @param page 
+	 * @param timevalue
+	 * @param userid 
+	 * @return
+	 */
+	PageInfo<KeContent> getArticlesByUserIdAndTime(int page, int limit, String timevalue, Integer userid);
 
 }

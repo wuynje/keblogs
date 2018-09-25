@@ -58,6 +58,17 @@ public class GeneralUtil {
 	}
 
 	/**
+	 * Date格式化为 yyyy-MM-dd HH:mm:ss
+	 * 
+	 * @param time
+	 * @return
+	 */
+	public static String dateFormates(Date time) {
+		DateFormat simplDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		return simplDateFormat.format(time);
+	}
+	
+	/**
 	 * 将timeMills转为Date
 	 * 
 	 * @param time

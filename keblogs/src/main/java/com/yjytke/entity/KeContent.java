@@ -1,5 +1,7 @@
 package com.yjytke.entity;
 
+import java.util.Date;
+
 /**
  * @author wuynje
  * @time 2018年8月30日 下午5:46:25
@@ -61,12 +63,12 @@ public class KeContent {
 	/**
 	 * 创建时间
 	 */
-	private long created;
+	private Date created;
 	
 	/**
 	 * 修改时间
 	 */
-	private long modifiedtime;
+	private Date modifiedtime;
 	
 	/**
 	 * 点击次数
@@ -151,19 +153,19 @@ public class KeContent {
 		this.tags = tags;
 	}
 
-	public long getCreated() {
+	public Date getCreated() {
 		return created;
 	}
 
-	public void setCreated(long created) {
+	public void setCreated(Date created) {
 		this.created = created;
 	}
 
-	public long getModifiedtime() {
+	public Date getModifiedtime() {
 		return modifiedtime;
 	}
 
-	public void setModifiedtime(long modifiedtime) {
+	public void setModifiedtime(Date modifiedtime) {
 		this.modifiedtime = modifiedtime;
 	}
 

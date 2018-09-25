@@ -38,7 +38,7 @@
                                             <span class="label label-default">生活</span>
                                         </th:block>
                                     </td>
-                                    <td><th:block th:text="${generalutil.timeMillsToDate(post.created)}"/></td>
+                                    <td><th:block th:text="${generalutil.dateFormates(post.created)}"/></td>
                                     <td><th:block th:text="${post.hits}"/></td>
                                     <td><th:block th:text="${post.btype}"/></td>
                                     <td>

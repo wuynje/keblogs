@@ -20,7 +20,7 @@
 		<trim prefix="VALUES(" suffix=")" suffixOverrides=",">
             #{userId, jdbcType=INTEGER}, #{fname, jdbcType=VARCHAR},
             #{ftype, jdbcType=VARCHAR},#{fkey, jdbcType=VARCHAR},
-            #{created, jdbcType=BIGINT}
+            #{created, jdbcType=TIMESTAMP}
         </trim>
 	</insert>
 

@@ -331,7 +331,7 @@
                             <th:block th:if="${article.style == 'life'}">
                                 <li class="tag"><a href="javascript: void(0)">生活</a></li>
                             </th:block>
-							<li class="date"><a href="javascript: void(0)" th:text="${generalutil.timeMillsToDate(article.created)}"></a></li>
+							<li class="date"><a href="javascript: void(0)" th:text="${generalutil.dateFormates(article.created)}"></a></li>
 						</ul>
 						<h4 class="title">
 							<a th:href="${article.style=='blogs' ? '/blogs/article/'+{article.id} : '/life/article/'+{article.id}}" th:text="${article.title}">
@@ -424,14 +424,12 @@
 				<div class="sidebar-box bg-box sidebar-categories">
 					<h6 class="sidebar-title">时间轴</h6>
 					<ul>
-						<li><a href="#">May 2018</a></li>
-						<li><a href="#">April 2018</a></li>
-						<li><a href="#">March 2018</a></li>
-						<li><a href="#">February 2018</a></li>
-						<li><a href="#">January 2018</a></li>
-						<li><a href="#">December 2107</a></li>
-						<li><a href="#">November 2017</a></li>
-						<li><a href="#">October 2017</a></li>
+						<th:block th:each="time:${timebase}">
+							<li>
+								<a th:href="@{'/index/'+${account}+'/time/'+${time}}" th:text="${time}">
+								</a>
+							</li>
+						</th:block>
 					</ul>
 				</div> <!-- /.sidebar-categories -->
 				<div class="sidebar-box bg-box sidebar-newsletter">

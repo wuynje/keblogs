@@ -52,4 +52,18 @@ public interface ContentDao {
 	 */
 	List<KeContent> getArticlesByUserAndBtype(String btypeid, Integer userid);
 	
+	/**
+	 * 博文时间轴
+	 * @param userid
+	 * @return
+	 */
+	List<String> getTimeList(Integer userid);
+
+	/**
+	 * 根据时间轴和用户获取博文
+	 * @param timevalue
+	 * @param userid
+	 * @return
+	 */
+	List<KeContent> getarticleByUserAndTime(String timevalue, Integer userid);
 }

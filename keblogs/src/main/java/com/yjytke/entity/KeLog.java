@@ -1,5 +1,7 @@
 package com.yjytke.entity;
 
+import java.util.Date;
+
 /**
  * @author wuynje
  * @time 2018年8月22日 下午4:47:29
@@ -28,7 +30,7 @@ public class KeLog {
 	/**
 	 * 创建时间
 	 */
-	private long ts;
+	private Date ts;
 
 	public int getId() {
 		return id;
@@ -62,12 +64,12 @@ public class KeLog {
 		this.operator = operator;
 	}
 
-	public long getTs() {
+	public Date getTs() {
 		return ts;
 	}
 
-	public void setTs(long ts) {
+	public void setTs(Date ts) {
 		this.ts = ts;
 	}
-	
+
 }

@@ -1,5 +1,7 @@
 package com.yjytke.entity;
 
+import java.util.Date;
+
 /**
  * @author wuynje
  * @time 2018年8月30日 下午6:54:42
@@ -28,7 +30,7 @@ public class KeFile {
     /**
      * 创建时间
      */
-    private long created;
+    private Date created;
     
 	public Integer getId() {
 		return id;
@@ -54,10 +56,11 @@ public class KeFile {
 	public void setFkey(String fkey) {
 		this.fkey = fkey;
 	}
-	public long getCreated() {
+
+	public Date getCreated() {
 		return created;
 	}
-	public void setCreated(long created) {
+	public void setCreated(Date created) {
 		this.created = created;
 	}
 	public Integer getUserId() {

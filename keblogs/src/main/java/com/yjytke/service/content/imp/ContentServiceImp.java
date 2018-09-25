@@ -1,5 +1,6 @@
 package com.yjytke.service.content.imp;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
@@ -19,7 +20,6 @@ import com.yjytke.entity.KeContent;
 import com.yjytke.exception.BusinessException;
 import com.yjytke.service.content.ContentService;
 import com.yjytke.service.properties.PropertiesService;
-import com.yjytke.utils.GeneralUtil;
 
 /**
  * @author wuynje
@@ -44,7 +44,7 @@ public class ContentServiceImp implements ContentService {
 	 */
 	@Transactional
 	@Override
-	@CacheEvict(value = { "articles", "articlesBtype" }, beforeInvocation = true, allEntries = true)
+	@CacheEvict(value = { "articles", "articlesBtype","articlestime" }, beforeInvocation = true, allEntries = true)
 	public void addContent(KeContent keContent) {
 		if (null == keContent)
 			throw new BusinessException(ErrorConst.CONTENTPARAMISNULL);
@@ -59,7 +59,7 @@ public class ContentServiceImp implements ContentService {
 		// 标签和分类
 		String tags = keContent.getTags();
 		String btype = keContent.getBtype();
-		keContent.setCreated(GeneralUtil.getcurrenttime());
+		keContent.setCreated(new Date(System.currentTimeMillis()));
 		contentDao.addArticle(keContent);
 		propertiesService.addProp(keContent, tags, WebConst.TypeProperties.TAG);
 		propertiesService.addProp(keContent, btype, WebConst.TypeProperties.BTYPE);
@@ -88,12 +88,12 @@ public class ContentServiceImp implements ContentService {
 	@Override
 	public void updateContentById(KeContent keContent) {
 		if (keContent.getId() != null && keContent.getId() != 0) {
-			keContent.setModifiedtime(GeneralUtil.getcurrenttime());
+			keContent.setModifiedtime(new Date(System.currentTimeMillis()));
 			contentDao.updateContent(keContent);
 			// 标签和分类
 			String tags = keContent.getTags();
 			String btype = keContent.getBtype();
-			keContent.setCreated(GeneralUtil.getcurrenttime());
+			keContent.setCreated(new Date(System.currentTimeMillis()));
 			propertiesService.addProp(keContent, tags, WebConst.TypeProperties.TAG);
 			propertiesService.addProp(keContent, btype, WebConst.TypeProperties.BTYPE);
 		}
@@ -104,7 +104,7 @@ public class ContentServiceImp implements ContentService {
 	 */
 	@Transactional
 	@Override
-	@CacheEvict(value = { "article", "articles", "articlesBtype" }, beforeInvocation = true, allEntries = true)
+	@CacheEvict(value = { "article", "articles", "articlesBtype","articlestime" }, beforeInvocation = true, allEntries = true)
 	public void deleteArticle(Integer id) {
 		if(id==null||id==0) {
 			throw new BusinessException(ErrorConst.CONTENTIDISERROE);
@@ -119,6 +119,21 @@ public class ContentServiceImp implements ContentService {
 	public PageInfo<KeContent> getArticlesByUserIdAndPrpoId(int page, int limit, String btypeid, Integer userid) {
 		PageHelper.startPage(page, limit);
 		List<KeContent> articles = contentDao.getArticlesByUserAndBtype(btypeid,userid);
+		PageInfo<KeContent> pageInfo = new PageInfo<KeContent>(articles);
+		return pageInfo;
+	}
+
+	@Override
+	@Cacheable(value = {"articlestime"}, key = "'userid'+#p0")
+	public List<String> getTimeBase(Integer userid) {
+		List<String> lists = contentDao.getTimeList(userid);
+		return lists;
+	}
+
+	@Override
+	public PageInfo<KeContent> getArticlesByUserIdAndTime(int page, int limit, String timevalue, Integer userid) {
+		PageHelper.startPage(page, limit);
+		List<KeContent> articles = contentDao.getarticleByUserAndTime(timevalue,userid);
 		PageInfo<KeContent> pageInfo = new PageInfo<KeContent>(articles);
 		return pageInfo;
 	}

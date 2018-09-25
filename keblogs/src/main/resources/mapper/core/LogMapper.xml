@@ -19,7 +19,7 @@
 		</trim>
 		<trim prefix="VALUES(" suffix=")" suffixOverrides=",">
             #{userid, jdbcType=INTEGER}, #{login_ip, jdbcType=VARCHAR},
-            #{operator, jdbcType=VARCHAR}, #{ts, jdbcType=BIGINT},
+            #{operator, jdbcType=VARCHAR}, #{ts, jdbcType=TIMESTAMP},
         </trim>
 	</insert>
 

@@ -11,6 +11,8 @@ import java.util.Date;
  */
 public class TestDate {
 	public static void main(String[] args) {
+		Long date = new Long("2018-09-01 12:12:12");
 		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+		System.out.println(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date));
 	}
 }

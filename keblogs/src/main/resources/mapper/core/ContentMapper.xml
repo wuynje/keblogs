@@ -25,7 +25,7 @@
             #{userid, jdbcType=INTEGER}, #{title, jdbcType=VARCHAR}, #{titlePic, jdbcType=VARCHAR},
             #{content, jdbcType=LONGVARCHAR}, #{style, jdbcType=VARCHAR},#{btype, jdbcType=VARCHAR},
             #{status, jdbcType=VARCHAR}, #{tags, jdbcType=VARCHAR},#{description, jdbcType=VARCHAR},
-            #{created, jdbcType=BIGINT},#{hits, jdbcType=INTEGER},#{allowComment, jdbcType=INTEGER},
+            #{created, jdbcType=TIMESTAMP},#{hits, jdbcType=INTEGER},#{allowComment, jdbcType=INTEGER},
         </trim>
 	</insert>
 	
@@ -104,7 +104,7 @@
 				description = #{description, jdbcType=VARCHAR},
 			</if>
 			<if test="modifiedtime!=null">
-				modifiedtime = #{modifiedtime, jdbcType=VARCHAR},
+				modifiedtime = #{modifiedtime, jdbcType=TIMESTAMP},
 			</if>
 			<if test="hits!=null">
 				hits = #{hits, jdbcType=INTEGER},
@@ -124,4 +124,31 @@
 		WHERE
 		id = #{id ,jdbcType=INTEGER}
 	</delete>
+	
+	<!-- 时间轴 -->
+	<select id="getTimeList" resultType ="java.lang.String">
+		SELECT 
+		DISTINCT(SUBSTRING(created,1,7)) 
+		FROM 
+		<include refid="BASE_TABLE"/> 
+		WHERE
+		userid = #{userid, jdbcType=INTEGER}
+		order by created
+	</select>
+	
+	<!-- 根据时间轴获取博文 -->
+	<select id="getarticleByUserAndTime" resultType="com.yjytke.entity.KeContent">
+		SELECT
+		<include refid="BASE_COLUMN"/>
+		FROM
+		<include refid="BASE_TABLE"/>
+		WHERE
+		<if test="timevalue!=null">
+			created LIKE CONCAT(#{timevalue, jdbcType = VARCHAR},'%')
+		</if>
+		<if test="userid!=null">
+			AND userid  = #{userid, jdbcType=INTEGER}
+		</if>
+	</select>
+	
 </mapper>

@@ -1,6 +1,7 @@
 package com.yjytke.controller.admin;
 
 import java.io.IOException;
+import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -59,7 +60,7 @@ public class FilePutController {
 			KeFile keFile = new KeFile();
 			keFile.setFkey(fKey);
 			keFile.setFname(file.getOriginalFilename());
-			keFile.setCreated(System.currentTimeMillis());
+			keFile.setCreated(new Date(System.currentTimeMillis()));
 			keFile.setUserId(((KeUser)request.getSession().getAttribute(WebConst.LOGIN_SESSION_KEY)).getId());
 			keFile.setFtype(WebConst.FileType.IMG);
 			fileService.markEditorImgUpload(keFile);
