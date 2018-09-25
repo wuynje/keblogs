@@ -36,8 +36,14 @@
 		FROM
 		<include refid="BASE_TABLE"/>
 		WHERE
-		<if test="_parameter!=null">
-		userid = #{_parameter, jdbcType=INTEGER}
+		<if test="userid!=null">
+		userid = #{userid, jdbcType=INTEGER}
+		</if>
+		<if test="status!=null">
+			AND status  = #{status, jdbcType=VARCHAR}
+		</if>
+		<if test="style!=null">
+			AND style  = #{style, jdbcType=VARCHAR}
 		</if>
 		ORDER BY CREATED DESC
 	</select>
@@ -61,10 +67,16 @@
 			AND propertiesid = #{btypeid, jdbcType=INTEGER}
 		</if>
 		)
+		<if test="status!=null">
+			AND status  = #{status, jdbcType=VARCHAR}
+		</if>
+		<if test="style!=null">
+			AND style  = #{style, jdbcType=VARCHAR}
+		</if>
 		ORDER BY CREATED DESC
 	</select>
 	
-	<!-- 根据主键查询博文列表 -->
+	<!-- 根据主键查询博文 -->
 	<select id="getArticleByID" resultType="com.yjytke.entity.KeContent">
 		SELECT
 		<include refid="BASE_COLUMN"/>
@@ -133,7 +145,7 @@
 		<include refid="BASE_TABLE"/> 
 		WHERE
 		userid = #{userid, jdbcType=INTEGER}
-		order by created
+		order by created DESC
 	</select>
 	
 	<!-- 根据时间轴获取博文 -->
@@ -149,6 +161,13 @@
 		<if test="userid!=null">
 			AND userid  = #{userid, jdbcType=INTEGER}
 		</if>
+		<if test="status!=null">
+			AND status  = #{status, jdbcType=VARCHAR}
+		</if>
+		<if test="style!=null">
+			AND style  = #{style, jdbcType=VARCHAR}
+		</if>
+			ORDER BY created DESC
 	</select>
 	
 </mapper>

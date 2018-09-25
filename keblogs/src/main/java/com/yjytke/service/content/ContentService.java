@@ -26,7 +26,7 @@ public interface ContentService {
 	 * @param userid
 	 * @return
 	 */
-	PageInfo<KeContent> getArticles(int page, int limit, int userid);
+	PageInfo<KeContent> getArticles(int page, int limit, int userid, String status, String style);
 
 	/**根据id获取博文
 	 * @param cid
@@ -53,7 +53,7 @@ public interface ContentService {
 	 * @param id
 	 * @return
 	 */
-	PageInfo<KeContent> getArticlesByUserIdAndPrpoId(int page, int limit, String btypeid, Integer userid);
+	PageInfo<KeContent> getArticlesByUserIdAndPrpoId(int page, int limit, String btypeid, Integer userid, String status, String style);
 
 	/**
 	 * 根据用户ID获取博文的时间轴
@@ -70,6 +70,6 @@ public interface ContentService {
 	 * @param userid 
 	 * @return
 	 */
-	PageInfo<KeContent> getArticlesByUserIdAndTime(int page, int limit, String timevalue, Integer userid);
+	PageInfo<KeContent> getArticlesByUserIdAndTime(int page, int limit, String timevalue, Integer userid, String status, String style);
 
 }

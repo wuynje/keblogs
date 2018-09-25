@@ -121,4 +121,15 @@ public class WebConst {
 		String LIFE = "life";
 	}
 	
+	public interface ArticleStatus{
+		/**
+		 * 发布
+		 */
+		String PUBLISH = "publish";
+		/**
+		 *草稿
+		 */
+		String DRAFT = "draft";
+	}
+	
 }

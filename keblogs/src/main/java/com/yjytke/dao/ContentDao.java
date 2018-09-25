@@ -23,7 +23,7 @@ public interface ContentDao {
 	 * @param userid
 	 * @return
 	 */
-	List<KeContent> getArticlesByUser(int userid);
+	List<KeContent> getArticlesByUser(int userid, String status, String style);
 
 	/**
 	 * 根据主键获取博文
@@ -50,7 +50,7 @@ public interface ContentDao {
 	 * @param userid
 	 * @return
 	 */
-	List<KeContent> getArticlesByUserAndBtype(String btypeid, Integer userid);
+	List<KeContent> getArticlesByUserAndBtype(String btypeid, Integer userid, String status, String style);
 	
 	/**
 	 * 博文时间轴
@@ -65,5 +65,5 @@ public interface ContentDao {
 	 * @param userid
 	 * @return
 	 */
-	List<KeContent> getarticleByUserAndTime(String timevalue, Integer userid);
+	List<KeContent> getarticleByUserAndTime(String timevalue, Integer userid, String status, String style);
 }
