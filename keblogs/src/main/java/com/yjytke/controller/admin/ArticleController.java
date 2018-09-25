@@ -60,7 +60,7 @@ public class ArticleController {
 		LOGGER.info("action : {}", "获取博文列表");
 		return "admin/article_list";
 	}
-
+ 
 	@ApiOperation("编辑博客页")
 	@GetMapping("/publish")
 	public String publish(HttpServletRequest request) {
