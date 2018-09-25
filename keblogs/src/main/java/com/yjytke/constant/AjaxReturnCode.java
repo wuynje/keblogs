@@ -9,7 +9,7 @@ package com.yjytke.constant;
 public interface AjaxReturnCode {
 
 	/**
-	 * 通用返回的code
+	 * 通用返回的code、
 	 */
 	interface Common{
 		static final String FAIL = "fail";//通用失败
