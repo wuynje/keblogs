@@ -53,6 +53,18 @@ public enum ErrorConst {
 	 */
 	PARAMISNULL("3001","参数为空"),
 	/**
+	 * 属性内容为空
+	 */
+	PROPVALUEISNULL("4000","属性内容为空"),
+	/**
+	 * 属性内容已经存在
+	 */
+	PROPVALUEISEXIST("4001","内容已经存在"),
+	/**
+	 * 属性编码为空
+	 */
+	PROPIDISNULL("4002","属性编码为空"),
+	/**
 	 * 加密错误
 	 */
 	ADDAECERROR("8001","加密错误"),
@@ -75,6 +87,22 @@ public enum ErrorConst {
 	@Override
 	public String toString() {
 		return "["+this.errorCode+":"+this.message+"]";
+	}
+
+	public String getErrorCode() {
+		return errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 	
 }

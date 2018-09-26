@@ -41,4 +41,12 @@
 		contentid = #{id, jdbcType=INTEGER}
 	</delete>
 	
+	<delete id="deleteByPropID">
+		DELETE
+		FROM
+		<include refid="BASE_TABLE" />
+		WHERE
+		propertiesid = #{mid, jdbcType=INTEGER}
+	</delete>
+	
 </mapper>

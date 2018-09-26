@@ -17,28 +17,28 @@
                                 <h1 class="panel-title">分类列表</h1>
                             </div>
                             <div class="panel-body">
-                                <th:block th:each="c : ${categories}">
+                                <th:block th:each="c : ${btypes}">
                                     <div class="btn-group m-b-10">
-                                        <th:block th:if="${c.name == '默认分类'}">
+                                        <th:block th:if="${c.rea_value == '默认分类'}">
                                             <button type="button"
-                                                    th:class="'btn btn-'+${adminCommons.rand_color()}+' waves-effect waves-light'">
-                                                <th:block th:text="${c.name}"/>
+                                                    th:class="'btn btn-'+${common.rand_color()}+' waves-effect waves-light'">
+                                                <th:block th:text="${c.rea_value}"/>
                                                 <th:block th:text="' ('+${c.count}+')'"/>
                                             </button>
                                         </th:block>
-                                        <th:block th:unless="${c.name == '默认分类'}">
+                                        <th:block th:unless="${c.rea_value == '默认分类'}">
                                             <button type="button"
-                                                    th:class="'btn btn-'+${adminCommons.rand_color()}+' dropdown-toggle waves-effect waves-light'"
+                                                    th:class="'btn btn-'+${common.rand_color()}+' dropdown-toggle waves-effect waves-light'"
                                                     data-toggle="dropdown" aria-expanded="false">
-                                                <th:block th:text="${c.name}"/>
+                                                <th:block th:text="${c.rea_value}"/>
                                                 <th:block th:text="' ('+${c.count}+')'"/>
                                                 <span
                                                         class="caret"></span></button>
                                             <ul class="dropdown-menu" role="menu">
-                                                <li><a href="javascript:void(0)" th:attr="mid=${c.mid},cname=${c.name}"
+                                                <li><a href="javascript:void(0)" th:attr="mid=${c.id},cname=${c.rea_value}"
                                                        class="edit-category">修改</a>
                                                 </li>
-                                                <li><a href="javascript:void(0)" th:attr="mid=${c.mid}"
+                                                <li><a href="javascript:void(0)" th:attr="mid=${c.id}"
                                                        class="del-category">删除</a></li>
                                             </ul>
                                         </th:block>
@@ -57,14 +57,14 @@
                                 <th:block th:each="c : ${tags}">
                                     <div class="btn-group m-b-10">
                                         <button type="button"
-                                                th:class="'btn btn-'+${adminCommons.rand_color()}+' dropdown-toggle waves-effect waves-light'"
+                                                th:class="'btn btn-'+${common.rand_color()}+' dropdown-toggle waves-effect waves-light'"
                                                 data-toggle="dropdown" aria-expanded="false">
-                                            <th:block th:text="${c.name}"/>
+                                            <th:block th:text="${c.rea_value}"/>
                                             <th:block th:text="' ('+${c.count}+')'"/>
                                             <span
                                                     class="caret"></span></button>
                                         <ul class="dropdown-menu" role="menu">
-                                            <li><a href="javascript:void(0)" th:attr="mid=${c.mid}"
+                                            <li><a href="javascript:void(0)" th:attr="mid=${c.id}"
                                                    class="del-category">删除</a></li>
                                         </ul>
                                     </div>
@@ -104,7 +104,7 @@
         var mid = $('#cform #mid').val();
         if (cname && cname != '') {
             tale.post({
-                url: '/admin/category/save',
+                url: '/admin/props/save',
                 data: {mid: mid, cname: cname},
                 success: function (result) {
                     $('#cform #mid').val('');
@@ -132,7 +132,7 @@
             title: '确定删除该项吗?',
             then: function () {
                 tale.post({
-                    url: '/admin/category/delete',
+                    url: '/admin/props/delete',
                     data: {mid: mid},
                     success: function (result) {
                         if (result && result.code == 'success') {

@@ -46,7 +46,7 @@
                 <ul class="nav navbar-nav navbar-right pull-right">
                     <li class="dropdown">
                         <a th:href="@{index.html}" class="dropdown-toggle profile" data-toggle="dropdown"
-                           aria-expanded="true"><img src="121" alt="user-img"
+                           aria-expanded="true"><img th:src="@{/admin/images/git.png}" alt="user-img"
                                                      class="img-circle"/> </a>
                         <ul class="dropdown-menu">
                             <li><a th:href="@{/admin/profile}" target="_blank"><i class="fa fa-eye"
@@ -86,7 +86,7 @@
                             class="fa fa-comments" aria-hidden="true"></i><span> 评论管理 </span></a>
                 </li>
                 <li th:class="${active}=='category'?'active':''">
-                    <a th:href="@{/admin/category}"
+                    <a th:href="@{/admin/props}"
                        th:class="${active}=='category'?'waves-effect active':'waves-effect'"><i
                             class="fa fa-tags" aria-hidden="true"></i><span> 分类/标签 </span></a>
                 </li>

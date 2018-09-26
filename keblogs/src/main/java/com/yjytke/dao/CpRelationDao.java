@@ -31,5 +31,11 @@ public interface CpRelationDao {
 	 * @param id
 	 */
 	void deleteByContentId(Integer id);
+
+	/**
+	 * 根据属性ID删除对应的关系
+	 * @param mid
+	 */
+	void deleteByPropID(Integer mid);
 	
 }

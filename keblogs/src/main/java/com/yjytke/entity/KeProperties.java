@@ -43,6 +43,10 @@ public class KeProperties {
 	 */
 	private int userid;
 	
+	/**
+	 *被引用的次数 
+	 */
+	private int count;	
 	public Integer getId() {
 		return id;
 	}
@@ -97,6 +101,14 @@ public class KeProperties {
 
 	public void setUserid(int userid) {
 		this.userid = userid;
+	}
+
+	public int getCount() {
+		return count;
+	}
+
+	public void setCount(int count) {
+		this.count = count;
 	}
 	
 }

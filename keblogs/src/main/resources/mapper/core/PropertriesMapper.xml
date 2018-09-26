@@ -4,6 +4,10 @@
 	<sql id="BASE_TABLE">
 		ke_properties
 	</sql>
+	
+	<sql id="CP_TABLE">
+		ke_cprelation
+	</sql>
 
 	<sql id="BASE_COLUMN">
 		id,type,rea_value,sort,picture,description
@@ -40,6 +44,9 @@
 		WHERE
 		<if test="userid != null">
 			userid = #{userid, jdbcType=INTEGER}
+		</if> 
+		<if test="type != null">
+			and type = #{type, jdbcType=VARCHAR}
 		</if> 
 		<if test="rea_value != null">
 			and rea_value = #{rea_value, jdbcType=INTEGER}
@@ -79,4 +86,45 @@
 		)
 	</select>
 	
+	<!-- 获取某种类型的属性 -->
+	<select id="getProp" resultType="com.yjytke.entity.KeProperties">
+		select a.*,b.count 
+		from 
+		<include refid="BASE_TABLE"/> a 
+		left join
+		(
+		select userid,propertiesid,count(propertiesid) as count from 
+		<include refid="CP_TABLE"/>  GROUP BY 
+		propertiesid,userid HAVING userid =  #{userid,jdbcType=INTEGER}
+		)
+		b on a.id = b.propertiesid 
+		WHERE 
+		a.userid = #{userid,jdbcType=INTEGER}
+		and a.type = #{type,jdbcType=VARCHAR}
+	</select>
+	
+	<!-- 修改属性 -->
+	<update id="updateProp" parameterType="com.yjytke.entity.KeProperties" >
+		UPDATE
+		<include refid="BASE_TABLE"/>
+		<set>
+			<if test="rea_value!=null">
+			rea_value = #{rea_value,jdbcType=VARCHAR},
+			</if>
+		</set>
+		WHERE
+		id = #{id,jdbcType=INTEGER}
+	</update>
+	
+	<!-- 删除属性 -->
+	<delete id="deletePropById">
+		DELETE
+		FROM
+		<include refid="BASE_TABLE" />
+		WHERE
+		id = #{id ,jdbcType=INTEGER}
+		<if test="userid!=null">
+		AND userid = #{userid,jdbcType=INTEGER}
+		</if>
+	</delete>
 </mapper>

@@ -13,11 +13,13 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.yjytke.constant.ErrorConst;
 import com.yjytke.dao.CpRelationDao;
 import com.yjytke.dao.PropertiesDao;
 import com.yjytke.entity.KeContent;
 import com.yjytke.entity.KeCpRelation;
 import com.yjytke.entity.KeProperties;
+import com.yjytke.exception.BusinessException;
 import com.yjytke.service.properties.PropertiesService;
 
 /**
@@ -39,7 +41,7 @@ public class PropertiesServiceImp implements PropertiesService {
 	 * 获取标签和分类
 	 */
 	@Override
-	@Cacheable(value = "tagsAndType")
+	@Cacheable(value = "tagsAndType", key = "'tag_'+#p0+'btype_'+#p1+'link_'+#p2+'userid_'+#p3")
 	public List<KeProperties> getTagAndTypeAndLink(String tag, String btype, String link, int userid) {
 		List<KeProperties> properties = proDao.getTagAndTypeAndLink(tag, btype, link, userid);
 		if (properties != null && properties.size() > 0) {
@@ -54,7 +56,7 @@ public class PropertiesServiceImp implements PropertiesService {
 	 */
 	@Transactional
 	@Override
-	@CacheEvict(value = { "tagsAndType" }, beforeInvocation = true, allEntries = true)
+	@CacheEvict(value = { "tagsAndType","contentTagBtype","propsBytype" }, beforeInvocation = true, allEntries = true)
 	public void addProp(KeContent content, String rea_value, String type) {
 		List<KeProperties> props = proDao.getPropByContent(content);
 		List<KeProperties> propType = new ArrayList<KeProperties>();// 将获取的属性按照类型取出来
@@ -105,6 +107,7 @@ public class PropertiesServiceImp implements PropertiesService {
 	 * 根据文章获取相应标签和分类
 	 */
 	@Override
+	@Cacheable(value = "contentTagBtype",key="'content_'+#p0")
 	public List<KeProperties> getPropByContent(KeContent content) {
 		List<KeProperties> properties = proDao.getPropByContent(content);
 		if (properties != null && properties.size() > 0) {
@@ -126,9 +129,9 @@ public class PropertiesServiceImp implements PropertiesService {
 			KeCpRelation cpRelation = new KeCpRelation();
 			cpRelation.setContentid(content.getId());
 			cpRelation.setUserid(content.getUserid());
-			KeProperties prop = proDao.getPropByValueAndUserid(s, content.getUserid());
-			if (null != prop) {
-				cpRelation.setPropertiesid(prop.getId());
+			List<KeProperties> prop = proDao.getPropByValueAndUserid(s,type, content.getUserid());
+			if (null != prop && prop.size() ==1 ) {
+				cpRelation.setPropertiesid(prop.get(0).getId());
 			} else {
 				KeProperties addprop = new KeProperties();
 				addprop.setType(type);
@@ -141,6 +144,42 @@ public class PropertiesServiceImp implements PropertiesService {
 		}
 	
 	}
+
 	
+	@Override
+	@Cacheable(value = "propsBytype", key = "'type_'+#p0+'userid_'+#p1")
+	public List<KeProperties> getTagAndBtype(String type, int userid) {
+		List<KeProperties> list = proDao.getProp(type,userid);
+		return list;
+	}
+
+	@Override
+	@CacheEvict(value = {"propsBytype","contentTagBtype","tagsAndType"}, beforeInvocation = true,allEntries = true)
+	public void saveProp(String cname, Integer mid, int userid, String btype) {
+		if(StringUtils.isEmpty(cname)) 
+			throw new BusinessException(ErrorConst.PROPVALUEISNULL);
+		List<KeProperties> props = proDao.getPropByValueAndUserid(cname, btype, userid);
+		if(props != null && props.size() > 0) 
+			throw new BusinessException(ErrorConst.PROPVALUEISEXIST);
+		KeProperties prop = new KeProperties();
+		prop.setId(mid);
+		prop.setRea_value(cname);
+		prop.setType(btype);
+		prop.setUserid(userid);
+		if(mid != null) 
+			proDao.updateProp(prop);
+		else
+			proDao.insertProp(prop);
+	}
+
+	@Transactional
+	@Override
+	@CacheEvict(value = {"propsBytype","contentTagBtype","tagsAndType"},beforeInvocation = true,allEntries = true)
+	public void deletePorp(Integer mid, int userid) {
+		if(mid == null) 
+			throw new BusinessException(ErrorConst.PROPIDISNULL);
+		proDao.deletePropById(mid,userid);
+		cprelationDao.deleteByPropID(mid);
+	}
 	
 }

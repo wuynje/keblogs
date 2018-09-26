@@ -28,6 +28,8 @@ import io.swagger.annotations.ApiOperation;
 public class Common {
 
 	private static Random random;
+	private static final String[] COLORS = { "default", "primary", "success", "info", "warning", "danger", "inverse",
+			"purple", "pink" };
 
 	@ApiOperation("获取0-max的随机数")
 	public static String random(int max, String str) {
@@ -109,10 +111,32 @@ public class Common {
 		content = mdToHtml(content);
 		content = content.replaceAll(PatternKit.REGEX_SCRIPT, "").replaceAll(PatternKit.REGEX_STYLE, "")
 				.replaceAll(PatternKit.REGEX_HTML, "").replaceAll("\\s*|\t|\r|\n", "").replaceAll(" ", "");
-		if(content.length() >= length) {
+		if (content.length() >= length) {
 			return content.substring(0, length);
 		}
 		return content;
+	}
+
+	/**
+	 * 获取随机颜色
+	 * 
+	 * @return
+	 */
+	public static String rand_color() {
+		random = getRandom();
+		int r = random.nextInt(COLORS.length - 1);
+		return COLORS[r];
+	}
+
+	public static Random getRandom() {
+		if (random == null) {
+			random = new Random();
+		}
+		return random;
+	}
+
+	public static void setRandom(Random random) {
+		Common.random = random;
 	}
 
 }

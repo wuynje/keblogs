@@ -1,5 +1,7 @@
 package com.yjytke.exception;
 
+import com.yjytke.constant.ErrorConst;
+
 /**
  * @author wuynje
  * @time 2018年8月15日 下午2:45:12
@@ -26,7 +28,10 @@ public class BusinessException extends RuntimeException {
 	 */
 	public BusinessException(Object o) {
 		super(o.toString());
-		setError_code("9999");
+		if(o instanceof ErrorConst) 
+			this.setError_code(((ErrorConst)o).getErrorCode());
+		else
+			setError_code("9999");
 	}
 	
 	public BusinessException(String message, String errorCode) {

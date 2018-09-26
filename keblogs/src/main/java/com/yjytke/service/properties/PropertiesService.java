@@ -14,14 +14,14 @@ import com.yjytke.entity.KeProperties;
 public interface PropertiesService {
 
 	/**
-	 * 查询tag和博客分类
+	 * 查询tag,博客分类,链接
 	 * @param userid 
 	 * @return
 	 */
 	List<KeProperties> getTagAndTypeAndLink(String tag, String btype, String link, int userid);
 
 	/**
-	 * 新增属性
+	 * 给文章新增属性
 	 * @param content
 	 * @param rea_value
 	 * @param type
@@ -34,6 +34,30 @@ public interface PropertiesService {
 	 * @return
 	 */
 	List<KeProperties> getPropByContent(KeContent content);
+
+	/**
+	 * 获取分类以及count
+	 * @param btype
+	 * @param userid
+	 * @return
+	 */
+	List<KeProperties> getTagAndBtype(String type, int userid);
+
+	/**
+	 * 新增属性
+	 * @param cname
+	 * @param mid
+	 * @param userid
+	 * @param btype
+	 */
+	void saveProp(String cname, Integer mid, int userid, String btype);
+
+	/**
+	 * 删除属性
+	 * @param mid
+	 * @param userid
+	 */
+	void deletePorp(Integer mid, int userid);
 
 
 }

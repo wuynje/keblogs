@@ -34,6 +34,7 @@ import sun.misc.BASE64Encoder;
  * @version 1.0
  * @description:一些规则的方法封装
  */
+@SuppressWarnings("restriction")
 @Component
 public class GeneralUtil {
 
