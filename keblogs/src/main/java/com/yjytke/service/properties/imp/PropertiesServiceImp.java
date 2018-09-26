@@ -177,7 +177,10 @@ public class PropertiesServiceImp implements PropertiesService {
 	@CacheEvict(value = {"propsBytype","contentTagBtype","tagsAndType"},beforeInvocation = true,allEntries = true)
 	public void deletePorp(Integer mid, int userid) {
 		if(mid == null) 
-			throw new BusinessException(ErrorConst.PROPIDISNULL);
+			throw new BusinessException(ErrorConst.PROPIDISNULL);	
+		List<KeCpRelation> cps = cprelationDao.getCprelationsByPropID(mid,userid);
+		if(cps != null && cps.size() > 0)
+			throw new BusinessException(ErrorConst.PROPINUSED);
 		proDao.deletePropById(mid,userid);
 		cprelationDao.deleteByPropID(mid);
 	}

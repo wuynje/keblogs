@@ -1,5 +1,7 @@
 package com.yjytke.dao;
 
+import java.util.List;
+
 import com.yjytke.entity.KeCpRelation;
 
 /**
@@ -37,5 +39,12 @@ public interface CpRelationDao {
 	 * @param mid
 	 */
 	void deleteByPropID(Integer mid);
+
+	/**
+	 * 查询属性是否被引用
+	 * @param mid
+	 * @return
+	 */
+	List<KeCpRelation> getCprelationsByPropID(Integer mid, Integer userid);
 	
 }

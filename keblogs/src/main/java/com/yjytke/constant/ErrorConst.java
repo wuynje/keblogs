@@ -65,6 +65,10 @@ public enum ErrorConst {
 	 */
 	PROPIDISNULL("4002","属性编码为空"),
 	/**
+	 * 属性已经被引用，请先删除
+	 */
+	PROPINUSED("4003","属性已经被引用，请先删除"),
+	/**
 	 * 加密错误
 	 */
 	ADDAECERROR("8001","加密错误"),
