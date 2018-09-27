@@ -57,7 +57,7 @@
 		FROM
 		<include refid="BASE_TABLE"/>
 		WHERE 
-		propertiesed = #{mid, jdbcType = INTEGER}
+		propertiesid = #{mid, jdbcType = INTEGER}
 		<if test="userid!=null">
 		AND userid = #{userid, jdbcType = INTEGER}
 		</if>
