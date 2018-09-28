@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -45,6 +46,14 @@ public class FilePutController {
 	@Autowired
 	private FileService fileService;
 	
+	@ApiOperation("跳转文件上传页面")
+	@GetMapping("/files")
+	public String fileIndex() {
+		
+		
+		return "admin/attach";
+	}
+	
 	@ApiOperation("markdown文件上传")
 	@PostMapping("/file/uploadfile")
 	public void upLoadFile(HttpServletRequest request,
@@ -55,13 +64,14 @@ public class FilePutController {
 		try {
 			request.setCharacterEncoding( "utf-8" );
 			response.setHeader( "Content-Type" , "text/html" );
-			String fileName = GeneralUtil.getFileNameKey(file.getOriginalFilename());//拼接后的文件名，包含文件在云存储的路径
+			KeUser user = (KeUser)request.getSession().getAttribute(WebConst.LOGIN_SESSION_KEY);
+			String fileName = GeneralUtil.getFileNameKey(file.getOriginalFilename(),user.getAccount_number());//拼接后的文件名，包含文件在云存储的路径
 			String fKey = TenCentCloudService.uploadFile(file,fileName,request.getContentLength());
 			KeFile keFile = new KeFile();
 			keFile.setFkey(fKey);
 			keFile.setFname(file.getOriginalFilename());
 			keFile.setCreated(new Date(System.currentTimeMillis()));
-			keFile.setUserId(((KeUser)request.getSession().getAttribute(WebConst.LOGIN_SESSION_KEY)).getId());
+			keFile.setUserId(user.getId());
 			keFile.setFtype(WebConst.FileType.IMG);
 			fileService.markEditorImgUpload(keFile);
 			response.getWriter().write( "{\"success\": 1, \"message\":\"上传成功\",\"url\":\"" + keFile.getFkey() + "\"}" );

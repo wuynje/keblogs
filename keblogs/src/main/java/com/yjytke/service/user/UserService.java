@@ -33,4 +33,11 @@ public interface UserService {
 	 * @return
 	 */
 	KeUser findUserByUsername(String username);
+	
+	/**
+	 * 根据编号获取用户
+	 * @param userid
+	 * @return
+	 */
+	KeUser findUserByUseID(Integer userid);
 }

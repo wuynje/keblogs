@@ -86,7 +86,8 @@ public class IndexController {
 		request.setAttribute("properties", properties);
 		request.setAttribute("contents", contents);
 		request.setAttribute("timebase", timebase);
-		request.setAttribute("user", user);
+		if(null == request.getSession().getAttribute(WebConst.LOGIN_SESSION_KEY))
+			request.getSession().setAttribute(WebConst.LOGIN_SESSION_KEY, user);
 		return "comm/index";
 	}
 }

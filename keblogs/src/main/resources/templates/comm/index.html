@@ -148,12 +148,12 @@
 	<header class="theme-main-header">
 		<div class="container">
 			<div class="content-holder clearfix">
-				<div class="logo"><a th:href="@{'/index/'+${account}}"><img th:src="@{/comm/images/logo/logo.png}" alt=""></a></div>
+				<div class="logo"><a th:href="@{'/index/'+${session.login_user.account_number}}"><img th:src="@{/comm/images/logo/logo.png}" alt=""></a></div>
 				<!-- ============== Menu Warpper ================ -->
 				<div class="menu-wrapper">
 					<nav id="mega-menu-holder" class="clearfix">
 					   <ul class="clearfix">
-						  <li><a th:href="@{'/index/'+${account}}">Home</a></li>
+						  <li><a th:href="@{'/index/'+${session.login_user.account_number}}">Home</a></li>
 						  <li><a href="about-me.html">About me</a></li>
 						  <li><a href="contact.html">contact me</a></li>
 					   </ul>
@@ -451,7 +451,7 @@
 	-->
 	<footer class="theme-footer">
 		<div class="container">
-			<div class="logo"><a th:href="@{'/index/'+${account}}"><img th:src="@{/comm/images/logo/logo.png}" alt=""></a></div>
+			<div class="logo"><a th:href="@{'/index/'+${session.login_user.account_number}}"><img th:src="@{/comm/images/logo/logo.png}" alt=""></a></div>
 			<p class="footer-text">Blog and Portfolio Theme</p>
 			<ul class="social-icon">
 				<li class="icon"><a href="#"><i class="fab fa-facebook-f"></i></a></li>

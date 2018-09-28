@@ -19,7 +19,7 @@
 <!-- Nav -->
 <nav id="menu">
 	<ul class="links">
-		<li><a href="index.html">Home</a></li>
+		<li><a th:href="@{'/index/'+${session.login_user.account_number}}">Home</a></li>
 		<li><a href="generic.html">Generic</a></li>
 		<li><a href="elements.html">Elements</a></li>
 	</ul>
@@ -29,13 +29,14 @@
 <section id="main">
 	<div class="inner">
 		<div class="image fit">
-			<img src="/comm/images/pic11.jpg" alt="" />
+			<img th:src="${article.titlePic}" alt="" />
 		</div>
 		<header>
 		<h1>
 		<th:block th:text="${article.title}"></th:block>
 		</h1>
-			<p class="info"><th:block th:text="${generalutil.timeMillsToDate(article.created)}" />______by
+			<p class="info"><th:block th:text="${generalutil.timeMillsToDate(article.created)}" />
+			______by：<th:block th:text="${session.login_user.nick_name}" />
 				<a href="#">
 					<!-- <th:block th:text="${}"/> -->
 				</a>

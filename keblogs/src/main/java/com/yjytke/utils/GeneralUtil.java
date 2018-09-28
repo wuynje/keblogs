@@ -236,12 +236,14 @@ public class GeneralUtil {
 	
 	/**
 	 * 生成存在云存储上的文件名
+	 * 云存储文件夹规则：账号/上传的年/月/随机名
 	 * @param fileName
+	 * @param account_number 
 	 * @return
 	 */
-	public static String getFileNameKey(String fileName) {
+	public static String getFileNameKey(String fileName, String account_number) {
 		String latsFileName = System.currentTimeMillis()+getStrRandom();
-		return getPathByDate()+"/"+latsFileName+fileName.substring(fileName.lastIndexOf("."), fileName.length());
+		return "/"+account_number+getPathByDate()+"/"+latsFileName+fileName.substring(fileName.lastIndexOf("."), fileName.length());
 	}
 
 }

@@ -70,4 +70,9 @@ public class UserServiceImp implements UserService {
 		return userDao.login(username, null);
 	}
 
+	@Override
+	public KeUser findUserByUseID(Integer userid) {
+		return userDao.getUserByID(userid);
+	}
+
 }

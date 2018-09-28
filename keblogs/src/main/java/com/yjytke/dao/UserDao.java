@@ -31,4 +31,11 @@ public interface UserDao {
 	int insert (KeUser user);
 	
 	List<KeUser> selectUsers();
+
+	/**
+	 * 根据用户ID查询用户
+	 * @param userid
+	 * @return
+	 */
+	KeUser getUserByID(Integer userid);
 }

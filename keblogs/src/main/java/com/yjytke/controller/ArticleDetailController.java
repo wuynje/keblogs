@@ -7,8 +7,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.yjytke.constant.WebConst;
 import com.yjytke.entity.KeContent;
+import com.yjytke.entity.KeUser;
 import com.yjytke.service.content.ContentService;
+import com.yjytke.service.user.UserService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -26,6 +29,8 @@ public class ArticleDetailController {
 	
 	@Autowired
 	private ContentService contentService;
+	@Autowired
+	private UserService userService;
 	
 	@ApiOperation("查看博文内容")
 	@GetMapping("/blogs/article/{id}")
@@ -34,6 +39,10 @@ public class ArticleDetailController {
 			) {
 		KeContent content = contentService.getArticleById(id);
 		request.setAttribute("article", content);
+		if(null == request.getSession().getAttribute(WebConst.LOGIN_SESSION_KEY)&&content != null) {
+			KeUser user = userService.findUserByUseID(content.getUserid());
+			request.getSession().setAttribute(WebConst.LOGIN_SESSION_KEY, user);
+		}
 		return "comm/generic";
 	}
 	

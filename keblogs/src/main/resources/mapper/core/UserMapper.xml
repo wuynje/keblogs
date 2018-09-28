@@ -62,7 +62,15 @@
          </if>
 	</select>
 
-
+	<!-- 根据主键查询ID -->
+	<select id="getUserByID" resultType="com.yjytke.entity.KeUser">
+		SELECT
+		<include refid="BASE_COLUMN" />
+		FROM
+		<include refid="BASE_TABLE" />
+		WHERE
+		id = #{userid,jdbcType = INTEGER}
+	</select>
 
 
 </mapper>
