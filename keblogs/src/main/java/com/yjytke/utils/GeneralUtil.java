@@ -241,9 +241,9 @@ public class GeneralUtil {
 	 * @param account_number 
 	 * @return
 	 */
-	public static String getFileNameKey(String fileName, String account_number) {
+	public static String getFileNameKey(String fileName,String fileSource, String account_number) {
 		String latsFileName = System.currentTimeMillis()+getStrRandom();
-		return "/"+account_number+getPathByDate()+"/"+latsFileName+fileName.substring(fileName.lastIndexOf("."), fileName.length());
+		return "/"+account_number+"/"+fileSource+getPathByDate()+"/"+latsFileName+fileName.substring(fileName.lastIndexOf("."), fileName.length());
 	}
 
 }

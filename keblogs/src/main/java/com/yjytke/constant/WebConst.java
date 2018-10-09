@@ -99,6 +99,12 @@ public class WebConst {
 		String BTYPE="blogtype"; 
 	}
 	
+	/**
+	 * @author wuynje
+	 * @time 2018年9月29日 上午9:43:04
+	 * @version 1.0
+	 * @description:文件类型
+	 */
 	public interface FileType{
 		/**
 		 * 图片
@@ -110,6 +116,12 @@ public class WebConst {
 		String YS = "ysfile";
 	}
 	
+	/**
+	 * @author wuynje
+	 * @time 2018年9月29日 上午9:42:18
+	 * @version 1.0
+	 * @description:文章类型：博文，生活
+	 */
 	public interface Articletype{
 		/**
 		 * 博文
@@ -121,6 +133,12 @@ public class WebConst {
 		String LIFE = "life";
 	}
 	
+	/**
+	 * @author wuynje
+	 * @time 2018年9月29日 上午9:41:42
+	 * @version 1.0
+	 * @description:文章状态：发布，草稿
+	 */
 	public interface ArticleStatus{
 		/**
 		 * 发布
@@ -130,6 +148,19 @@ public class WebConst {
 		 *草稿
 		 */
 		String DRAFT = "draft";
+	}
+	
+	/**
+	 * @author wuynje
+	 * @time 2018年9月29日 上午9:43:21
+	 * @version 1.0
+	 * @description:上传到云存储的分类
+	 */
+	public interface FileSource{
+		/**
+		 * 文章
+		 */
+		String CONTENT = "content";
 	}
 	
 }

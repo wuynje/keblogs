@@ -22,14 +22,14 @@
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">账号</label>
                                         <div class="col-md-9">
-                                            <input type="text" th:value="${session.login_user.username}" class="form-control"  readonly="readonly" disabled="disabled"/>
+                                            <input type="text" th:value="${session.login_user.account_number}" class="form-control"  readonly="readonly" disabled="disabled"/>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">姓名</label>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control" name="screenName" placeholder="输入您的姓名"
-                                                   th:value="${session.login_user.screenName}" required="required" aria-required="true"/>
+                                            <input type="text" class="form-control" name="screenName" placeholder="输入您的昵称"
+                                                   th:value="${session.login_user.nick_name}" required="required" aria-required="true"/>
                                         </div>
                                     </div>
                                     <div class="form-group">

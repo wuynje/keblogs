@@ -1,7 +1,11 @@
 package com.yjytke.controller.admin;
 
+import java.io.IOException;
+
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
@@ -36,7 +40,7 @@ import io.swagger.annotations.ApiParam;
  * @version 1.0
  * @description:登录相关
  */
-@Api("登录相关")
+@Api("作者相关")
 @Controller
 @RequestMapping("/admin")
 public class AuthorController {
@@ -87,5 +91,30 @@ public class AuthorController {
 		logService.addLog(IPKit.getIpAddrByRequest(request), LogActions.MANAGERLOGIN.toString(), keUser.getId());
 		return new ApiResponse(AjaxReturnCode.Common.SUCCESS);
 	}
-
+			
+	@ApiOperation("个人设置页面")
+	@GetMapping("/profileset")
+	public String profileIndex() {
+		return "admin/profile";
+		
+	}
+	
+	@ApiOperation("注销")
+	@GetMapping("/logout")
+	public void logout(HttpServletRequest request,
+			HttpSession session,HttpServletResponse response) {
+		session.removeAttribute(WebConst.LOGIN_SESSION_KEY);
+		Cookie cookie = new Cookie(WebConst.USER_IN_COOKIE, null);
+		cookie.setMaxAge(0);//立即销毁cookie
+		cookie.setValue(null);
+		cookie.setPath("/");
+		response.addCookie(cookie);
+		try {
+			response.sendRedirect("/admin/login");
+		} catch (IOException e) {
+			e.printStackTrace();
+			LOGGER.error("error : {}, Exception : {}","注销失败",e);
+		}
+	}
+	
 }

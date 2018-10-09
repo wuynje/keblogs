@@ -65,7 +65,8 @@ public class FilePutController {
 			request.setCharacterEncoding( "utf-8" );
 			response.setHeader( "Content-Type" , "text/html" );
 			KeUser user = (KeUser)request.getSession().getAttribute(WebConst.LOGIN_SESSION_KEY);
-			String fileName = GeneralUtil.getFileNameKey(file.getOriginalFilename(),user.getAccount_number());//拼接后的文件名，包含文件在云存储的路径
+			String fileName = GeneralUtil.getFileNameKey(file.getOriginalFilename(),
+					WebConst.FileSource.CONTENT,user.getAccount_number());//拼接后的文件名，包含文件在云存储的路径
 			String fKey = TenCentCloudService.uploadFile(file,fileName,request.getContentLength());
 			KeFile keFile = new KeFile();
 			keFile.setFkey(fKey);
