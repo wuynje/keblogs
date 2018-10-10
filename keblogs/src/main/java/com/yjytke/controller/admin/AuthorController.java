@@ -29,6 +29,7 @@ import com.yjytke.service.user.UserService;
 import com.yjytke.utils.ApiResponse;
 import com.yjytke.utils.GeneralUtil;
 import com.yjytke.utils.IPKit;
+import com.yjytke.utils.PatternKit;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -92,13 +93,6 @@ public class AuthorController {
 		return new ApiResponse(AjaxReturnCode.Common.SUCCESS);
 	}
 			
-	@ApiOperation("个人设置页面")
-	@GetMapping("/profileset")
-	public String profileIndex() {
-		return "admin/profile";
-		
-	}
-	
 	@ApiOperation("注销")
 	@GetMapping("/logout")
 	public void logout(HttpServletRequest request,
@@ -117,4 +111,31 @@ public class AuthorController {
 		}
 	}
 	
+	@ApiOperation("个人设置页面")
+	@GetMapping("/profileset")
+	public String profileIndex() {
+		return "admin/profile";
+		
+	}
+	
+	@ApiOperation("保存个人信息")
+	@ResponseBody
+	@PostMapping("/profilesave")
+	public ApiResponse saveUserProfile(
+			@ApiParam(name = "nickname", value = "昵称") @RequestParam String nickname, 
+			@ApiParam(name = "email", value = "邮箱") @RequestParam String email, HttpServletRequest request) {
+		KeUser user = (KeUser) request.getSession().getAttribute(WebConst.LOGIN_SESSION_KEY);
+		if(null == user)
+			return new ApiResponse("fail", "帐号登录异常，保存失败");
+		if(StringUtils.isEmpty(nickname))
+			return new ApiResponse("fail", "昵称为空，保存失败");
+		if(StringUtils.isEmpty(email)|| (!PatternKit.isEmail(email)))
+			return new ApiResponse("fail", "邮箱格式错误，保存失败");
+		if((!nickname.equals(user.getNick_name())) || (!email.equals(user.getEmail()))) {//如果存在修改
+			user.setNick_name(nickname);
+			user.setEmail(email);
+			userService.updateUserProfile(user);
+		}
+		return new ApiResponse("success");
+	}
 }

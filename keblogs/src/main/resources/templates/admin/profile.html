@@ -28,7 +28,7 @@
                                     <div class="form-group">
                                         <label class="col-md-3 control-label">姓名</label>
                                         <div class="col-md-9">
-                                            <input type="text" class="form-control" name="screenName" placeholder="输入您的昵称"
+                                            <input type="text" class="form-control" name="nickname" placeholder="输入您的昵称"
                                                    th:value="${session.login_user.nick_name}" required="required" aria-required="true"/>
                                         </div>
                                     </div>
@@ -41,7 +41,7 @@
                                     </div>
                                     <div class="clearfix pull-right">
                                         <button type="button" class="btn btn-primary waves-effect waves-light" onclick="saveSetting()">
-                                            保存信息
+                                          		  保存信息
                                         </button>
                                     </div>
                                 </form>
@@ -105,7 +105,7 @@
     function saveSetting() {
         var param = $('#user-form').serialize();
         tale.post({
-            url : '/admin/profile',
+            url : '/admin/profilesave',
             data: param,
             success: function (result) {
                 if(result && result.code == 'success'){

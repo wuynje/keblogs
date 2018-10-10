@@ -71,6 +71,24 @@
 		WHERE
 		id = #{userid,jdbcType = INTEGER}
 	</select>
-
+	
+	<update id="update" parameterType="com.yjytke.entity.KeUser">
+		UPDATE
+		<include refid="BASE_TABLE" />
+		<set>
+			<if test="account_password != null">
+                account_password = #{account_password, jdbcType=VARCHAR},
+            </if>
+            <if test="nick_name != null">
+                nick_name = #{nick_name, jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                email = #{email, jdbcType=VARCHAR},
+            </if>
+            <if test="avatar != null">
+                avatar = #{avatar, jdbcType=VARCHAR},
+            </if>
+		</set>
+	</update>
 
 </mapper>

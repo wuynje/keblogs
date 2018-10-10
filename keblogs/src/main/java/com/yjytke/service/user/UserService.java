@@ -40,4 +40,10 @@ public interface UserService {
 	 * @return
 	 */
 	KeUser findUserByUseID(Integer userid);
+
+	/**
+	 * 修改用户信息
+	 * @param user
+	 */
+	void updateUserProfile(KeUser user);
 }

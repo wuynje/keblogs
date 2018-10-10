@@ -38,4 +38,10 @@ public interface UserDao {
 	 * @return
 	 */
 	KeUser getUserByID(Integer userid);
+
+	/**
+	 * 修改用户信息
+	 * @param user
+	 */
+	void update(KeUser user);
 }

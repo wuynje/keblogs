@@ -75,4 +75,10 @@ public class UserServiceImp implements UserService {
 		return userDao.getUserByID(userid);
 	}
 
+	@Transactional
+	@Override
+	public void updateUserProfile(KeUser user) {
+		userDao.update(user);
+	}
+
 }
