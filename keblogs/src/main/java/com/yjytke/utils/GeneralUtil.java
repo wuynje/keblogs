@@ -236,8 +236,9 @@ public class GeneralUtil {
 	
 	/**
 	 * 生成存在云存储上的文件名
-	 * 云存储文件夹规则：账号/上传的年/月/随机名
+	 * 云存储文件夹规则：账号/所属类型/上传的年/月/随机名
 	 * @param fileName
+	 * @param fileSource 
 	 * @param account_number 
 	 * @return
 	 */

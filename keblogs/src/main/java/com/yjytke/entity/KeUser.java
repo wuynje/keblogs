@@ -42,6 +42,10 @@ public class KeUser {
 	private String email;
 	
 	/**
+	 * 个人简介，备注
+	 */
+	private String memo;
+	/**
 	 *账号标识
 	 */
 	private int status;
@@ -148,6 +152,14 @@ public class KeUser {
 
 	public void setLogin_time(long login_time) {
 		this.login_time = login_time;
+	}
+
+	public String getMemo() {
+		return memo;
+	}
+
+	public void setMemo(String memo) {
+		this.memo = memo;
 	}
 	
 }

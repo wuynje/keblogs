@@ -17,7 +17,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
+import com.yjytke.api.TenCentCloudService;
 import com.yjytke.constant.AjaxReturnCode;
 import com.yjytke.constant.ErrorConst;
 import com.yjytke.constant.LogActions;
@@ -123,7 +125,9 @@ public class AuthorController {
 	@PostMapping("/profilesave")
 	public ApiResponse saveUserProfile(
 			@ApiParam(name = "nickname", value = "昵称") @RequestParam String nickname, 
-			@ApiParam(name = "email", value = "邮箱") @RequestParam String email, HttpServletRequest request) {
+			@ApiParam(name = "email", value = "邮箱") @RequestParam String email, 
+			@ApiParam(name = "userpic", value = "头像") @RequestParam MultipartFile userpic,
+			HttpServletRequest request) {
 		KeUser user = (KeUser) request.getSession().getAttribute(WebConst.LOGIN_SESSION_KEY);
 		if(null == user)
 			return new ApiResponse("fail", "帐号登录异常，保存失败");
@@ -131,9 +135,20 @@ public class AuthorController {
 			return new ApiResponse("fail", "昵称为空，保存失败");
 		if(StringUtils.isEmpty(email)|| (!PatternKit.isEmail(email)))
 			return new ApiResponse("fail", "邮箱格式错误，保存失败");
-		if((!nickname.equals(user.getNick_name())) || (!email.equals(user.getEmail()))) {//如果存在修改
+		String pickey = "";//照片保存后的返回路径
+		if(userpic != null && (!StringUtils.isEmpty(userpic.getName()))) {
+			String fileName = GeneralUtil.getFileNameKey(userpic.getOriginalFilename(), WebConst.FileSource.PHOTO, user.getAccount_number());
+			try {
+				pickey = TenCentCloudService.uploadFile(userpic, fileName, request.getContentLength());
+			} catch (IOException e) {
+				LOGGER.error("头像上传失败");
+				return new ApiResponse("fail", "照片上传流错误，保存失败");
+			}
+		}
+		if((!nickname.equals(user.getNick_name())) || (!email.equals(user.getEmail())) || (!StringUtils.isEmpty(pickey))) {//如果存在修改
 			user.setNick_name(nickname);
 			user.setEmail(email);
+			user.setAvatar(pickey);
 			userService.updateUserProfile(user);
 		}
 		return new ApiResponse("success");

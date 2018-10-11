@@ -161,6 +161,10 @@ public class WebConst {
 		 * 文章
 		 */
 		String CONTENT = "content";
+		/**
+		 * 头像
+		 */
+		String PHOTO = "photo";
 	}
 	
 }

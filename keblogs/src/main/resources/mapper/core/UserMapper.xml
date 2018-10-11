@@ -6,7 +6,7 @@
 	</sql>
 
 	<sql id="BASE_COLUMN">
-		id,account_number,nick_name,avatar,account_password,phone_number,email,ts,status,login_error_tale,login_time
+		id,account_number,nick_name,avatar,account_password,phone_number,email,memo,ts,status,login_error_tale,login_time
 	</sql>
 
 	<insert id="insert"

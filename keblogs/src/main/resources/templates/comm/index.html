@@ -373,9 +373,8 @@
 			<div class="col-lg-4 col-md-7 col-12 theme-main-sidebar">
 				<div class="sidebar-box bg-box about-me">
 					<h6 class="sidebar-title">关于我</h6>
-					<img src="/comm/images/home/1.jpg" alt="">
-					<p>大家好，我是渣渣杰</p>
-					<div class="clearfix"><img src="/comm/images/home/sign.png" alt="" class="signature float-right"></div>
+					<img th:src="${session.login_user.avatar}" alt="">
+					<p><th:block th:text="${session.login_user.memo}" /></p>
 				</div> <!-- /.about-me -->
 				<div class="sidebar-box bg-box sidebar-categories">
 					<h6 class="sidebar-title">博文分类</h6>
