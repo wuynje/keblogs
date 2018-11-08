@@ -48,7 +48,7 @@ public class UserServiceImp implements UserService {
 			if(keUserA.getLogin_error_tale() >= WebConst.ERROR_TIME)
 				throw new BusinessException(ErrorConst.PAWWORRDERROROVERTHREE);
 		}
-		KeUser keUserB = userDao.login(username, password);
+		KeUser keUserB = userDao.login(username, GeneralUtil.md5Code(password));
 		if(null == keUserB) {
 			userDao.addLoginErrorSum(username,WebConst.ADD,GeneralUtil.getcurrenttime());
 		}
@@ -78,6 +78,18 @@ public class UserServiceImp implements UserService {
 	@Transactional
 	@Override
 	public void updateUserProfile(KeUser user) {
+		userDao.update(user);
+	}
+
+	/**
+	 * 修改密码
+	 */
+	@Override
+	public void updatePwd(String username, String oldpwd, String pwd) {
+		KeUser user = userDao.login(username, GeneralUtil.md5Code(oldpwd));
+		if(null == user)
+			throw new BusinessException(ErrorConst.PASSWORDERROR);
+		user.setAccount_password(GeneralUtil.md5Code(pwd));
 		userDao.update(user);
 	}
 

@@ -157,7 +157,14 @@
                 data: params,
                 success: function (result) {
                     if(result && result.code == 'success'){
-                        tale.alertOk('密码修改成功');
+                        tale.alertOk({
+                            text:result.msg,
+                            then: function () {
+                                setTimeout(function () {
+                                    window.location.href = '/admin/logout';
+                                }, 500);
+                            }
+                        });
                     } else {
                         tale.alertError(result.msg || '密码修改失败');
                     }

@@ -46,4 +46,12 @@ public interface UserService {
 	 * @param user
 	 */
 	void updateUserProfile(KeUser user);
+	
+	/**
+	 * 修改密码
+	 * @param username
+	 * @param oldpwd
+	 * @param pwd
+	 */
+	void updatePwd(String username, String oldpwd, String pwd);
 }

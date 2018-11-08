@@ -107,7 +107,7 @@ $.tale.prototype.alertBox = function (options) {
         title: options.title,
         text: options.text,
         type: options.type,
-        timer: options.timer || 9999,
+        timer: options.timer || null,
         showCloseButton: options.showCloseButton,
         showCancelButton: options.showCancelButton,
         showLoaderOnConfirm: options.showLoaderOnConfirm || false,
