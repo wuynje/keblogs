@@ -51,7 +51,12 @@ public interface PropertiesService {
 	 * @param btype
 	 */
 	void saveProp(String cname, Integer mid, int userid, String btype);
-
+	
+	/**
+	 * 新增属性
+	 * @param prop
+	 */
+	void saveProp(KeProperties prop);
 	/**
 	 * 删除属性
 	 * @param mid

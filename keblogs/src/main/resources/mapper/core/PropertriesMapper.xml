@@ -33,6 +33,7 @@
 		</trim>
 		 AND
 		userid = #{userid, jdbcType=INTEGER}
+		order by sort
 	</select>
 	
 	<!-- 根据实际值和用户id查询属性 -->
@@ -110,6 +111,18 @@
 		<set>
 			<if test="rea_value!=null">
 			rea_value = #{rea_value,jdbcType=VARCHAR},
+			</if>
+			<if test="type!=null">
+			type = #{type,jdbcType=VARCHAR},
+			</if>
+			<if test="sort!=null">
+			sort = #{sort,jdbcType=INTEGER},
+			</if>
+			<if test="picture!=null">
+			picture = #{picture,jdbcType=VARCHAR},
+			</if>
+			<if test="description!=null">
+			description = #{description,jdbcType=VARCHAR},
 			</if>
 		</set>
 		WHERE

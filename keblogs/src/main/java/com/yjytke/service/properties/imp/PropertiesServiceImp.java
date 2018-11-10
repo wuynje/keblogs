@@ -56,7 +56,7 @@ public class PropertiesServiceImp implements PropertiesService {
 	 */
 	@Transactional
 	@Override
-	@CacheEvict(value = { "tagsAndType","contentTagBtype","propsBytype" }, beforeInvocation = true, allEntries = true)
+	@CacheEvict(value = { "tagsAndType", "contentTagBtype", "propsBytype" }, beforeInvocation = true, allEntries = true)
 	public void addProp(KeContent content, String rea_value, String type) {
 		List<KeProperties> props = proDao.getPropByContent(content);
 		List<KeProperties> propType = new ArrayList<KeProperties>();// 将获取的属性按照类型取出来
@@ -65,39 +65,40 @@ public class PropertiesServiceImp implements PropertiesService {
 				propType.add(p);
 			}
 		}
-		/**传入的rea_value为空**/
-		if (StringUtils.isBlank(rea_value) && propType.size()==0) {//如果属性为空;
+		/** 传入的rea_value为空 **/
+		if (StringUtils.isBlank(rea_value) && propType.size() == 0) {// 如果属性为空;
 			return;
 		}
-		if (StringUtils.isBlank(rea_value) && propType.size()>0) {//新编辑的属性为空，已经存在属性，直接全部删除;
-			for(KeProperties p : propType) {
+		if (StringUtils.isBlank(rea_value) && propType.size() > 0) {// 新编辑的属性为空，已经存在属性，直接全部删除;
+			for (KeProperties p : propType) {
 				cprelationDao.deleteByContentIdAndPropID(content.getId(), p.getId());
 			}
 			return;
 		}
-		/**传入的rea_value不为空**/
+		/** 传入的rea_value不为空 **/
 		String[] str = rea_value.split(",");
 		List<String> strListArray = Arrays.asList(str);
-		List<String> strList = new ArrayList<String>(strListArray);//必须进行一次new arrayList，因为Arrays.asList方法返回的ArrayList的add,remove等方法直接跑出异常
+		List<String> strList = new ArrayList<String>(strListArray);// 必须进行一次new
+																	// arrayList，因为Arrays.asList方法返回的ArrayList的add,remove等方法直接跑出异常
 		/**
 		 * 如果没有相应的属性，一般为新增
 		 */
 		if (propType.size() == 0) {
 			this.newPropAdd(strList, content, type);
-		}else {
+		} else {
 			/**
 			 * 如果该博文有相应的属性，一般为修改
 			 */
-			Set<KeProperties> propSet = new HashSet<KeProperties>();//存放要删除的属性
-			for(KeProperties p : propType) {
-				if(strList.contains(p.getRea_value())) {
-					strList.remove(p.getRea_value());//remove之后的strList中只有需要新增的属性
-				}else {
+			Set<KeProperties> propSet = new HashSet<KeProperties>();// 存放要删除的属性
+			for (KeProperties p : propType) {
+				if (strList.contains(p.getRea_value())) {
+					strList.remove(p.getRea_value());// remove之后的strList中只有需要新增的属性
+				} else {
 					propSet.add(p);
 				}
 			}
 			this.newPropAdd(strList, content, type);
-			for(KeProperties p : propSet) {
+			for (KeProperties p : propSet) {
 				cprelationDao.deleteByContentIdAndPropID(content.getId(), p.getId());
 			}
 		}
@@ -107,7 +108,7 @@ public class PropertiesServiceImp implements PropertiesService {
 	 * 根据文章获取相应标签和分类
 	 */
 	@Override
-	@Cacheable(value = "contentTagBtype",key="'content_'+#p0")
+	@Cacheable(value = "contentTagBtype", key = "'content_'+#p0")
 	public List<KeProperties> getPropByContent(KeContent content) {
 		List<KeProperties> properties = proDao.getPropByContent(content);
 		if (properties != null && properties.size() > 0) {
@@ -116,10 +117,10 @@ public class PropertiesServiceImp implements PropertiesService {
 			return null;
 		}
 	}
-	
-	
+
 	/**
 	 * 需要新增的属性
+	 * 
 	 * @param strList
 	 * @param content
 	 * @param type
@@ -129,8 +130,8 @@ public class PropertiesServiceImp implements PropertiesService {
 			KeCpRelation cpRelation = new KeCpRelation();
 			cpRelation.setContentid(content.getId());
 			cpRelation.setUserid(content.getUserid());
-			List<KeProperties> prop = proDao.getPropByValueAndUserid(s,type, content.getUserid());
-			if (null != prop && prop.size() ==1 ) {
+			List<KeProperties> prop = proDao.getPropByValueAndUserid(s, type, content.getUserid());
+			if (null != prop && prop.size() == 1) {
 				cpRelation.setPropertiesid(prop.get(0).getId());
 			} else {
 				KeProperties addprop = new KeProperties();
@@ -142,31 +143,30 @@ public class PropertiesServiceImp implements PropertiesService {
 			}
 			cprelationDao.insert(cpRelation);
 		}
-	
+
 	}
 
-	
 	@Override
 	@Cacheable(value = "propsBytype", key = "'type_'+#p0+'userid_'+#p1")
 	public List<KeProperties> getTagAndBtype(String type, int userid) {
-		List<KeProperties> list = proDao.getProp(type,userid);
+		List<KeProperties> list = proDao.getProp(type, userid);
 		return list;
 	}
 
 	@Override
-	@CacheEvict(value = {"propsBytype","contentTagBtype","tagsAndType"}, beforeInvocation = true,allEntries = true)
+	@CacheEvict(value = { "propsBytype", "contentTagBtype", "tagsAndType" }, beforeInvocation = true, allEntries = true)
 	public void saveProp(String cname, Integer mid, int userid, String btype) {
-		if(StringUtils.isEmpty(cname)) 
+		if (StringUtils.isEmpty(cname))
 			throw new BusinessException(ErrorConst.PROPVALUEISNULL);
 		List<KeProperties> props = proDao.getPropByValueAndUserid(cname, btype, userid);
-		if(props != null && props.size() > 0) 
+		if (props != null && props.size() > 0)
 			throw new BusinessException(ErrorConst.PROPVALUEISEXIST);
 		KeProperties prop = new KeProperties();
 		prop.setId(mid);
 		prop.setRea_value(cname);
 		prop.setType(btype);
 		prop.setUserid(userid);
-		if(mid != null) 
+		if (mid != null)
 			proDao.updateProp(prop);
 		else
 			proDao.insertProp(prop);
@@ -174,15 +174,26 @@ public class PropertiesServiceImp implements PropertiesService {
 
 	@Transactional
 	@Override
-	@CacheEvict(value = {"propsBytype","contentTagBtype","tagsAndType"},beforeInvocation = true,allEntries = true)
+	@CacheEvict(value = { "propsBytype", "contentTagBtype", "tagsAndType" }, beforeInvocation = true, allEntries = true)
 	public void deletePorp(Integer mid, int userid) {
-		if(mid == null) 
-			throw new BusinessException(ErrorConst.PROPIDISNULL);	
-		List<KeCpRelation> cps = cprelationDao.getCprelationsByPropID(mid,userid);
-		if(cps != null && cps.size() > 0)
+		if (mid == null)
+			throw new BusinessException(ErrorConst.PROPIDISNULL);
+		List<KeCpRelation> cps = cprelationDao.getCprelationsByPropID(mid, userid);
+		if (cps != null && cps.size() > 0)
 			throw new BusinessException(ErrorConst.PROPINUSED);
-		proDao.deletePropById(mid,userid);
+		proDao.deletePropById(mid, userid);
 		cprelationDao.deleteByPropID(mid);
 	}
-	
+
+	@Transactional
+	@Override
+	@CacheEvict(value = { "tagsAndType" }, beforeInvocation = true, allEntries = true)
+	public void saveProp(KeProperties prop) {
+		if (prop.getId() != null && prop.getId() != 0) {
+			proDao.updateProp(prop);
+		}else {
+			proDao.insertProp(prop);
+		}
+	}
+
 }

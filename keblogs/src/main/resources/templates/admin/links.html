@@ -24,16 +24,16 @@
                             </thead>
                             <tbody>
                             <th:block th:each="link : ${links}">
-                                <tr th:attr="mid=${link.mid}">
-                                    <td th:text="${link.name}"></td>
-                                    <td><a th:href="@{${link.slug}}" target="_blank" th:text="${link.slug}"></a></td>
+                                <tr th:attr="id=${link.id}">
                                     <td th:text="${link.description}"></td>
+                                    <td><a th:href="@{${link.rea_value}}" target="_blank" th:text="${link.rea_value}"></a></td>
+                                    <td th:text="${link.picture}"></td>
                                     <td th:text="${link.sort}"></td>
                                     <td>
                                         <a href="javascript:void(0)" onclick="editLink(this);"
                                            class="btn btn-primary btn-sm waves-effect waves-light m-b-5"><i
                                                 class="fa fa-edit"></i> <span>编辑</span></a>
-                                        <a href="javascript:void(0)" th:onclick="'delLink('+${link.mid}+');'"
+                                        <a href="javascript:void(0)" th:onclick="'delLink('+${link.id}+');'"
                                            class="btn btn-danger btn-sm waves-effect waves-light m-b-5"><i
                                                 class="fa fa-trash-o"></i> <span>删除</span></a>
                                     </td>
@@ -50,11 +50,11 @@
 
                                     <form id="linkForm" class="form-inline" role="form" novalidate="novalidate">
 
-                                        <input type="hidden" id="mid" name="mid"/>
+                                        <input type="hidden" id="id" name="id"/>
 
                                         <div class="form-group">
-                                            <label class="sr-only">链接标题</label>
-                                            <input type="text" id="title" name="title" class="form-control" placeholder="请输入链接标题"
+                                            <label class="sr-only">链接描述</label>
+                                            <input type="text" id="title" name="description" class="form-control" placeholder="请输入链接描述"
                                                    required="required" aria-required="true"/>
                                         </div>
 
@@ -117,14 +117,14 @@
     function editLink(obj) {
         var this_ = $(obj);
 
-        var mid = this_.parents('tr').attr('mid');
-        var title = this_.parents('tr').find('td:eq(0)').text();
+        var id = this_.parents('tr').attr('id');
+        var description = this_.parents('tr').find('td:eq(0)').text();
         var url = this_.parents('tr').find('td:eq(1)').text();
         var logo = this_.parents('tr').find('td:eq(2)').text();
         var sort = this_.parents('tr').find('td:eq(3)').text();
 
-        $('#linkForm #mid').val(mid);
-        $('#linkForm #title').val(title);
+        $('#linkForm #id').val(id);
+        $('#linkForm #title').val(description);
         $('#linkForm #url').val(url);
         $('#linkForm #logo').val(logo);
         $('#linkForm #sort').val(sort);

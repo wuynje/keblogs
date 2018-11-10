@@ -165,7 +165,7 @@ public class AuthorController {
 		} catch (BusinessException e) {
 			return new ApiResponse(AjaxReturnCode.Common.FAIL, e.getMessage());
 		}
-		LOGGER.info("user info []","密码修改成功。");
+		LOGGER.info("user info {}","密码修改成功。");
 		return new ApiResponse(AjaxReturnCode.Common.SUCCESS, "密码修改成功，请重新登录。");
 	}
 }

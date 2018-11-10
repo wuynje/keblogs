@@ -110,7 +110,7 @@ public class ArticleController {
 	 */
 	@GetMapping(value = "/{id}")
 	public String postArticleEdit(HttpServletRequest request,
-			@ApiParam(name = "id", value = "博文id", required = true) @PathVariable(name = "id", required = true) int cid) {
+			@ApiParam(name = "id", value = "博文id", required = true) @PathVariable(name = "id", required = true) Integer cid) {
 		int userid = ((KeUser) request.getSession().getAttribute(WebConst.LOGIN_SESSION_KEY)).getId();
 		KeContent content = contentService.getArticleById(cid);
 		List<KeProperties> btype = proService.getTagAndTypeAndLink(null, WebConst.TypeProperties.BTYPE, null, userid);

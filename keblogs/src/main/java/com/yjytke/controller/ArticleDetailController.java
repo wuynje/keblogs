@@ -35,7 +35,7 @@ public class ArticleDetailController {
 	@ApiOperation("查看博文内容")
 	@GetMapping("/blogs/article/{id}")
 	public String getArticleDetail(HttpServletRequest request,
-			@ApiParam(name = "id", required = true) @PathVariable(name = "id", required = true)int id
+			@ApiParam(name = "id", required = true) @PathVariable(name = "id", required = true)Integer id
 			) {
 		KeContent content = contentService.getArticleById(id);
 		request.setAttribute("article", content);
