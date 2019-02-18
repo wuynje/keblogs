@@ -110,7 +110,7 @@
 		Top Header
 	============================================== 
 	-->
-	<div class="top-header">
+<!-- 	<div class="top-header">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 col-12">
@@ -120,8 +120,8 @@
 							<div class="list"><a href="#">One morning, when Gregor Samsa woke from troubled dreams.</a></div>
 							<div class="list"><a href="#">CNN's Kyung Lah sits down with Japan's World Cup-winning.</a></div>
 							<div class="list"><a href="#">Song Byeok had every reason to be pleased with his success.</a></div>
-						</div> <!-- /.wrapper -->
-					</div> <!-- /.breaking-news -->
+						</div> /.wrapper
+					</div> /.breaking-news
 				</div>
 				<div class="col-lg-4 col-12">
 					<ul class="social-icon text-right">
@@ -134,9 +134,9 @@
 						</li>
 					</ul>
 				</div>
-			</div> <!-- /.row -->
-		</div> <!-- /.container -->
-	</div> <!-- /.top-header -->
+			</div> /.row
+		</div> /.container
+	</div> /.top-header -->
 
 	
 
@@ -154,7 +154,7 @@
 					<nav id="mega-menu-holder" class="clearfix">
 					   <ul class="clearfix">
 						  <li><a th:href="@{'/index/'+${session.login_user.account_number}}">Home</a></li>
-						  <li><a href="about-me.html">About me</a></li>
+						  <li><a href="about-me.html">my life</a></li>
 						  <li><a href="contact.html">contact me</a></li>
 					   </ul>
 					</nav> <!-- /#mega-menu-holder -->
@@ -348,7 +348,8 @@
 							</ul>
 						</th:block>
 						<br/>
-						<ul class="share-meta clearfix">
+						<!-- 博文喜欢分享评论 -->
+						<!-- <ul class="share-meta clearfix">
 							<li><a href="#"><i class="icon flaticon-comment"></i>Comments (04)</a></li>
 							<li><a href="#"><i class="icon flaticon-like-heart"></i>Likes (02)</a></li>
 							<li class="share-option">
@@ -359,8 +360,8 @@
 									<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
 									<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
 								</ul>
-							</li> <!-- /.share-option -->
-						</ul>
+							</li> /.share-option
+						</ul> -->
 						<p><th:block th:text="${common.htmlToText(article.content,100)}" /></p>
 					</div> <!-- /.post-meta-box -->
 				</div> <!-- /.single-blog-post -->
@@ -446,13 +447,13 @@
 	<footer class="theme-footer">
 		<div class="container">
 			<div class="logo"><a th:href="@{'/index/'+${session.login_user.account_number}}"><img th:src="@{/comm/images/logo/logo.png}" alt=""></a></div>
-			<p class="footer-text">Blog and Portfolio Theme</p>
+			<!-- <p class="footer-text">Blog and Portfolio Theme</p>
 			<ul class="social-icon">
 				<li class="icon"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
 				<li class="icon"><a href="#"><i class="fab fa-twitter"></i></a></li>
 				<li class="icon"><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
 				<li class="icon"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-			</ul>
+			</ul> -->
 			<p class="copyright">Copyright &copy; 2018 wuynje.</p>
 		</div>
 	</footer>
