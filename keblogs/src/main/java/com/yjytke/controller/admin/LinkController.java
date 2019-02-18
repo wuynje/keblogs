@@ -20,6 +20,7 @@ import com.yjytke.constant.WebConst;
 import com.yjytke.controller.BaseController;
 import com.yjytke.entity.KeProperties;
 import com.yjytke.entity.KeUser;
+import com.yjytke.exception.BusinessException;
 import com.yjytke.service.properties.PropertiesService;
 import com.yjytke.utils.ApiResponse;
 import com.yjytke.utils.PatternKit;
@@ -70,11 +71,26 @@ public class LinkController extends BaseController {
 		prop.setRea_value(url);
 		prop.setPicture(logo);
 		prop.setSort(sort);
-		prop.setUserid(getUserFromSession(request)==null?0:getUserFromSession(request).getId());
+		prop.setUserid(getUserFromSession(request)==null?-9999999:getUserFromSession(request).getId());
 		prop.setType(WebConst.TypeProperties.LINK);
 		prop.setId(id);
 		propService.saveProp(prop);
 		return new ApiResponse(AjaxReturnCode.Common.SUCCESS, "链接保存成功。");
 	}
-
+	
+	@ApiOperation("友链删除")
+	@PostMapping("/delete")
+	@ResponseBody
+	public ApiResponse deleteLink(
+			HttpServletRequest request,
+			@ApiParam(name = "id", value = "id", required = true)@RequestParam(name = "id", required = true) Integer id) {
+		try {
+			propService.deletePorp(id, getUserFromSession(request)==null?-9999999:getUserFromSession(request).getId());//为空的话给一个不可能出现的id
+		} catch (BusinessException e) {
+			return new ApiResponse(AjaxReturnCode.Common.FAIL, "删除链接失败");
+		}
+		//TODO 写日志
+		return new ApiResponse(AjaxReturnCode.Common.SUCCESS, "删除成功");
+	}
+	
 }

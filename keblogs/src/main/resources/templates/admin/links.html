@@ -130,13 +130,13 @@
         $('#linkForm #sort').val(sort);
     }
 
-    function delLink(mid) {
+    function delLink(id) {
         tale.alertConfirm({
             title:'确定删除该链接吗?',
             then: function () {
                 tale.post({
                     url : '/admin/links/delete',
-                    data: {mid: mid},
+                    data: {id: id},
                     success: function (result) {
                         if(result && result.code == 'success'){
                             tale.alertOkAndReload('链接删除成功');

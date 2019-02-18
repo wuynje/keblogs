@@ -399,24 +399,19 @@
 				
 				<div class="sidebar-box bg-box sidebar-trending-post">
 					<h6 class="sidebar-title">链接</h6>
-					<div class="single-trending-post clearfix">
-						<img src="/comm/images/blog/5.jpg" alt="" class="float-left">
-						<div class="post float-left">
-							<h6><a href="#">这是我的github </a></h6>
-							<ul>
-								<li class="tag">LINK</li>
-							</ul>
-						</div>
-					</div>
-					<div class="single-trending-post clearfix">
-						<img src="/comm/images/blog/6.jpg" alt="" class="float-left">
-						<div class="post float-left">
-							<h6><a href="#">这是我的球球</a></h6>
-							<ul>
-								<li class="tag">LINK</li>
-							</ul>
-						</div>
-					</div>
+					<th:block th:each="p:${properties}">
+						<th:block th:if="${p.type == 'link'}">
+							<div class="single-trending-post clearfix">
+								<img th:src="${p.picture}" alt="" class="float-left">
+								<div class="post float-left">
+									<h6><a th:href="@{${p.rea_value}}" th:text="${p.description}"></a></h6>
+									<ul>
+										<li class="tag">LINK</li>
+									</ul>
+								</div>
+							</div>
+						</th:block>
+					</th:block>
 				</div>
 				
 				
