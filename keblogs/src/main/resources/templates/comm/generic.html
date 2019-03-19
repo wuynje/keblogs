@@ -5,12 +5,14 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" th:href="@{/comm/css/main.css}" />
+<link rel="stylesheet" href="/site/css/index.css">
 </head>
 <body>
 
+
 <!-- Header -->
 <header id="header">
-	<a href="index.html" class="logo"><strong>KeBlogs</strong></a>
+	<a th:href="@{'/index/'+${session.login_user.account_number}}" class="logo"><strong>KeBlogs</strong></a>
 	<nav>
 		<a href="#menu">Menu</a>
 	</nav>
@@ -46,6 +48,92 @@
 	</div>
 </section>
 
+<!-- 留言信息 -->
+<div class="comment-container">
+    <div id="comments" ref="comments" class="clearfix">
+        <span class="response"></span>
+        <!-- 表单 -->
+        <form method="post" id="comment-form" class="comment-form" onsubmit="return TumoComment.subComment();">
+            <input hidden="hidden" name="articleId" id="articleId" th:value="${article.Id}"/>
+            <input hidden="hidden" name="articleTitle" id="articleTitle" th:value="${article.title}"/>
+            <input maxlength="12" name="author" id="author" class="form-control input-control clearfix" placeholder="姓名 (*)" value="" required/>
+            <input type="email" name="email"  id="email" style="background-color:white;border-left-width:0px;border-top-width:0px;border-right-width:0px;" class="form-control input-control clearfix" placeholder="邮箱 (*)" value="" required/>
+            <textarea name="content" id="content" style="background-color:white;border: 0px" class="form-control" placeholder="回复" required minlength="5" maxlength="2000"></textarea>
+            <button class="submit" id="misubmit">提交</button>
+        </form>
+
+        <!-- 列表 -->
+<!--         <ol class="comment-list" th:if="${talkList.total} >= 0">
+            <li th:each="comment : ${talkList.rows}" th:id="'li-comment-' + ${comment.parent.id}"
+                class="comment-body comment-parent comment-odd">
+                <div th:id="'comment-' + ${comment.parent.id}">
+                    <div class="comment-view">
+                        <div class="comment-header">
+                            <img class="avatar" th:src="@{/public/author.png}" width="80" height="80">
+                            <span class="comment-author">
+                                    <a th:href="${comment.parent.url}" target="_blank" rel="external nofollow" th:text="${comment.parent.author}"></a>
+                                </span>
+                        </div>
+                        <div class="comment-content">
+                            <span class="comment-author-at"></span>
+                            <p><p th:text="${comment.parent.content}"></p></p>
+                        </div>
+                        <div class="comment-meta">
+                            <time class="comment-time" th:text="${#dates.format(comment.parent.time, 'yyyy-MM-dd')}"></time>
+                            <span class="comment-reply">
+                                <a rel="nofollow" th:onclick="'javascript:TumoComment.reply(\'' + ${comment.parent.author} + '\',\'' + ${comment.parent.id} + '\');'">回复</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div th:if="${comment.childrenList} != '[]'" class="comment-children">
+                    <ol class="comment-list">
+                        <li th:each="item : ${comment.childrenList}" th:id="'li-comment-' + ${item.id}"
+                            class="comment-body comment-child comment-level-odd comment-odd">
+                            <div th:id="'comment-' + ${item.id}">
+                                <div class="comment-view">
+                                    <div class="comment-header">
+                                        <img class="avatar" th:src="@{/public/author.png}" width="80" height="80">
+                                        <span class="comment-author comment-by-author">
+                                            <a th:href="${item.url}" target="_blank" rel="external nofollow" th:text="${item.author}"></a>
+                                        </span>
+                                    </div>
+                                    <div class="comment-content">
+                                        <span class="comment-author-at">
+                                            <a th:href="'#comment-' + ${item.cId == 0 ? item.pId : item.cId}" th:text="${item.authorId}"></a>
+                                        </span>
+                                        <p><p th:text="${item.content}"></p></p>
+                                    </div>
+                                    <div class="comment-meta">
+                                        <time class="comment-time" th:text="${#dates.format(item.time, 'yyyy-MM-dd')}"></time>
+                                        <span class="comment-reply">
+                                            <a rel="nofollow" th:onclick="'javascript:TumoComment.reply(\'' + ${item.author} + '\',\'' + ${item.pId} + '\',\'' + ${item.id} + '\');'">回复</a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </li>
+        </ol>
+        <div class="lists-navigator clearfix">
+            <ol class="page-navigator" th:if="${talkList.total > 0}">
+                <li class="prev" th:if="${cp} gt '1'">
+                    <a th:href="'?cp=' + ${cp < 1 ? cp : cp-1} + '#comments'">←</a>
+                </li>
+                <li th:each="i : ${#numbers.sequence(1, talkList.total)}">
+                    <a th:style="${i == cp ? 'color: #eb5055;' : ''}" th:href="'?cp=' + ${i} + '#comments'" th:text="${i}"></a>
+                </li>
+                <li class="next" th:if="${cp < talkList.total}">
+                    <a th:href="'?cp=' + ${cp < talkList.total ? cp+1 : talkList.total} + '#comments'">→</a>
+                </li>
+            </ol>
+        </div> -->
+    </div>
+</div>
+
+
 <!-- Footer -->
 <footer id="footer">
 	<ul class="icons">
@@ -55,13 +143,13 @@
 	</ul>
 	<div class="copyright">Copyright &copy; 2018 wuynje</div>
 </footer>
-
+<div th:include="comm/js"></div>
 <!-- Scripts -->
 <script th:src="@{/comm/js/jquery.min.js}"></script>
 <script th:src="@{/comm/js/jquery.scrolly.min.js}"></script>
 <script th:src="@{/comm/js/skel.min.js}"></script>
 <script th:src="@{/comm/js/util.js}"></script>
 <script th:src="@{/comm/js/main.js}"></script>
-
+<script type="text/javascript" th:src="@{/site/js/content.js}"></script>
 </body>
 </html>
